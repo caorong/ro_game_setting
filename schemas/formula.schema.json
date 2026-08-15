@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/caorong/ro_game_setting/schemas/formula.schema.json",
+  "title": "RO Pre-Renewal Formula Record",
+  "type": "object",
+  "required": [
+    "id",
+    "status",
+    "expression",
+    "source"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "verified",
+        "derived",
+        "table-driven",
+        "source-indexed",
+        "uncertain"
+      ]
+    },
+    "expression": {
+      "type": "string",
+      "minLength": 1
+    },
+    "unit": {
+      "type": "string"
+    },
+    "rounding": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "path"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        }
+      }
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

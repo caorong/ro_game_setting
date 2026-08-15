@@ -1,0 +1,44 @@
+schema_version: 1
+ruleset: pre-renewal
+source_commit: 2fe6ab3dc4d830b11d93fb44c3b48436571890bd
+battle:
+  min_hitrate_percent: 5
+  max_hitrate_percent: 100
+  attribute_recover: false
+  weapon_defense_type: 0
+  magic_defense_type: 0
+  left_cardfix_to_right: true
+  arrow_decrement: 1
+  max_def: 99
+  sources:
+  - conf/battle/battle.conf
+swarm_penalties:
+  flee:
+    type: percent
+    target: PC
+    count: 3
+    amount_per_extra_attacker: 10
+  defense:
+    type: percent
+    target: PC
+    count: 3
+    amount_per_extra_attacker: 5
+player:
+  max_aspd: 190
+  max_primary_stat: 99
+  transcendent_status_points: 52
+  natural_heal_hp_interval_ms: 6000
+  natural_heal_sp_interval_ms: 8000
+  natural_heal_skill_interval_ms: 10000
+  natural_heal_weight_rate_percent: 50
+  major_overweight_rate_percent: 90
+  sources:
+  - conf/battle/player.conf
+skill:
+  casting_rate_percent: 100
+  delay_rate_percent: 100
+  delay_depends_on_dex: false
+  delay_depends_on_agi: false
+  instant_cast_dex: 150
+  minimum_skill_delay_ms: 100
+  source: conf/battle/skill.conf

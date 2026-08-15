@@ -1,0 +1,66 @@
+schema_version: 1
+ruleset: pre-renewal
+source:
+  path: src/map/status.cpp
+  commit: 2fe6ab3dc4d830b11d93fb44c3b48436571890bd
+  symbol: status_get_sc_def
+units:
+  chance: 0..10000
+  percentage_resistance: 0..10000
+  duration: milliseconds
+general_pipeline:
+- rate = rate - rate * sc_def / 10000
+- rate = rate - sc_def2
+- apply item resistance multiplicatively
+- round a positive rate upward to a multiple of 10
+- apply status minimum chance and roll random(0..9999)
+- duration = duration - duration * tick_def / 10000 - tick_def2
+- apply status minimum duration
+statuses:
+  Poison:
+    sc_def: VIT * 100
+    sc_def2: LUK * 10 + target_level * 10 - source_level * 10
+    tick_def_player: VIT * 75
+    tick_def2_player: LUK * 100
+  DeadlyPoison:
+    sc_def: VIT * 100
+    sc_def2: LUK * 10 + target_level * 10 - source_level * 10
+    notes:
+    - Damage-over-time behavior is separate from application resistance.
+  Stun:
+    sc_def: VIT * 100
+    sc_def2: LUK * 10 + target_level * 10 - source_level * 10
+    tick_def2: LUK * 10
+  Silence:
+    sc_def: VIT * 100
+    sc_def2: LUK * 10 + target_level * 10 - source_level * 10
+    tick_def2: LUK * 10
+  Bleeding:
+    sc_def: VIT * 100
+    sc_def2: LUK * 10 + target_level * 10 - source_level * 10
+    tick_def2: LUK * 10
+  Sleep:
+    sc_def: INT * 100
+    sc_def2: LUK * 10 + target_level * 10 - source_level * 10
+    tick_def2: LUK * 10
+  StoneWait:
+    sc_def: hard_MDEF * 100
+    sc_def2: LUK * 10 + target_level * 10 - source_level * 10
+  Freeze:
+    sc_def: hard_MDEF * 100
+    sc_def2: LUK * 10 + target_level * 10 - source_level * 10
+    tick_def2: -source_LUK * 10
+  Curse:
+    immunity: target LUK == 0
+    sc_def: target_LUK * 100
+    sc_def2: target_LUK * 10 - source_level * 10
+    tick_def: VIT * 100
+    tick_def2: LUK * 10
+  Blind:
+    sc_def: (VIT + INT) * 50
+    sc_def2: LUK * 10 + target_level * 10 - source_level * 10
+    tick_def2: LUK * 10
+  Confusion:
+    sc_def: (STR + INT) * 50
+    notes:
+    - The fixed term has status-specific source ordering; use executable source for exact edge cases.

@@ -1,0 +1,173 @@
+schema_version: 1
+ruleset: pre-renewal
+source:
+  repository: rathena/rathena
+  commit: 2fe6ab3dc4d830b11d93fb44c3b48436571890bd
+  paths:
+  - db/pre-re/skill_tree.yml
+  - db/pre-re/job_stats.yml
+  - db/pre-re/job_exp.yml
+conventions:
+  normal_base_cap: 99
+  normal_primary_stat_cap: 99
+  rebirth: BaseLv 99 / JobLv 50 normal second job returns to Novice High and follows High first class into trans second job.
+  variants: Baby, mounted sprite and sex-specific variants do not create additional progression nodes unless gameplay differs.
+routes:
+- family: swordman
+  name_zh: 剑士系
+  entry: Novice
+  paths:
+  - - Novice
+    - Swordman
+    - Knight
+    - Lord_Knight
+  - - Novice
+    - Swordman
+    - Crusader
+    - Paladin
+  rebirth_bridge:
+  - Knight|Crusader
+  - Novice_High
+  - Swordman_High
+  - Lord_Knight|Paladin
+- family: mage
+  name_zh: 魔法师系
+  entry: Novice
+  paths:
+  - - Novice
+    - Mage
+    - Wizard
+    - High_Wizard
+  - - Novice
+    - Mage
+    - Sage
+    - Professor
+  rebirth_bridge:
+  - Wizard|Sage
+  - Novice_High
+  - Mage_High
+  - High_Wizard|Professor
+- family: archer
+  name_zh: 弓箭手系
+  entry: Novice
+  paths:
+  - - Novice
+    - Archer
+    - Hunter
+    - Sniper
+  - - Novice
+    - Archer
+    - Bard
+    - Clown
+  - - Novice
+    - Archer
+    - Dancer
+    - Gypsy
+  sex_rules:
+    Bard: male
+    Clown: male
+    Dancer: female
+    Gypsy: female
+  rebirth_bridge:
+  - Hunter|Bard|Dancer
+  - Novice_High
+  - Archer_High
+  - Sniper|Clown|Gypsy
+- family: acolyte
+  name_zh: 服事系
+  entry: Novice
+  paths:
+  - - Novice
+    - Acolyte
+    - Priest
+    - High_Priest
+  - - Novice
+    - Acolyte
+    - Monk
+    - Champion
+  rebirth_bridge:
+  - Priest|Monk
+  - Novice_High
+  - Acolyte_High
+  - High_Priest|Champion
+- family: merchant
+  name_zh: 商人系
+  entry: Novice
+  paths:
+  - - Novice
+    - Merchant
+    - Blacksmith
+    - Whitesmith
+  - - Novice
+    - Merchant
+    - Alchemist
+    - Creator
+  rebirth_bridge:
+  - Blacksmith|Alchemist
+  - Novice_High
+  - Merchant_High
+  - Whitesmith|Creator
+- family: thief
+  name_zh: 盗贼系
+  entry: Novice
+  paths:
+  - - Novice
+    - Thief
+    - Assassin
+    - Assassin_Cross
+  - - Novice
+    - Thief
+    - Rogue
+    - Stalker
+  rebirth_bridge:
+  - Assassin|Rogue
+  - Novice_High
+  - Thief_High
+  - Assassin_Cross|Stalker
+expanded_routes:
+- - Novice
+  - Super_Novice
+- - Novice
+  - Taekwon
+  - Star_Gladiator
+- - Novice
+  - Taekwon
+  - Soul_Linker
+- - Novice
+  - Gunslinger
+- - Novice
+  - Ninja
+technical_variants:
+  baby: Adoption variants have lower stat caps and separate technical job IDs; generated tables retain them.
+  mounted:
+  - Knight2
+  - Lord_Knight2
+  - Crusader2
+  - Paladin2
+  - Star_Gladiator2
+  high_first:
+  - Swordman_High
+  - Mage_High
+  - Archer_High
+  - Acolyte_High
+  - Merchant_High
+  - Thief_High
+excluded_successors:
+- Rune_Knight
+- Royal_Guard
+- Warlock
+- Sorcerer
+- Ranger
+- Minstrel
+- Wanderer
+- Arch_Bishop
+- Sura
+- Mechanic
+- Genetic
+- Guillotine_Cross
+- Shadow_Chaser
+- Rebellion
+- Kagerou
+- Oboro
+- Summoner
+- all fourth jobs

@@ -1,0 +1,19 @@
+schema_version: 1
+repository: rathena/rathena
+commit: 2fe6ab3dc4d830b11d93fb44c3b48436571890bd
+commit_url: https://github.com/rathena/rathena/commit/2fe6ab3dc4d830b11d93fb44c3b48436571890bd
+raw_base_url: https://raw.githubusercontent.com/rathena/rathena/2fe6ab3dc4d830b11d93fb44c3b48436571890bd
+mode: PRERE
+renewal_macros_disabled:
+- RENEWAL
+- RENEWAL_CAST
+- RENEWAL_DROP
+- RENEWAL_EXP
+- RENEWAL_LVDMG
+- RENEWAL_ASPD
+- RENEWAL_STAT
+locked_on: '2026-08-15'
+notes:
+- rAthena is an executable community implementation, not Gravity official server source.
+- Common db files and db/pre-re overrides must be interpreted together.
+- Every generated record should retain source path and commit.
