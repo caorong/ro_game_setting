@@ -7,6 +7,9 @@ on:
         description: Download and index all split skill implementations
         type: boolean
         default: true
+  push:
+    branches: [agent/pre-renewal-reference]
+    paths: [build-index.ready]
 
 jobs:
   build:
@@ -22,7 +25,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ "${{ inputs.include_skill_source }}" = "true" ]; then
+          if [ "${{ github.event_name }}" = "push" ] || [ "${{ inputs.include_skill_source }}" = "true" ]; then
             python scripts/sync_rathena.py --include-skill-source
           else
             python scripts/sync_rathena.py
