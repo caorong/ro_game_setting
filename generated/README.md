@@ -75,3 +75,24 @@ rAthena 的 `Description` 字段主要是技能显示名，而不是完整攻略
 ## 重要边界
 
 这里是“锁定 rAthena 提交的 Pre-Renewal 运行数据集”，不是某一个历史 Episode 的博物馆快照。`db/pre-re` 中可能包含后来加入、但在 Pre-Renewal 计算模式下可用的内容；所有记录都保留来源路径和提交号，便于后续按 Episode 再做筛选。
+
+<!-- generated-cards:start -->
+## 卡片数据
+
+- 卡片记录：**538**
+- 浏览分页：**4**
+- 机器数据：`items/cards.jsonl` / `items/cards.csv`
+- 浏览入口：`reference/items/cards/README.md`
+- 每张卡片保留完整 rAthena `Script`，用于还原属性、种族、体型、状态和触发效果。
+<!-- generated-cards:end -->
+
+<!-- generated-skill-implementations:start -->
+## 技能精确实现索引
+
+- 经典职业技能记录：**457**
+- 职业公式页：**73**
+- 覆盖分布：`{"core-source-references": 80, "exact-class-methods": 332, "generic-or-class-mapped": 43, "metadata-only": 2}`
+- 机器数据：`skills/classic_implementations.jsonl`
+- 浏览入口：`reference/skill-formulas/README.md`
+- 优先使用技能工厂映射后的完整类方法；没有独立实现类时再回退到通用战斗源码定位。
+<!-- generated-skill-implementations:end -->

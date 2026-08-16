@@ -3,6 +3,7 @@
   "commit": "2fe6ab3dc4d830b11d93fb44c3b48436571890bd",
   "mode": "PRERE",
   "include_skill_source": true,
+  "workers": 12,
   "files": [
     {
       "path": "LICENSE",

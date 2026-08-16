@@ -1,6 +1,7 @@
 # Knight2 技能
 
 > 规则集：Pre-Renewal / PRERE；来源提交：`2fe6ab3dc4d830b11d93fb44c3b48436571890bd`。
+> 精确公式与实现：[查看 `Knight2` 公式页](../skill-formulas/Knight2.md)
 
 ## 有效技能列表
 

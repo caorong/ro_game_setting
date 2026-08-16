@@ -37,6 +37,21 @@
       "companions/pets.jsonl": 57,
       "companions/homunculus.jsonl": 8,
       "companions/mercenaries.jsonl": 0
+    },
+    "cards": {
+      "records": 538,
+      "csv_rows": 538,
+      "pages": 4
+    },
+    "skill_implementations": {
+      "records": 457,
+      "pages": 73,
+      "coverage": {
+        "core-source-references": 80,
+        "exact-class-methods": 332,
+        "generic-or-class-mapped": 43,
+        "metadata-only": 2
+      }
     }
   }
 }
