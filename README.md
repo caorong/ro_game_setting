@@ -14,7 +14,7 @@
 - STR / AGI / VIT / INT / DEX / LUK 与所有主要派生属性；
 - 普通攻击、物理/魔法/特殊技能、命中、暴击、防御、属性、体型、种族与阶级修正；
 - 吟唱、后摇、冷却、多段、状态异常、HP/SP、自然恢复；
-- 全职业技能树、技能量化描述、源码公式定位；
+- 全职业技能树、技能量化描述、源码公式与实现类；
 - 完整怪物数值、掉落、怪物技能 AI；
 - 完整武器、防具、卡片、弹药及装备脚本；
 - 精炼、职业成长、经验、宠物、人工生命体和佣兵等支持数据。
@@ -28,8 +28,10 @@ GitHub Actions 会从锁定的 rAthena 提交生成并提交 `generated/`。主�
 | 数据 | 入口 |
 |---|---|
 | 全职业技能目录 | [`generated/reference/jobs/README.md`](generated/reference/jobs/README.md) |
+| 按职业查看精确实现 | [`generated/reference/skill-formulas/README.md`](generated/reference/skill-formulas/README.md) |
 | 经典职业技能 JSONL | [`generated/skills/catalog.jsonl`](generated/skills/catalog.jsonl) |
-| 全技能源码公式索引 | [`generated/skills/formulas.jsonl`](generated/skills/formulas.jsonl) |
+| 精确实现类与方法块 | [`generated/skills/classic_implementations.jsonl`](generated/skills/classic_implementations.jsonl) |
+| 全技能广义源码索引 | [`generated/skills/formulas.jsonl`](generated/skills/formulas.jsonl) |
 | 怪物浏览目录 | [`generated/reference/monsters/README.md`](generated/reference/monsters/README.md) |
 | 完整怪物数据 | [`generated/monsters/metadata.jsonl`](generated/monsters/metadata.jsonl) |
 | 怪物掉落与技能 | [`generated/monsters/drops.jsonl`](generated/monsters/drops.jsonl) / [`skills.jsonl`](generated/monsters/skills.jsonl) |
@@ -42,14 +44,20 @@ GitHub Actions 会从锁定的 rAthena 提交生成并提交 `generated/`。主�
 
 `skill_db.yml` 的 `Description` 主要是技能显示名，不是完整攻略说明。本仓库根据目标、类型、属性、射程、段数、范围、吟唱、后摇、冷却、持续时间、SP/HP/Zeny/弹药/道具消耗和关联状态生成结构化中文量化描述。
 
-技能效果还分散在 `skills/**/*.cpp`、`battle.cpp`、`skill.cpp`、`status.cpp`、状态数据库和装备脚本中。因此 `formulas.jsonl` 保存：
+技能效果还分散在 `skills/**/*.cpp`、`battle.cpp`、`skill.cpp`、`status.cpp`、状态数据库和装备脚本中。仓库提供两层索引：
 
-- 技能常量的全部源码定位；
-- 附近的原始 C++ 倍率、伤害、概率、持续时间和状态表达式；
-- `dedicated-source`、`core-source`、`metadata-only` 覆盖状态；
-- 来源提交、路径与行号。
+1. `classic_implementations.jsonl`：解析技能工厂，把技能常量映射到具体实现类，保存完整方法块、文件和行号；这是查看经典职业技能公式的首选入口。
+2. `formulas.jsonl`：保存技能常量在全部分技能源码和通用战斗源码中的引用与附近表达式；用于查找共享管线和被其他技能引用的情况。
 
-复杂技能不会被静默猜成一行“看起来合理”的代数式。
+覆盖状态包括：
+
+- `exact-class-methods`：已从技能工厂定位到具体实现类，并提取完整方法；
+- `filename-inferred-methods`：根据技能名或显示名定位实现文件，需要人工复核映射；
+- `generic-or-class-mapped`：技能由通用实现类或状态系统处理；
+- `core-source-references`：公式位于旧式通用战斗/技能管线；
+- `metadata-only`：主要由数据库、状态或脚本驱动。
+
+复杂技能不会被静默猜成一行“看起来合理”的代数式。最终伤害还可能依赖命中、DEF/MDEF、属性、体型、种族/阶级、装备卡片脚本、状态效果和 C++ 整数截断顺序。
 
 ## 目录
 
@@ -64,7 +72,7 @@ src/ro_pre_re/              可执行公式与生成工具
 scripts/                    同步、构建、校验命令
 tests/                      公式边界与表格回归测试
 vendor/rathena/             临时同步的上游文件，不提交
-generated/                  自动生成并提交的完整技能、怪物、装备目录
+generated/                  自动生成并提交的完整技能、怪物、装备与卡片目录
 ```
 
 ## 本地重新生成
@@ -73,6 +81,8 @@ generated/                  自动生成并提交的完整技能、怪物、装�
 python -m pip install -e '.[dev]'
 python scripts/sync_rathena.py --clean --include-skill-source
 python scripts/build_reference.py
+python scripts/build_cards.py
+python scripts/build_skill_implementations.py
 python scripts/sync_rathena.py --verify-only
 python scripts/validate_reference.py
 pytest
