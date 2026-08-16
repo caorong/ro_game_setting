@@ -9,8 +9,8 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from typing import Iterable
 
 import yaml
 
@@ -25,7 +25,7 @@ def load_yaml(path: Path) -> dict:
         return yaml.safe_load(handle)
 
 
-def request(url: str, token: str | None = None, retries: int = 3) -> bytes:
+def request(url: str, token: str | None = None, retries: int = 4) -> bytes:
     headers = {"User-Agent": "ro-game-setting-sync/1.0", "Accept": "application/vnd.github+json"}
     if token:
         headers["Authorization"] = f"Bearer {token}"
@@ -84,11 +84,25 @@ def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def download_one(raw_base: str, path: str, token: str | None) -> dict[str, object]:
+    data = request(f"{raw_base}/{path}", token)
+    destination = VENDOR / path
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_bytes(data)
+    return {"path": path, "size": len(data), "sha256": sha256(data)}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Sync pinned rAthena Pre-Renewal sources")
     parser.add_argument("--include-skill-source", action="store_true", help="download every src/map/skills .cpp/.hpp")
     parser.add_argument("--verify-only", action="store_true", help="verify existing files against sync-manifest.json")
     parser.add_argument("--clean", action="store_true", help="remove vendor directory before download")
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=int(os.environ.get("RATHENA_SYNC_WORKERS", "12")),
+        help="parallel raw-file downloads (default: 12, max: 32)",
+    )
     args = parser.parse_args()
 
     lock = load_yaml(LOCK_PATH)
@@ -122,25 +136,32 @@ def main() -> int:
     tree = github_tree(repository, commit, token)
     paths = selected_paths(tree, config, args.include_skill_source)
     raw_base = lock["raw_base_url"].rstrip("/")
-    records = []
+    workers = max(1, min(args.workers, 32))
+    records_by_path: dict[str, dict[str, object]] = {}
 
-    for index, path in enumerate(paths, 1):
-        data = request(f"{raw_base}/{path}", token)
-        destination = VENDOR / path
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        destination.write_bytes(data)
-        records.append({"path": path, "size": len(data), "sha256": sha256(data)})
-        print(f"[{index}/{len(paths)}] {path}")
+    with ThreadPoolExecutor(max_workers=workers, thread_name_prefix="rathena-sync") as executor:
+        futures = {
+            executor.submit(download_one, raw_base, path, token): path
+            for path in paths
+        }
+        completed = 0
+        for future in as_completed(futures):
+            path = futures[future]
+            records_by_path[path] = future.result()
+            completed += 1
+            print(f"[{completed}/{len(paths)}] {path}")
 
+    records = [records_by_path[path] for path in paths]
     manifest = {
         "repository": repository,
         "commit": commit,
         "mode": "PRERE",
         "include_skill_source": args.include_skill_source,
+        "workers": workers,
         "files": records,
     }
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"synced {len(records)} files to {VENDOR}")
+    print(f"synced {len(records)} files to {VENDOR} with {workers} workers")
     return 0
 
 
