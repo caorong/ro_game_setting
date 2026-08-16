@@ -34,7 +34,9 @@ GENERATED_REQUIRED = [
     "skills/catalog.jsonl",
     "skills/tree.jsonl",
     "skills/formulas.jsonl",
+    "skills/classic_implementations.jsonl",
     "reference/jobs/README.md",
+    "reference/skill-formulas/README.md",
     "monsters/metadata.jsonl",
     "monsters/index.csv",
     "monsters/drops.jsonl",
@@ -42,7 +44,10 @@ GENERATED_REQUIRED = [
     "reference/monsters/README.md",
     "items/equipment.jsonl",
     "items/equipment.csv",
+    "items/cards.jsonl",
+    "items/cards.csv",
     "reference/items/README.md",
+    "reference/items/cards/README.md",
 ]
 
 
@@ -61,6 +66,10 @@ def walk_strings(value):
     elif isinstance(value, list):
         for child in value:
             yield from walk_strings(child)
+
+
+def positive_int(value) -> bool:
+    return isinstance(value, int) and value > 0
 
 
 def validate_generated(root: Path, lock: dict, errors: list[str]) -> None:
@@ -86,9 +95,22 @@ def validate_generated(root: Path, lock: dict, errors: list[str]) -> None:
                 errors.append("generated summary and source lock commit differ")
             counts = summary.get("counts", {})
             for key in ("skills_all_metadata", "skills_classic_catalog", "skill_formula_records", "classic_jobs"):
-                value = counts.get(key, 0)
-                if not isinstance(value, int) or value <= 0:
+                if not positive_int(counts.get(key, 0)):
                     errors.append(f"generated count {key} must be positive")
+
+            cards = counts.get("cards", {})
+            if not positive_int(cards.get("records", 0)) or not positive_int(cards.get("pages", 0)):
+                errors.append("generated card records/pages must be positive")
+
+            implementations = counts.get("skill_implementations", {})
+            implementation_records = implementations.get("records", 0)
+            if not positive_int(implementation_records) or not positive_int(implementations.get("pages", 0)):
+                errors.append("generated skill implementation records/pages must be positive")
+            if positive_int(counts.get("skills_classic_catalog", 0)) and implementation_records != counts.get("skills_classic_catalog"):
+                errors.append("classic skill catalog and implementation record counts differ")
+            coverage = implementations.get("coverage", {})
+            if isinstance(coverage, dict) and sum(value for value in coverage.values() if isinstance(value, int)) != implementation_records:
+                errors.append("skill implementation coverage total does not match record count")
 
     manifest_path = generated / "source-manifest.json"
     if manifest_path.is_file():
@@ -106,7 +128,14 @@ def validate_generated(root: Path, lock: dict, errors: list[str]) -> None:
                     break
 
     # JSONL integrity check without loading the complete catalogs into memory.
-    for relative in ("skills/catalog.jsonl", "skills/formulas.jsonl", "monsters/metadata.jsonl", "items/equipment.jsonl"):
+    for relative in (
+        "skills/catalog.jsonl",
+        "skills/formulas.jsonl",
+        "skills/classic_implementations.jsonl",
+        "monsters/metadata.jsonl",
+        "items/equipment.jsonl",
+        "items/cards.jsonl",
+    ):
         path = generated / relative
         if not path.is_file():
             continue
