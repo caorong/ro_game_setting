@@ -119,8 +119,8 @@ def build_pages(cards: list[dict[str, Any]]) -> int:
         lines = [
             f"# 卡片 {start}-{end}",
             "",
-            "| ID | 卡片 | 重量 | 买价/卖价 | 脚本 |
-|---:|---|---:|---|---|",
+            "| ID | 卡片 | 重量 | 买价/卖价 | 脚本 |",
+            "|---:|---|---:|---|---|",
         ]
         for card in sorted(page_cards, key=lambda row: int(row.get("Id", 0) or 0)):
             script = str(card.get("Script", "")).strip()
