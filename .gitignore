@@ -6,6 +6,5 @@ dist/
 build/
 *.egg-info/
 vendor/rathena/
-generated/
 .sync-cache/
 .DS_Store
