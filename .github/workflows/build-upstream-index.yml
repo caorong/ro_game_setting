@@ -38,6 +38,7 @@ jobs:
       - name: Sync pinned rAthena sources
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RATHENA_SYNC_WORKERS: '12'
         run: |
           if [ "${{ github.event_name }}" = "push" ] || [ "${{ inputs.include_skill_source }}" = "true" ]; then
             python scripts/sync_rathena.py --clean --include-skill-source
@@ -45,9 +46,13 @@ jobs:
             python scripts/sync_rathena.py --clean
           fi
       - name: Build complete reference catalogs
-        run: python scripts/build_reference.py
+        run: |
+          python scripts/build_reference.py
+          python scripts/build_cards.py
+          python scripts/build_skill_implementations.py
       - name: Verify source lock and generated reference
         run: |
+          python -m py_compile scripts/*.py src/ro_pre_re/*.py
           python scripts/sync_rathena.py --verify-only
           python scripts/validate_reference.py
           pytest
