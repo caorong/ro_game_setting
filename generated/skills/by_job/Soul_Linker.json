@@ -1,0 +1,2974 @@
+{
+  "job": "Soul_Linker",
+  "ruleset": "pre-renewal",
+  "commit": "2fe6ab3dc4d830b11d93fb44c3b48436571890bd",
+  "skills": [
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_BASIC",
+        "MaxLevel": 9
+      },
+      "skill": {
+        "Id": 1,
+        "Name": "NV_BASIC",
+        "Description": "Basic Skill",
+        "MaxLevel": 9
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 9。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_FIRSTAID",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 142,
+        "Name": "NV_FIRSTAID",
+        "Description": "First Aid",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 3
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 3。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "WE_CALLBABY",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 410,
+        "Name": "WE_CALLBABY",
+        "Description": "Call Baby",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsWedding": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 3,
+        "ActiveInstance": 1,
+        "Duration1": 20000,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": 1
+        },
+        "Unit": {
+          "Id": "Callfamily",
+          "Range": -1,
+          "Interval": -1
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；射程：9；命中类型：Single；段数：1；范围：3；持续时间1：20000 ms；伤害标记：NoDamage；消耗/限制：SP 1。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_RUN",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 411,
+        "Name": "TK_RUN",
+        "Description": "Running",
+        "MaxLevel": 10,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "Toggleable": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Knockback": 4,
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 6000
+          },
+          {
+            "Level": 2,
+            "Time": 5000
+          },
+          {
+            "Level": 3,
+            "Time": 4000
+          },
+          {
+            "Level": 4,
+            "Time": 3000
+          },
+          {
+            "Level": 5,
+            "Time": 2000
+          },
+          {
+            "Level": 6,
+            "Time": 1000
+          }
+        ],
+        "Duration1": 1000,
+        "Duration2": 150000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 100
+            },
+            {
+              "Level": 2,
+              "Amount": 90
+            },
+            {
+              "Level": 3,
+              "Amount": 80
+            },
+            {
+              "Level": 4,
+              "Amount": 70
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            },
+            {
+              "Level": 6,
+              "Amount": 50
+            },
+            {
+              "Level": 7,
+              "Amount": 40
+            },
+            {
+              "Level": 8,
+              "Amount": 30
+            },
+            {
+              "Level": 9,
+              "Amount": 20
+            },
+            {
+              "Level": 10,
+              "Amount": 10
+            }
+          ],
+          "State": "Move_Enable"
+        },
+        "Status": "Run"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 10；命中类型：Single；段数：1；击退：4；吟唱：Lv1=6000; Lv2=5000; Lv3=4000; Lv4=3000; Lv5=2000; Lv6=1000 ms；持续时间1：1000 ms；持续时间2：150000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=100; Lv2=90; Lv3=80; Lv4=70; Lv5=60; Lv6=50; Lv7=40; Lv8=30; Lv9=20; Lv10=10；状态 Move_Enable；关联状态：Run。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_READYSTORM",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "TK_STORMKICK",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 412,
+        "Name": "TK_READYSTORM",
+        "Description": "Tornado Stance",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "Toggleable": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 1
+        },
+        "Status": "ReadyStorm"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 1；关联状态：ReadyStorm。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_STORMKICK",
+        "MaxLevel": 7
+      },
+      "skill": {
+        "Id": 413,
+        "Name": "TK_STORMKICK",
+        "Description": "Tornado Kick",
+        "MaxLevel": 7,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "NoTargetSelf": true,
+          "TargetTrap": true
+        },
+        "Range": -2,
+        "Hit": "Multi_Hit",
+        "HitCount": -3,
+        "Element": "Weapon",
+        "SplashArea": 2,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 14
+            },
+            {
+              "Level": 2,
+              "Amount": 12
+            },
+            {
+              "Level": 3,
+              "Amount": 10
+            },
+            {
+              "Level": 4,
+              "Amount": 8
+            },
+            {
+              "Level": 5,
+              "Amount": 6
+            },
+            {
+              "Level": 6,
+              "Amount": 4
+            },
+            {
+              "Level": 7,
+              "Amount": 2
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 7；射程：-2；命中类型：Multi_Hit；段数：-3；属性：Weapon；范围：2；伤害标记：Splash；消耗/限制：SP Lv1=14; Lv2=12; Lv3=10; Lv4=8; Lv5=6; Lv6=4; Lv7=2。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_READYDOWN",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "TK_DOWNKICK",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 414,
+        "Name": "TK_READYDOWN",
+        "Description": "Heel Drop Stance",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "Toggleable": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 1
+        },
+        "Status": "ReadyDown"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 1；关联状态：ReadyDown。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_DOWNKICK",
+        "MaxLevel": 7
+      },
+      "skill": {
+        "Id": 415,
+        "Name": "TK_DOWNKICK",
+        "Description": "Heel Drop",
+        "MaxLevel": 7,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": -2,
+        "Hit": "Multi_Hit",
+        "HitCount": -3,
+        "Element": "Weapon",
+        "Duration2": 3000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 14
+            },
+            {
+              "Level": 2,
+              "Amount": 12
+            },
+            {
+              "Level": 3,
+              "Amount": 10
+            },
+            {
+              "Level": 4,
+              "Amount": 8
+            },
+            {
+              "Level": 5,
+              "Amount": 6
+            },
+            {
+              "Level": 6,
+              "Amount": 4
+            },
+            {
+              "Level": 7,
+              "Amount": 2
+            }
+          ]
+        },
+        "Status": "Stun"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 7；射程：-2；命中类型：Multi_Hit；段数：-3；属性：Weapon；持续时间2：3000 ms；消耗/限制：SP Lv1=14; Lv2=12; Lv3=10; Lv4=8; Lv5=6; Lv6=4; Lv7=2；关联状态：Stun。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_READYTURN",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "TK_TURNKICK",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 416,
+        "Name": "TK_READYTURN",
+        "Description": "Roundhouse Stance",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "Toggleable": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 1
+        },
+        "Status": "ReadyTurn"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 1；关联状态：ReadyTurn。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_TURNKICK",
+        "MaxLevel": 7
+      },
+      "skill": {
+        "Id": 417,
+        "Name": "TK_TURNKICK",
+        "Description": "Roundhouse Kick",
+        "MaxLevel": 7,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": -2,
+        "Hit": "Multi_Hit",
+        "HitCount": -3,
+        "Element": "Weapon",
+        "SplashArea": 1,
+        "Knockback": 2,
+        "Duration1": 5000,
+        "Duration2": 2000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 14
+            },
+            {
+              "Level": 2,
+              "Amount": 12
+            },
+            {
+              "Level": 3,
+              "Amount": 10
+            },
+            {
+              "Level": 4,
+              "Amount": 8
+            },
+            {
+              "Level": 5,
+              "Amount": 6
+            },
+            {
+              "Level": 6,
+              "Amount": 4
+            },
+            {
+              "Level": 7,
+              "Amount": 2
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 7；射程：-2；命中类型：Multi_Hit；段数：-3；属性：Weapon；范围：1；击退：2；持续时间1：5000 ms；持续时间2：2000 ms；伤害标记：Splash；消耗/限制：SP Lv1=14; Lv2=12; Lv3=10; Lv4=8; Lv5=6; Lv6=4; Lv7=2。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_READYCOUNTER",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "TK_COUNTER",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 418,
+        "Name": "TK_READYCOUNTER",
+        "Description": "Counter Kick Stance",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "Toggleable": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 1
+        },
+        "Status": "ReadyCounter"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 1；关联状态：ReadyCounter。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_COUNTER",
+        "MaxLevel": 7
+      },
+      "skill": {
+        "Id": 419,
+        "Name": "TK_COUNTER",
+        "Description": "Counter Kick",
+        "MaxLevel": 7,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "IgnoreFlee": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": -2,
+        "Hit": "Multi_Hit",
+        "HitCount": -3,
+        "Element": "Weapon",
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 14
+            },
+            {
+              "Level": 2,
+              "Amount": 12
+            },
+            {
+              "Level": 3,
+              "Amount": 10
+            },
+            {
+              "Level": 4,
+              "Amount": 8
+            },
+            {
+              "Level": 5,
+              "Amount": 6
+            },
+            {
+              "Level": 6,
+              "Amount": 4
+            },
+            {
+              "Level": 7,
+              "Amount": 2
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 7；射程：-2；命中类型：Multi_Hit；段数：-3；属性：Weapon；伤害标记：IgnoreFlee；消耗/限制：SP Lv1=14; Lv2=12; Lv3=10; Lv4=8; Lv5=6; Lv6=4; Lv7=2。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_DODGE",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "TK_JUMPKICK",
+            "Level": 7
+          }
+        ]
+      },
+      "skill": {
+        "Id": 420,
+        "Name": "TK_DODGE",
+        "Description": "Tumbling",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 1
+        },
+        "Status": "Dodge"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 1；关联状态：Dodge。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_JUMPKICK",
+        "MaxLevel": 7
+      },
+      "skill": {
+        "Id": 421,
+        "Name": "TK_JUMPKICK",
+        "Description": "Flying Kick",
+        "MaxLevel": 7,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Multi_Hit",
+        "HitCount": -3,
+        "Element": "Weapon",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 70
+            },
+            {
+              "Level": 2,
+              "Amount": 60
+            },
+            {
+              "Level": 3,
+              "Amount": 50
+            },
+            {
+              "Level": 4,
+              "Amount": 40
+            },
+            {
+              "Level": 5,
+              "Amount": 30
+            },
+            {
+              "Level": 6,
+              "Amount": 20
+            },
+            {
+              "Level": 7,
+              "Amount": 10
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 7；射程：9；命中类型：Multi_Hit；段数：-3；属性：Weapon；伤害标记：NoDamage；消耗/限制：SP Lv1=70; Lv2=60; Lv3=50; Lv4=40; Lv5=30; Lv6=20; Lv7=10。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_HPTIME",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 422,
+        "Name": "TK_HPTIME",
+        "Description": "Peaceful Break",
+        "MaxLevel": 10,
+        "SplashArea": 1
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10；范围：1。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_SPTIME",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 423,
+        "Name": "TK_SPTIME",
+        "Description": "Happy Break",
+        "MaxLevel": 10,
+        "SplashArea": 1,
+        "Duration1": 1800000,
+        "Status": "EarthScroll"
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10；范围：1；持续时间1：1800000 ms；关联状态：EarthScroll。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_POWER",
+        "MaxLevel": 5
+      },
+      "skill": {
+        "Id": 424,
+        "Name": "TK_POWER",
+        "Description": "Kihop",
+        "MaxLevel": 5,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 5。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_SEVENWIND",
+        "MaxLevel": 7,
+        "Requires": [
+          {
+            "Name": "TK_HPTIME",
+            "Level": 5
+          },
+          {
+            "Name": "TK_SPTIME",
+            "Level": 5
+          },
+          {
+            "Name": "TK_POWER",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 425,
+        "Name": "TK_SEVENWIND",
+        "Description": "Mild Wind",
+        "MaxLevel": 7,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": [
+          {
+            "Level": 1,
+            "Element": "Earth"
+          },
+          {
+            "Level": 2,
+            "Element": "Wind"
+          },
+          {
+            "Level": 3,
+            "Element": "Water"
+          },
+          {
+            "Level": 4,
+            "Element": "Fire"
+          },
+          {
+            "Level": 5,
+            "Element": "Ghost"
+          },
+          {
+            "Level": 6,
+            "Element": "Dark"
+          },
+          {
+            "Level": 7,
+            "Element": "Holy"
+          }
+        ],
+        "Duration1": 300000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 20
+            },
+            {
+              "Level": 2,
+              "Amount": 20
+            },
+            {
+              "Level": 3,
+              "Amount": 20
+            },
+            {
+              "Level": 4,
+              "Amount": 20
+            },
+            {
+              "Level": 5,
+              "Amount": 50
+            },
+            {
+              "Level": 6,
+              "Amount": 50
+            },
+            {
+              "Level": 7,
+              "Amount": 50
+            }
+          ]
+        },
+        "Status": "SevenWind"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 7；命中类型：Single；段数：1；属性：Lv1=Earth; Lv2=Wind; Lv3=Water; Lv4=Fire; Lv5=Ghost; Lv6=Dark; Lv7=Holy；持续时间1：300000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1-4=20; Lv5-7=50；关联状态：SevenWind。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_HIGHJUMP",
+        "MaxLevel": 5
+      },
+      "skill": {
+        "Id": 426,
+        "Name": "TK_HIGHJUMP",
+        "Description": "Taekwon Jump",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 5000
+          },
+          {
+            "Level": 2,
+            "Time": 4000
+          },
+          {
+            "Level": 3,
+            "Time": 3000
+          },
+          {
+            "Level": 4,
+            "Time": 2000
+          },
+          {
+            "Level": 5,
+            "Time": 1000
+          }
+        ],
+        "Requires": {
+          "SpCost": 50
+        },
+        "CastCancel": false
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 5；命中类型：Single；段数：1；吟唱：Lv1=5000; Lv2=4000; Lv3=3000; Lv4=2000; Lv5=1000 ms；伤害标记：NoDamage；消耗/限制：SP 50。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_MISSION",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "TK_POWER",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 493,
+        "Name": "TK_MISSION",
+        "Description": "Taekwon Mission",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "Requires": {
+          "SpCost": 10
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；吟唱：1000 ms；伤害标记：NoDamage；消耗/限制：SP 10。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_ALCHEMIST",
+        "MaxLevel": 5
+      },
+      "skill": {
+        "Id": 445,
+        "Name": "SL_ALCHEMIST",
+        "Description": "Spirit of the Alchemist",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_MONK",
+        "MaxLevel": 5
+      },
+      "skill": {
+        "Id": 447,
+        "Name": "SL_MONK",
+        "Description": "Spirit of the Monk",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_STAR",
+        "MaxLevel": 5
+      },
+      "skill": {
+        "Id": 448,
+        "Name": "SL_STAR",
+        "Description": "Spirit of the Star Gladiator",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_SAGE",
+        "MaxLevel": 5
+      },
+      "skill": {
+        "Id": 449,
+        "Name": "SL_SAGE",
+        "Description": "Spirit of the Sage",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_CRUSADER",
+        "MaxLevel": 5
+      },
+      "skill": {
+        "Id": 450,
+        "Name": "SL_CRUSADER",
+        "Description": "Spirit of the Crusader",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_SUPERNOVICE",
+        "MaxLevel": 5
+      },
+      "skill": {
+        "Id": 451,
+        "Name": "SL_SUPERNOVICE",
+        "Description": "Spirit of the Supernovice",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_KNIGHT",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SL_CRUSADER",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 452,
+        "Name": "SL_KNIGHT",
+        "Description": "Spirit of the Knight",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_WIZARD",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SL_SAGE",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 453,
+        "Name": "SL_WIZARD",
+        "Description": "Spirit of the Wizard",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_PRIEST",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SL_MONK",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 454,
+        "Name": "SL_PRIEST",
+        "Description": "Spirit of the Priest",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_BARDDANCER",
+        "MaxLevel": 5
+      },
+      "skill": {
+        "Id": 455,
+        "Name": "SL_BARDDANCER",
+        "Description": "Spirit of the Artist",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_ROGUE",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SL_ASSASIN",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 456,
+        "Name": "SL_ROGUE",
+        "Description": "Spirit of the Rogue",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_ASSASIN",
+        "MaxLevel": 5
+      },
+      "skill": {
+        "Id": 457,
+        "Name": "SL_ASSASIN",
+        "Description": "Spirit of the Assasin",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_BLACKSMITH",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SL_ALCHEMIST",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 458,
+        "Name": "SL_BLACKSMITH",
+        "Description": "Spirit of the Blacksmith",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_HUNTER",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SL_BARDDANCER",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 460,
+        "Name": "SL_HUNTER",
+        "Description": "Spirit of the Hunter",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_SOULLINKER",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SL_STAR",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 461,
+        "Name": "SL_SOULLINKER",
+        "Description": "Spirit of the Soul Linker",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_KAIZEL",
+        "MaxLevel": 7,
+        "Requires": [
+          {
+            "Name": "SL_PRIEST",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 462,
+        "Name": "SL_KAIZEL",
+        "Description": "Kaizel",
+        "MaxLevel": 7,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 4500
+          },
+          {
+            "Level": 2,
+            "Time": 4000
+          },
+          {
+            "Level": 3,
+            "Time": 3500
+          },
+          {
+            "Level": 4,
+            "Time": 3000
+          },
+          {
+            "Level": 5,
+            "Time": 2500
+          },
+          {
+            "Level": 6,
+            "Time": 2000
+          },
+          {
+            "Level": 7,
+            "Time": 1500
+          }
+        ],
+        "Duration1": 1800000,
+        "Duration2": 2000,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 120
+            },
+            {
+              "Level": 2,
+              "Amount": 110
+            },
+            {
+              "Level": 3,
+              "Amount": 100
+            },
+            {
+              "Level": 4,
+              "Amount": 90
+            },
+            {
+              "Level": 5,
+              "Amount": 80
+            },
+            {
+              "Level": 6,
+              "Amount": 70
+            },
+            {
+              "Level": 7,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Kaizel"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 7；射程：9；命中类型：Single；段数：1；吟唱：Lv1=4500; Lv2=4000; Lv3=3500; Lv4=3000; Lv5=2500; Lv6=2000; Lv7=1500 ms；持续时间1：1800000 ms；持续时间2：2000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=120; Lv2=110; Lv3=100; Lv4=90; Lv5=80; Lv6=70; Lv7=60；关联状态：Kaizel。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_KAAHI",
+        "MaxLevel": 7,
+        "Requires": [
+          {
+            "Name": "SL_PRIEST",
+            "Level": 1
+          },
+          {
+            "Name": "SL_CRUSADER",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 463,
+        "Name": "SL_KAAHI",
+        "Description": "Kaahi",
+        "MaxLevel": 7,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "AfterCastActDelay": 500,
+        "Duration1": 350000,
+        "Requires": {
+          "SpCost": 30
+        },
+        "Status": "Kaahi"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 7；射程：9；命中类型：Single；段数：1；技能后摇：500 ms；持续时间1：350000 ms；伤害标记：NoDamage；消耗/限制：SP 30；关联状态：Kaahi。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_KAUPE",
+        "MaxLevel": 3,
+        "Requires": [
+          {
+            "Name": "SL_ROGUE",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 464,
+        "Name": "SL_KAUPE",
+        "Description": "Kaupe",
+        "MaxLevel": 3,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 500,
+        "AfterCastActDelay": 500,
+        "Duration1": 600000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 20
+            },
+            {
+              "Level": 2,
+              "Amount": 30
+            },
+            {
+              "Level": 3,
+              "Amount": 40
+            }
+          ]
+        },
+        "Status": "Kaupe"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 3；射程：9；命中类型：Single；段数：1；吟唱：500 ms；技能后摇：500 ms；持续时间1：600000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=20; Lv2=30; Lv3=40；关联状态：Kaupe。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_KAITE",
+        "MaxLevel": 7,
+        "Requires": [
+          {
+            "Name": "SL_WIZARD",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 465,
+        "Name": "SL_KAITE",
+        "Description": "Kaite",
+        "MaxLevel": 7,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 6000
+          },
+          {
+            "Level": 2,
+            "Time": 5500
+          },
+          {
+            "Level": 3,
+            "Time": 5000
+          },
+          {
+            "Level": 4,
+            "Time": 4500
+          },
+          {
+            "Level": 5,
+            "Time": 4000
+          },
+          {
+            "Level": 6,
+            "Time": 3500
+          },
+          {
+            "Level": 7,
+            "Time": 3000
+          }
+        ],
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 60000
+          },
+          {
+            "Level": 2,
+            "Time": 120000
+          },
+          {
+            "Level": 3,
+            "Time": 180000
+          },
+          {
+            "Level": 4,
+            "Time": 240000
+          },
+          {
+            "Level": 5,
+            "Time": 300000
+          },
+          {
+            "Level": 6,
+            "Time": 360000
+          },
+          {
+            "Level": 7,
+            "Time": 600000
+          }
+        ],
+        "Requires": {
+          "SpCost": 70
+        },
+        "Status": "Kaite"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 7；射程：9；命中类型：Single；段数：1；吟唱：Lv1=6000; Lv2=5500; Lv3=5000; Lv4=4500; Lv5=4000; Lv6=3500; Lv7=3000 ms；持续时间1：Lv1=60000; Lv2=120000; Lv3=180000; Lv4=240000; Lv5=300000; Lv6=360000; Lv7=600000 ms；伤害标记：NoDamage；消耗/限制：SP 70；关联状态：Kaite。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_KAINA",
+        "MaxLevel": 7,
+        "Requires": [
+          {
+            "Name": "TK_SPTIME",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 466,
+        "Name": "SL_KAINA",
+        "Description": "Kaina",
+        "MaxLevel": 7,
+        "Type": "Magic"
+      },
+      "structured_description_zh": "魔法技能；目标：被动；最高等级 7。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_STIN",
+        "MaxLevel": 7,
+        "Requires": [
+          {
+            "Name": "SL_WIZARD",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 467,
+        "Name": "SL_STIN",
+        "Description": "Estin",
+        "MaxLevel": 7,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Endowed",
+        "Knockback": 2,
+        "CastTime": 100,
+        "AfterCastActDelay": 500,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 18
+            },
+            {
+              "Level": 2,
+              "Amount": 20
+            },
+            {
+              "Level": 3,
+              "Amount": 22
+            },
+            {
+              "Level": 4,
+              "Amount": 24
+            },
+            {
+              "Level": 5,
+              "Amount": 26
+            },
+            {
+              "Level": 6,
+              "Amount": 28
+            },
+            {
+              "Level": 7,
+              "Amount": 30
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 7；射程：9；命中类型：Single；段数：1；属性：Endowed；击退：2；吟唱：100 ms；技能后摇：500 ms；消耗/限制：SP Lv1=18; Lv2=20; Lv3=22; Lv4=24; Lv5=26; Lv6=28; Lv7=30。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_STUN",
+        "MaxLevel": 7,
+        "Requires": [
+          {
+            "Name": "SL_WIZARD",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 468,
+        "Name": "SL_STUN",
+        "Description": "Estun",
+        "MaxLevel": 7,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Endowed",
+        "CastTime": 100,
+        "AfterCastActDelay": 500,
+        "Duration1": 2000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 18
+            },
+            {
+              "Level": 2,
+              "Amount": 20
+            },
+            {
+              "Level": 3,
+              "Amount": 22
+            },
+            {
+              "Level": 4,
+              "Amount": 24
+            },
+            {
+              "Level": 5,
+              "Amount": 26
+            },
+            {
+              "Level": 6,
+              "Amount": 28
+            },
+            {
+              "Level": 7,
+              "Amount": 30
+            }
+          ]
+        },
+        "Status": "Stun"
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 7；射程：9；命中类型：Single；段数：1；属性：Endowed；吟唱：100 ms；技能后摇：500 ms；持续时间1：2000 ms；消耗/限制：SP Lv1=18; Lv2=20; Lv3=22; Lv4=24; Lv5=26; Lv6=28; Lv7=30；关联状态：Stun。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_SMA",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "SL_STIN",
+            "Level": 7
+          },
+          {
+            "Name": "SL_STUN",
+            "Level": 7
+          }
+        ]
+      },
+      "skill": {
+        "Id": 469,
+        "Name": "SL_SMA",
+        "Description": "Esma",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "Range": 9,
+        "Hit": "Multi_Hit",
+        "HitCount": [
+          {
+            "Level": 1,
+            "Count": 1
+          },
+          {
+            "Level": 2,
+            "Count": 2
+          },
+          {
+            "Level": 3,
+            "Count": 3
+          },
+          {
+            "Level": 4,
+            "Count": 4
+          },
+          {
+            "Level": 5,
+            "Count": 5
+          },
+          {
+            "Level": 6,
+            "Count": 6
+          },
+          {
+            "Level": 7,
+            "Count": 7
+          },
+          {
+            "Level": 8,
+            "Count": 8
+          },
+          {
+            "Level": 9,
+            "Count": 9
+          },
+          {
+            "Level": 10,
+            "Count": 10
+          }
+        ],
+        "Element": "Endowed",
+        "CastTime": 2000,
+        "AfterCastActDelay": 500,
+        "Duration1": 3000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 8
+            },
+            {
+              "Level": 2,
+              "Amount": 16
+            },
+            {
+              "Level": 3,
+              "Amount": 24
+            },
+            {
+              "Level": 4,
+              "Amount": 32
+            },
+            {
+              "Level": 5,
+              "Amount": 40
+            },
+            {
+              "Level": 6,
+              "Amount": 48
+            },
+            {
+              "Level": 7,
+              "Amount": 56
+            },
+            {
+              "Level": 8,
+              "Amount": 64
+            },
+            {
+              "Level": 9,
+              "Amount": 72
+            },
+            {
+              "Level": 10,
+              "Amount": 80
+            }
+          ]
+        },
+        "Status": "Sma"
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 10；射程：9；命中类型：Multi_Hit；段数：Lv1=1; Lv2=2; Lv3=3; Lv4=4; Lv5=5; Lv6=6; Lv7=7; Lv8=8; Lv9=9; Lv10=10；属性：Endowed；吟唱：2000 ms；技能后摇：500 ms；持续时间1：3000 ms；消耗/限制：SP Lv1=8; Lv2=16; Lv3=24; Lv4=32; Lv5=40; Lv6=48; Lv7=56; Lv8=64; Lv9=72; Lv10=80；关联状态：Sma。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_SWOO",
+        "MaxLevel": 7,
+        "Requires": [
+          {
+            "Name": "SL_PRIEST",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 470,
+        "Name": "SL_SWOO",
+        "Description": "Eswoo",
+        "MaxLevel": 7,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 1000
+          },
+          {
+            "Level": 2,
+            "Time": 2000
+          },
+          {
+            "Level": 3,
+            "Time": 3000
+          },
+          {
+            "Level": 4,
+            "Time": 4000
+          },
+          {
+            "Level": 5,
+            "Time": 5000
+          },
+          {
+            "Level": 6,
+            "Time": 6000
+          },
+          {
+            "Level": 7,
+            "Time": 7000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 75
+            },
+            {
+              "Level": 2,
+              "Amount": 65
+            },
+            {
+              "Level": 3,
+              "Amount": 55
+            },
+            {
+              "Level": 4,
+              "Amount": 45
+            },
+            {
+              "Level": 5,
+              "Amount": 35
+            },
+            {
+              "Level": 6,
+              "Amount": 25
+            },
+            {
+              "Level": 7,
+              "Amount": 15
+            }
+          ]
+        },
+        "Status": "Swoo"
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 7；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=1000; Lv2=2000; Lv3=3000; Lv4=4000; Lv5=5000; Lv6=6000; Lv7=7000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=75; Lv2=65; Lv3=55; Lv4=45; Lv5=35; Lv6=25; Lv7=15；关联状态：Swoo。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_SKE",
+        "MaxLevel": 3,
+        "Requires": [
+          {
+            "Name": "SL_KNIGHT",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 471,
+        "Name": "SL_SKE",
+        "Description": "Eske",
+        "MaxLevel": 3,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 3000
+          },
+          {
+            "Level": 2,
+            "Time": 2000
+          },
+          {
+            "Level": 3,
+            "Time": 1000
+          }
+        ],
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 10000
+          },
+          {
+            "Level": 2,
+            "Time": 20000
+          },
+          {
+            "Level": 3,
+            "Time": 30000
+          }
+        ],
+        "Duration2": 3000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 55
+            },
+            {
+              "Level": 2,
+              "Amount": 35
+            },
+            {
+              "Level": 3,
+              "Amount": 15
+            }
+          ]
+        },
+        "Status": "Ske"
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 3；射程：9；命中类型：Single；段数：1；吟唱：Lv1=3000; Lv2=2000; Lv3=1000 ms；技能后摇：500 ms；持续时间1：Lv1=10000; Lv2=20000; Lv3=30000 ms；持续时间2：3000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=55; Lv2=35; Lv3=15；关联状态：Ske。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_SKA",
+        "MaxLevel": 3,
+        "Requires": [
+          {
+            "Name": "SL_MONK",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 472,
+        "Name": "SL_SKA",
+        "Description": "Eska",
+        "MaxLevel": 3,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 3000
+          },
+          {
+            "Level": 2,
+            "Time": 2000
+          },
+          {
+            "Level": 3,
+            "Time": 1000
+          }
+        ],
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 10000
+          },
+          {
+            "Level": 2,
+            "Time": 20000
+          },
+          {
+            "Level": 3,
+            "Time": 30000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 100
+            },
+            {
+              "Level": 2,
+              "Amount": 80
+            },
+            {
+              "Level": 3,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Ska"
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 3；射程：9；命中类型：Single；段数：1；吟唱：Lv1=3000; Lv2=2000; Lv3=1000 ms；技能后摇：500 ms；持续时间1：Lv1=10000; Lv2=20000; Lv3=30000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=100; Lv2=80; Lv3=60；关联状态：Ska。"
+    },
+    {
+      "job": "Soul_Linker",
+      "origin_job": "Soul_Linker",
+      "direct": true,
+      "tree": {
+        "Name": "SL_HIGH",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SL_SUPERNOVICE",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 494,
+        "Name": "SL_HIGH",
+        "Description": "Spirit of Rebirth",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 150000
+          },
+          {
+            "Level": 2,
+            "Time": 200000
+          },
+          {
+            "Level": 3,
+            "Time": 250000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 350000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 460
+            },
+            {
+              "Level": 2,
+              "Amount": 360
+            },
+            {
+              "Level": 3,
+              "Amount": 260
+            },
+            {
+              "Level": 4,
+              "Amount": 160
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ]
+        },
+        "Status": "Spirit"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；持续时间1：Lv1=150000; Lv2=200000; Lv3=250000; Lv4=300000; Lv5=350000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=460; Lv2=360; Lv3=260; Lv4=160; Lv5=60；关联状态：Spirit。"
+    }
+  ]
+}

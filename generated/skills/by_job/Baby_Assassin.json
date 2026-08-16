@@ -1,0 +1,1346 @@
+{
+  "job": "Baby_Assassin",
+  "ruleset": "pre-renewal",
+  "commit": "2fe6ab3dc4d830b11d93fb44c3b48436571890bd",
+  "skills": [
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Baby",
+      "direct": false,
+      "tree": {
+        "Name": "NV_BASIC",
+        "MaxLevel": 9
+      },
+      "skill": {
+        "Id": 1,
+        "Name": "NV_BASIC",
+        "Description": "Basic Skill",
+        "MaxLevel": 9
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 9。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Baby",
+      "direct": false,
+      "tree": {
+        "Name": "NV_FIRSTAID",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 142,
+        "Name": "NV_FIRSTAID",
+        "Description": "First Aid",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 3
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 3。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Baby",
+      "direct": false,
+      "tree": {
+        "Name": "WE_BABY",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 408,
+        "Name": "WE_BABY",
+        "Description": "Baby",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsWedding": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 3000,
+        "Duration1": 300000,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": 1,
+          "SpRateCost": -10
+        },
+        "Status": "ProtectExp"
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；射程：9；命中类型：Single；段数：1；吟唱：3000 ms；持续时间1：300000 ms；伤害标记：NoDamage；消耗/限制：SP 1；SP% -10；关联状态：ProtectExp。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Baby",
+      "direct": false,
+      "tree": {
+        "Name": "WE_CALLPARENT",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 409,
+        "Name": "WE_CALLPARENT",
+        "Description": "Call Parent",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsWedding": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 3,
+        "ActiveInstance": 1,
+        "Duration1": 20000,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": 1
+        },
+        "Unit": {
+          "Id": "Callfamily",
+          "Range": -1,
+          "Interval": -1
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；射程：9；命中类型：Single；段数：1；范围：3；持续时间1：20000 ms；伤害标记：NoDamage；消耗/限制：SP 1。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_DOUBLE",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 48,
+        "Name": "TF_DOUBLE",
+        "Description": "Double Attack",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "Range": -1,
+        "Hit": "Multi_Hit",
+        "HitCount": 2,
+        "Element": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10；射程：-1；命中类型：Multi_Hit；段数：2；属性：Weapon。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_MISS",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 49,
+        "Name": "TF_MISS",
+        "Description": "Improve Dodge",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_STEAL",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 50,
+        "Name": "TF_STEAL",
+        "Description": "Steal",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 10
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 10。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_HIDING",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "TF_STEAL",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 51,
+        "Name": "TF_HIDING",
+        "Description": "Hiding",
+        "MaxLevel": 10,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "AllowWhenHidden": true,
+          "IgnoreKagehumi": true,
+          "AllowOnMado": true,
+          "IgnoreWugBite": true,
+          "Toggleable": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 30000
+          },
+          {
+            "Level": 2,
+            "Time": 60000
+          },
+          {
+            "Level": 3,
+            "Time": 90000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 150000
+          },
+          {
+            "Level": 6,
+            "Time": 180000
+          },
+          {
+            "Level": 7,
+            "Time": 210000
+          },
+          {
+            "Level": 8,
+            "Time": 240000
+          },
+          {
+            "Level": 9,
+            "Time": 270000
+          },
+          {
+            "Level": 10,
+            "Time": 300000
+          }
+        ],
+        "Requires": {
+          "SpCost": 10
+        },
+        "Status": "Hiding"
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 10；射程：1；命中类型：Single；段数：1；持续时间1：Lv1=30000; Lv2=60000; Lv3=90000; Lv4=120000; Lv5=150000; Lv6=180000; Lv7=210000; Lv8=240000; Lv9=270000; Lv10=300000 ms；伤害标记：NoDamage；消耗/限制：SP 10；关联状态：Hiding。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_POISON",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 52,
+        "Name": "TF_POISON",
+        "Description": "Envenom",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Range": -2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Poison",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "Duration2": 60000,
+        "Requires": {
+          "SpCost": 12
+        },
+        "Status": "Poison"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-2；命中类型：Single；段数：1；属性：Poison；持续时间2：60000 ms；消耗/限制：SP 12；关联状态：Poison。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_DETOXIFY",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "TF_POISON",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 53,
+        "Name": "TF_DETOXIFY",
+        "Description": "Detoxify",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Poison",
+        "Requires": {
+          "SpCost": 10
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：友方目标；最高等级 1；射程：9；命中类型：Single；段数：1；属性：Poison；伤害标记：NoDamage；消耗/限制：SP 10。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_SPRINKLESAND",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 149,
+        "Name": "TF_SPRINKLESAND",
+        "Description": "Sand Attack",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "IgnoreAtkCard": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Earth",
+        "Duration2": 30000,
+        "Requires": {
+          "SpCost": 9
+        },
+        "Status": "Blind"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 1；射程：1；命中类型：Single；段数：1；属性：Earth；持续时间2：30000 ms；伤害标记：IgnoreAtkCard；消耗/限制：SP 9；关联状态：Blind。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_BACKSLIDING",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 150,
+        "Name": "TF_BACKSLIDING",
+        "Description": "Back Slide",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true,
+          "IgnoreKagehumi": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Knockback": 5,
+        "Requires": {
+          "SpCost": 7
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；击退：5；伤害标记：NoDamage；消耗/限制：SP 7。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_PICKSTONE",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 151,
+        "Name": "TF_PICKSTONE",
+        "Description": "Find Stone",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 500,
+        "Requires": {
+          "SpCost": 3,
+          "State": "Recover_Weight_Rate"
+        },
+        "Status": "Stun"
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；吟唱：500 ms；伤害标记：NoDamage；消耗/限制：SP 3；状态 Recover_Weight_Rate；关联状态：Stun。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_THROWSTONE",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 152,
+        "Name": "TF_THROWSTONE",
+        "Description": "Stone Fling",
+        "MaxLevel": 1,
+        "Type": "Misc",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "IgnoreFlee": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Range": 7,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "Duration1": 5000,
+        "Duration2": 30000,
+        "Requires": {
+          "SpCost": 2,
+          "ItemCost": [
+            {
+              "Item": "Stone",
+              "Amount": 1
+            }
+          ]
+        },
+        "Status": "Stun"
+      },
+      "structured_description_zh": "特殊技能；目标：敌方目标；最高等级 1；射程：7；命中类型：Single；段数：1；持续时间1：5000 ms；持续时间2：30000 ms；伤害标记：IgnoreFlee；消耗/限制：SP 2；道具 Stone×1；关联状态：Stun。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Assassin",
+      "direct": false,
+      "tree": {
+        "Name": "AS_RIGHT",
+        "MaxLevel": 5
+      },
+      "skill": {
+        "Id": 132,
+        "Name": "AS_RIGHT",
+        "Description": "Righthand Mastery",
+        "MaxLevel": 5,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 5。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Assassin",
+      "direct": false,
+      "tree": {
+        "Name": "AS_LEFT",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "AS_RIGHT",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 133,
+        "Name": "AS_LEFT",
+        "Description": "Lefthand Mastery",
+        "MaxLevel": 5,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 5。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Assassin",
+      "direct": false,
+      "tree": {
+        "Name": "AS_KATAR",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 134,
+        "Name": "AS_KATAR",
+        "Description": "Katar Mastery",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Assassin",
+      "direct": false,
+      "tree": {
+        "Name": "AS_CLOAKING",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "TF_HIDING",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 135,
+        "Name": "AS_CLOAKING",
+        "Description": "Cloaking",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IgnoreKagehumi": true,
+          "IgnoreWugBite": true,
+          "Toggleable": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 500
+          },
+          {
+            "Level": 2,
+            "Time": 1000
+          },
+          {
+            "Level": 3,
+            "Time": 2000
+          },
+          {
+            "Level": 4,
+            "Time": 3000
+          },
+          {
+            "Level": 5,
+            "Time": 4000
+          },
+          {
+            "Level": 6,
+            "Time": 5000
+          },
+          {
+            "Level": 7,
+            "Time": 6000
+          },
+          {
+            "Level": 8,
+            "Time": 7000
+          },
+          {
+            "Level": 9,
+            "Time": 8000
+          },
+          {
+            "Level": 10,
+            "Time": 9000
+          }
+        ],
+        "Requires": {
+          "SpCost": 15
+        },
+        "Status": "Cloaking"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 10；命中类型：Single；段数：1；持续时间1：Lv1=500; Lv2=1000; Lv3=2000; Lv4=3000; Lv5=4000; Lv6=5000; Lv7=6000; Lv8=7000; Lv9=8000; Lv10=9000 ms；伤害标记：NoDamage；消耗/限制：SP 15；关联状态：Cloaking。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Assassin",
+      "direct": false,
+      "tree": {
+        "Name": "AS_SONICBLOW",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AS_KATAR",
+            "Level": 4
+          }
+        ]
+      },
+      "skill": {
+        "Id": 136,
+        "Name": "AS_SONICBLOW",
+        "Description": "Sonic Blow",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Range": 1,
+        "Hit": "Multi_Hit",
+        "HitCount": -8,
+        "Element": "Weapon",
+        "AfterCastActDelay": 2000,
+        "AfterCastWalkDelay": 2000,
+        "Duration2": 5000,
+        "CastDelayFlags": {
+          "IgnoreStatus": true
+        },
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 16
+            },
+            {
+              "Level": 2,
+              "Amount": 18
+            },
+            {
+              "Level": 3,
+              "Amount": 20
+            },
+            {
+              "Level": 4,
+              "Amount": 22
+            },
+            {
+              "Level": 5,
+              "Amount": 24
+            },
+            {
+              "Level": 6,
+              "Amount": 26
+            },
+            {
+              "Level": 7,
+              "Amount": 28
+            },
+            {
+              "Level": 8,
+              "Amount": 30
+            },
+            {
+              "Level": 9,
+              "Amount": 32
+            },
+            {
+              "Level": 10,
+              "Amount": 34
+            }
+          ],
+          "Weapon": {
+            "Katar": true
+          }
+        },
+        "Status": "Stun"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：1；命中类型：Multi_Hit；段数：-8；属性：Weapon；技能后摇：2000 ms；移动后摇：2000 ms；持续时间2：5000 ms；消耗/限制：SP Lv1=16; Lv2=18; Lv3=20; Lv4=22; Lv5=24; Lv6=26; Lv7=28; Lv8=30; Lv9=32; Lv10=34；武器 Katar；关联状态：Stun。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Assassin",
+      "direct": false,
+      "tree": {
+        "Name": "AS_GRIMTOOTH",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "AS_CLOAKING",
+            "Level": 2
+          },
+          {
+            "Name": "AS_SONICBLOW",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 137,
+        "Name": "AS_GRIMTOOTH",
+        "Description": "Grimtooth",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "TargetTrap": true,
+          "AllowWhenHidden": true
+        },
+        "Range": [
+          {
+            "Level": 1,
+            "Size": 3
+          },
+          {
+            "Level": 2,
+            "Size": 4
+          },
+          {
+            "Level": 3,
+            "Size": 5
+          },
+          {
+            "Level": 4,
+            "Size": 6
+          },
+          {
+            "Level": 5,
+            "Size": 7
+          }
+        ],
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": 1,
+        "Duration2": 1000,
+        "Requires": {
+          "SpCost": 3,
+          "Weapon": {
+            "Katar": true
+          },
+          "Status": {
+            "Hiding": true
+          }
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 5；射程：Lv1=3; Lv2=4; Lv3=5; Lv4=6; Lv5=7；命中类型：Single；段数：1；属性：Weapon；范围：1；持续时间2：1000 ms；伤害标记：Splash；消耗/限制：SP 3；武器 Katar；前置状态 Hiding。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Assassin",
+      "direct": false,
+      "tree": {
+        "Name": "AS_ENCHANTPOISON",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "TF_POISON",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 138,
+        "Name": "AS_ENCHANTPOISON",
+        "Description": "Enchant Poison",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "PartyOnly": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Poison",
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 30000
+          },
+          {
+            "Level": 2,
+            "Time": 45000
+          },
+          {
+            "Level": 3,
+            "Time": 60000
+          },
+          {
+            "Level": 4,
+            "Time": 75000
+          },
+          {
+            "Level": 5,
+            "Time": 90000
+          },
+          {
+            "Level": 6,
+            "Time": 105000
+          },
+          {
+            "Level": 7,
+            "Time": 120000
+          },
+          {
+            "Level": 8,
+            "Time": 135000
+          },
+          {
+            "Level": 9,
+            "Time": 150000
+          },
+          {
+            "Level": 10,
+            "Time": 165000
+          }
+        ],
+        "Duration2": [
+          {
+            "Level": 1,
+            "Time": 10000
+          },
+          {
+            "Level": 2,
+            "Time": 20000
+          },
+          {
+            "Level": 3,
+            "Time": 30000
+          },
+          {
+            "Level": 4,
+            "Time": 40000
+          },
+          {
+            "Level": 5,
+            "Time": 50000
+          },
+          {
+            "Level": 6,
+            "Time": 60000
+          },
+          {
+            "Level": 7,
+            "Time": 70000
+          },
+          {
+            "Level": 8,
+            "Time": 80000
+          },
+          {
+            "Level": 9,
+            "Time": 90000
+          },
+          {
+            "Level": 10,
+            "Time": 100000
+          }
+        ],
+        "Requires": {
+          "SpCost": 20
+        },
+        "Status": "EncPoison"
+      },
+      "structured_description_zh": "武器/物理技能；目标：友方目标；最高等级 10；射程：1；命中类型：Single；段数：1；属性：Poison；持续时间1：Lv1=30000; Lv2=45000; Lv3=60000; Lv4=75000; Lv5=90000; Lv6=105000; Lv7=120000; Lv8=135000; Lv9=150000; Lv10=165000 ms；持续时间2：Lv1=10000; Lv2=20000; Lv3=30000; Lv4=40000; Lv5=50000; Lv6=60000; Lv7=70000; Lv8=80000; Lv9=90000; Lv10=100000 ms；伤害标记：NoDamage；消耗/限制：SP 20；关联状态：EncPoison。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Assassin",
+      "direct": false,
+      "tree": {
+        "Name": "AS_POISONREACT",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AS_ENCHANTPOISON",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 139,
+        "Name": "AS_POISONREACT",
+        "Description": "Poison React",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 20000
+          },
+          {
+            "Level": 2,
+            "Time": 25000
+          },
+          {
+            "Level": 3,
+            "Time": 30000
+          },
+          {
+            "Level": 4,
+            "Time": 35000
+          },
+          {
+            "Level": 5,
+            "Time": 40000
+          },
+          {
+            "Level": 6,
+            "Time": 45000
+          },
+          {
+            "Level": 7,
+            "Time": 50000
+          },
+          {
+            "Level": 8,
+            "Time": 55000
+          },
+          {
+            "Level": 9,
+            "Time": 60000
+          },
+          {
+            "Level": 10,
+            "Time": 60000
+          }
+        ],
+        "Duration2": 60000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 25
+            },
+            {
+              "Level": 2,
+              "Amount": 30
+            },
+            {
+              "Level": 3,
+              "Amount": 35
+            },
+            {
+              "Level": 4,
+              "Amount": 40
+            },
+            {
+              "Level": 5,
+              "Amount": 45
+            },
+            {
+              "Level": 6,
+              "Amount": 50
+            },
+            {
+              "Level": 7,
+              "Amount": 55
+            },
+            {
+              "Level": 8,
+              "Amount": 60
+            },
+            {
+              "Level": 9,
+              "Amount": 45
+            },
+            {
+              "Level": 10,
+              "Amount": 45
+            }
+          ]
+        },
+        "Status": "PoisonReact"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 10；命中类型：Single；段数：1；持续时间1：Lv1=20000; Lv2=25000; Lv3=30000; Lv4=35000; Lv5=40000; Lv6=45000; Lv7=50000; Lv8=55000; Lv9-10=60000 ms；持续时间2：60000 ms；消耗/限制：SP Lv1=25; Lv2=30; Lv3=35; Lv4=40; Lv5=45; Lv6=50; Lv7=55; Lv8=60; Lv9-10=45；关联状态：PoisonReact。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Assassin",
+      "direct": false,
+      "tree": {
+        "Name": "AS_VENOMDUST",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AS_ENCHANTPOISON",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 140,
+        "Name": "AS_VENOMDUST",
+        "Description": "Venom Dust",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Poison",
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 5000
+          },
+          {
+            "Level": 2,
+            "Time": 10000
+          },
+          {
+            "Level": 3,
+            "Time": 15000
+          },
+          {
+            "Level": 4,
+            "Time": 20000
+          },
+          {
+            "Level": 5,
+            "Time": 25000
+          },
+          {
+            "Level": 6,
+            "Time": 30000
+          },
+          {
+            "Level": 7,
+            "Time": 35000
+          },
+          {
+            "Level": 8,
+            "Time": 40000
+          },
+          {
+            "Level": 9,
+            "Time": 45000
+          },
+          {
+            "Level": 10,
+            "Time": 50000
+          }
+        ],
+        "Duration2": 60000,
+        "Requires": {
+          "SpCost": 20,
+          "ItemCost": [
+            {
+              "Item": "Red_Gemstone",
+              "Amount": 1
+            }
+          ]
+        },
+        "Unit": {
+          "Id": "Venomdust",
+          "Layout": -1,
+          "Range": 1,
+          "Interval": 1000,
+          "Target": "Enemy",
+          "Flag": {
+            "RemovedByFireRain": true
+          }
+        },
+        "Status": "Poison"
+      },
+      "structured_description_zh": "武器/物理技能；目标：地面区域；最高等级 10；射程：2；命中类型：Single；段数：1；属性：Poison；持续时间1：Lv1=5000; Lv2=10000; Lv3=15000; Lv4=20000; Lv5=25000; Lv6=30000; Lv7=35000; Lv8=40000; Lv9=45000; Lv10=50000 ms；持续时间2：60000 ms；伤害标记：NoDamage；消耗/限制：SP 20；道具 Red_Gemstone×1；关联状态：Poison。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Assassin",
+      "direct": false,
+      "tree": {
+        "Name": "AS_SPLASHER",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AS_POISONREACT",
+            "Level": 5
+          },
+          {
+            "Name": "AS_VENOMDUST",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 141,
+        "Name": "AS_SPLASHER",
+        "Description": "Venom Splasher",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true,
+          "IgnoreAtkCard": true,
+          "IgnoreFlee": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": 2,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": 1000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 11000
+          },
+          {
+            "Level": 2,
+            "Time": 10000
+          },
+          {
+            "Level": 3,
+            "Time": 9000
+          },
+          {
+            "Level": 4,
+            "Time": 8000
+          },
+          {
+            "Level": 5,
+            "Time": 7000
+          },
+          {
+            "Level": 6,
+            "Time": 6000
+          },
+          {
+            "Level": 7,
+            "Time": 5000
+          },
+          {
+            "Level": 8,
+            "Time": 4000
+          },
+          {
+            "Level": 9,
+            "Time": 3000
+          },
+          {
+            "Level": 10,
+            "Time": 2000
+          }
+        ],
+        "Duration2": 60000,
+        "Cooldown": [
+          {
+            "Level": 1,
+            "Time": 7500
+          },
+          {
+            "Level": 2,
+            "Time": 8000
+          },
+          {
+            "Level": 3,
+            "Time": 8500
+          },
+          {
+            "Level": 4,
+            "Time": 9000
+          },
+          {
+            "Level": 5,
+            "Time": 9500
+          },
+          {
+            "Level": 6,
+            "Time": 10000
+          },
+          {
+            "Level": 7,
+            "Time": 10500
+          },
+          {
+            "Level": 8,
+            "Time": 11000
+          },
+          {
+            "Level": 9,
+            "Time": 11500
+          },
+          {
+            "Level": 10,
+            "Time": 12000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 12
+            },
+            {
+              "Level": 2,
+              "Amount": 14
+            },
+            {
+              "Level": 3,
+              "Amount": 16
+            },
+            {
+              "Level": 4,
+              "Amount": 18
+            },
+            {
+              "Level": 5,
+              "Amount": 20
+            },
+            {
+              "Level": 6,
+              "Amount": 22
+            },
+            {
+              "Level": 7,
+              "Amount": 24
+            },
+            {
+              "Level": 8,
+              "Amount": 26
+            },
+            {
+              "Level": 9,
+              "Amount": 28
+            },
+            {
+              "Level": 10,
+              "Amount": 30
+            }
+          ],
+          "ItemCost": [
+            {
+              "Item": "Red_Gemstone",
+              "Amount": 1
+            }
+          ]
+        },
+        "Status": "Splasher"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：1；命中类型：Single；段数：1；属性：Weapon；范围：2；吟唱：1000 ms；冷却：Lv1=7500; Lv2=8000; Lv3=8500; Lv4=9000; Lv5=9500; Lv6=10000; Lv7=10500; Lv8=11000; Lv9=11500; Lv10=12000 ms；持续时间1：Lv1=11000; Lv2=10000; Lv3=9000; Lv4=8000; Lv5=7000; Lv6=6000; Lv7=5000; Lv8=4000; Lv9=3000; Lv10=2000 ms；持续时间2：60000 ms；伤害标记：NoDamage, IgnoreAtkCard, IgnoreFlee；消耗/限制：SP Lv1=12; Lv2=14; Lv3=16; Lv4=18; Lv5=20; Lv6=22; Lv7=24; Lv8=26; Lv9=28; Lv10=30；道具 Red_Gemstone×1；关联状态：Splasher。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Assassin",
+      "direct": false,
+      "tree": {
+        "Name": "AS_SONICACCEL",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 1003,
+        "Name": "AS_SONICACCEL",
+        "Description": "Sonic Acceleration",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "Flags": {
+          "IsQuest": true
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 1。"
+    },
+    {
+      "job": "Baby_Assassin",
+      "origin_job": "Assassin",
+      "direct": false,
+      "tree": {
+        "Name": "AS_VENOMKNIFE",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 1004,
+        "Name": "AS_VENOMKNIFE",
+        "Description": "Throw Venom Knife",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "IgnoreAtkCard": true
+        },
+        "Flags": {
+          "IsQuest": true,
+          "IgnoreAutoGuard": true,
+          "IgnoreCicada": true
+        },
+        "Range": 9,
+        "Hit": "Multi_Hit",
+        "HitCount": 1,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "Duration2": 60000,
+        "Requires": {
+          "SpCost": 15,
+          "Ammo": {
+            "Dagger": true
+          },
+          "AmmoAmount": 1
+        },
+        "Status": "Poison"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 1；射程：9；命中类型：Multi_Hit；段数：1；持续时间2：60000 ms；伤害标记：IgnoreAtkCard；消耗/限制：SP 15；弹药数 1；弹药 Dagger；关联状态：Poison。"
+    }
+  ]
+}

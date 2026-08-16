@@ -1,0 +1,1224 @@
+{
+  "job": "Knight",
+  "ruleset": "pre-renewal",
+  "commit": "2fe6ab3dc4d830b11d93fb44c3b48436571890bd",
+  "skills": [
+    {
+      "job": "Knight",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_BASIC",
+        "MaxLevel": 9
+      },
+      "skill": {
+        "Id": 1,
+        "Name": "NV_BASIC",
+        "Description": "Basic Skill",
+        "MaxLevel": 9
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 9。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_FIRSTAID",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 142,
+        "Name": "NV_FIRSTAID",
+        "Description": "First Aid",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 3
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 3。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "WE_CALLBABY",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 410,
+        "Name": "WE_CALLBABY",
+        "Description": "Call Baby",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsWedding": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 3,
+        "ActiveInstance": 1,
+        "Duration1": 20000,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": 1
+        },
+        "Unit": {
+          "Id": "Callfamily",
+          "Range": -1,
+          "Interval": -1
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；射程：9；命中类型：Single；段数：1；范围：3；持续时间1：20000 ms；伤害标记：NoDamage；消耗/限制：SP 1。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Swordman",
+      "direct": false,
+      "tree": {
+        "Name": "SM_SWORD",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 2,
+        "Name": "SM_SWORD",
+        "Description": "Sword Mastery",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Swordman",
+      "direct": false,
+      "tree": {
+        "Name": "SM_TWOHAND",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "SM_SWORD",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 3,
+        "Name": "SM_TWOHAND",
+        "Description": "Two-Handed Sword Mastery",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Swordman",
+      "direct": false,
+      "tree": {
+        "Name": "SM_RECOVERY",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 4,
+        "Name": "SM_RECOVERY",
+        "Description": "Increase HP Recovery",
+        "MaxLevel": 10
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Swordman",
+      "direct": false,
+      "tree": {
+        "Name": "SM_BASH",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 5,
+        "Name": "SM_BASH",
+        "Description": "Bash",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Range": -1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "Duration2": 5000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 8
+            },
+            {
+              "Level": 2,
+              "Amount": 8
+            },
+            {
+              "Level": 3,
+              "Amount": 8
+            },
+            {
+              "Level": 4,
+              "Amount": 8
+            },
+            {
+              "Level": 5,
+              "Amount": 8
+            },
+            {
+              "Level": 6,
+              "Amount": 15
+            },
+            {
+              "Level": 7,
+              "Amount": 15
+            },
+            {
+              "Level": 8,
+              "Amount": 15
+            },
+            {
+              "Level": 9,
+              "Amount": 15
+            },
+            {
+              "Level": 10,
+              "Amount": 15
+            }
+          ],
+          "Weapon": {
+            "Fist": true,
+            "Dagger": true,
+            "1hSword": true,
+            "2hSword": true,
+            "1hSpear": true,
+            "2hSpear": true,
+            "1hAxe": true,
+            "2hAxe": true,
+            "Mace": true,
+            "2hMace": true,
+            "Staff": true,
+            "Knuckle": true,
+            "Musical": true,
+            "Whip": true,
+            "Book": true,
+            "Katar": true,
+            "Revolver": true,
+            "Rifle": true,
+            "Gatling": true,
+            "Shotgun": true,
+            "Grenade": true,
+            "Huuma": true
+          }
+        },
+        "Status": "Stun"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-1；命中类型：Single；段数：1；属性：Weapon；持续时间2：5000 ms；消耗/限制：SP Lv1-5=8; Lv6-10=15；武器 Fist, Dagger, 1hSword, 2hSword, 1hSpear, 2hSpear, 1hAxe, 2hAxe, Mace, 2hMace, Staff, Knuckle, Musical, Whip, Book, Katar, Revolver, Rifle, Gatling, Shotgun, Grenade, Huuma；关联状态：Stun。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Swordman",
+      "direct": false,
+      "tree": {
+        "Name": "SM_PROVOKE",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 6,
+        "Name": "SM_PROVOKE",
+        "Description": "Provoke",
+        "MaxLevel": 10,
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 30000,
+        "Cooldown": 1000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 4
+            },
+            {
+              "Level": 2,
+              "Amount": 5
+            },
+            {
+              "Level": 3,
+              "Amount": 6
+            },
+            {
+              "Level": 4,
+              "Amount": 7
+            },
+            {
+              "Level": 5,
+              "Amount": 8
+            },
+            {
+              "Level": 6,
+              "Amount": 9
+            },
+            {
+              "Level": 7,
+              "Amount": 10
+            },
+            {
+              "Level": 8,
+              "Amount": 11
+            },
+            {
+              "Level": 9,
+              "Amount": 12
+            },
+            {
+              "Level": 10,
+              "Amount": 13
+            }
+          ]
+        },
+        "Status": "Provoke"
+      },
+      "structured_description_zh": "非伤害技能；目标：敌方目标；最高等级 10；射程：9；命中类型：Single；段数：1；冷却：1000 ms；持续时间1：30000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=4; Lv2=5; Lv3=6; Lv4=7; Lv5=8; Lv6=9; Lv7=10; Lv8=11; Lv9=12; Lv10=13；关联状态：Provoke。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Swordman",
+      "direct": false,
+      "tree": {
+        "Name": "SM_MAGNUM",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "SM_BASH",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 7,
+        "Name": "SM_MAGNUM",
+        "Description": "Magnum Break",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "TargetTrap": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Fire",
+        "SplashArea": [
+          {
+            "Level": 1,
+            "Area": 2
+          },
+          {
+            "Level": 2,
+            "Area": 2
+          },
+          {
+            "Level": 3,
+            "Area": 2
+          },
+          {
+            "Level": 4,
+            "Area": 2
+          },
+          {
+            "Level": 5,
+            "Area": 2
+          },
+          {
+            "Level": 6,
+            "Area": 2
+          },
+          {
+            "Level": 7,
+            "Area": 2
+          },
+          {
+            "Level": 8,
+            "Area": 2
+          },
+          {
+            "Level": 9,
+            "Area": 2
+          },
+          {
+            "Level": 10,
+            "Area": 2
+          },
+          {
+            "Level": 11,
+            "Area": 4
+          }
+        ],
+        "Knockback": 2,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "AfterCastActDelay": 2000,
+        "Duration2": 10000,
+        "Requires": {
+          "HpCost": [
+            {
+              "Level": 1,
+              "Amount": 20
+            },
+            {
+              "Level": 2,
+              "Amount": 20
+            },
+            {
+              "Level": 3,
+              "Amount": 19
+            },
+            {
+              "Level": 4,
+              "Amount": 19
+            },
+            {
+              "Level": 5,
+              "Amount": 18
+            },
+            {
+              "Level": 6,
+              "Amount": 18
+            },
+            {
+              "Level": 7,
+              "Amount": 17
+            },
+            {
+              "Level": 8,
+              "Amount": 17
+            },
+            {
+              "Level": 9,
+              "Amount": 16
+            },
+            {
+              "Level": 10,
+              "Amount": 16
+            }
+          ],
+          "SpCost": 30
+        },
+        "Status": "Watk_Element"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 10；命中类型：Single；段数：1；属性：Fire；范围：Lv1-10=2; Lv11=4；击退：2；技能后摇：2000 ms；持续时间2：10000 ms；伤害标记：Splash；消耗/限制：HP Lv1-2=20; Lv3-4=19; Lv5-6=18; Lv7-8=17; Lv9-10=16；SP 30；关联状态：Watk_Element。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Swordman",
+      "direct": false,
+      "tree": {
+        "Name": "SM_ENDURE",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "SM_PROVOKE",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 8,
+        "Name": "SM_ENDURE",
+        "Description": "Endure",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 10000
+          },
+          {
+            "Level": 2,
+            "Time": 13000
+          },
+          {
+            "Level": 3,
+            "Time": 16000
+          },
+          {
+            "Level": 4,
+            "Time": 19000
+          },
+          {
+            "Level": 5,
+            "Time": 22000
+          },
+          {
+            "Level": 6,
+            "Time": 25000
+          },
+          {
+            "Level": 7,
+            "Time": 28000
+          },
+          {
+            "Level": 8,
+            "Time": 31000
+          },
+          {
+            "Level": 9,
+            "Time": 34000
+          },
+          {
+            "Level": 10,
+            "Time": 37000
+          }
+        ],
+        "Duration2": 10000,
+        "Cooldown": 10000,
+        "Requires": {
+          "SpCost": 10
+        },
+        "Status": "Endure"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 10；命中类型：Single；段数：1；冷却：10000 ms；持续时间1：Lv1=10000; Lv2=13000; Lv3=16000; Lv4=19000; Lv5=22000; Lv6=25000; Lv7=28000; Lv8=31000; Lv9=34000; Lv10=37000 ms；持续时间2：10000 ms；伤害标记：NoDamage；消耗/限制：SP 10；关联状态：Endure。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Swordman",
+      "direct": false,
+      "tree": {
+        "Name": "SM_MOVINGRECOVERY",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 144,
+        "Name": "SM_MOVINGRECOVERY",
+        "Description": "Moving HP-Recovery",
+        "MaxLevel": 1,
+        "Flags": {
+          "IsQuest": true
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 1。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Swordman",
+      "direct": false,
+      "tree": {
+        "Name": "SM_FATALBLOW",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 145,
+        "Name": "SM_FATALBLOW",
+        "Description": "Fatal Blow",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "Flags": {
+          "IsQuest": true
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 1。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Swordman",
+      "direct": false,
+      "tree": {
+        "Name": "SM_AUTOBERSERK",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 146,
+        "Name": "SM_AUTOBERSERK",
+        "Description": "Auto Berserk",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 1
+        },
+        "Status": "AutoBerserk"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 1；关联状态：AutoBerserk。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Knight",
+      "direct": true,
+      "tree": {
+        "Name": "KN_SPEARMASTERY",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 55,
+        "Name": "KN_SPEARMASTERY",
+        "Description": "Spear Mastery",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Knight",
+      "direct": true,
+      "tree": {
+        "Name": "KN_PIERCE",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "KN_SPEARMASTERY",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 56,
+        "Name": "KN_PIERCE",
+        "Description": "Pierce",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Range": -2,
+        "Hit": "Multi_Hit",
+        "HitCount": 3,
+        "Element": "Weapon",
+        "Requires": {
+          "SpCost": 7,
+          "Weapon": {
+            "1hSpear": true,
+            "2hSpear": true
+          }
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-2；命中类型：Multi_Hit；段数：3；属性：Weapon；消耗/限制：SP 7；武器 1hSpear, 2hSpear。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Knight",
+      "direct": true,
+      "tree": {
+        "Name": "KN_BRANDISHSPEAR",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "KN_RIDING",
+            "Level": 1
+          },
+          {
+            "Name": "KN_SPEARSTAB",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 57,
+        "Name": "KN_BRANDISHSPEAR",
+        "Description": "Brandish Spear",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": -2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": 2,
+        "ActiveInstance": 5,
+        "Knockback": 2,
+        "CastTime": 700,
+        "Duration1": 1000,
+        "Requires": {
+          "SpCost": 12,
+          "Weapon": {
+            "1hSpear": true,
+            "2hSpear": true
+          },
+          "State": "Riding"
+        },
+        "CastCancel": false
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-2；命中类型：Single；段数：1；属性：Weapon；范围：2；击退：2；吟唱：700 ms；持续时间1：1000 ms；伤害标记：NoDamage；消耗/限制：SP 12；武器 1hSpear, 2hSpear；状态 Riding。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Knight",
+      "direct": true,
+      "tree": {
+        "Name": "KN_SPEARSTAB",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "KN_PIERCE",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 58,
+        "Name": "KN_SPEARSTAB",
+        "Description": "Spear Stab",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "TargetTrap": true
+        },
+        "Range": -4,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "Knockback": 6,
+        "Requires": {
+          "SpCost": 9,
+          "Weapon": {
+            "1hSpear": true,
+            "2hSpear": true
+          }
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-4；命中类型：Single；段数：1；属性：Weapon；击退：6；伤害标记：Splash；消耗/限制：SP 9；武器 1hSpear, 2hSpear。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Knight",
+      "direct": true,
+      "tree": {
+        "Name": "KN_SPEARBOOMERANG",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "KN_PIERCE",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 59,
+        "Name": "KN_SPEARBOOMERANG",
+        "Description": "Spear Boomerang",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Range": [
+          {
+            "Level": 1,
+            "Size": 3
+          },
+          {
+            "Level": 2,
+            "Size": 5
+          },
+          {
+            "Level": 3,
+            "Size": 7
+          },
+          {
+            "Level": 4,
+            "Size": 9
+          },
+          {
+            "Level": 5,
+            "Size": 11
+          }
+        ],
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "AfterCastActDelay": 1000,
+        "Requires": {
+          "SpCost": 10,
+          "Weapon": {
+            "1hSpear": true,
+            "2hSpear": true
+          }
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 5；射程：Lv1=3; Lv2=5; Lv3=7; Lv4=9; Lv5=11；命中类型：Single；段数：1；属性：Weapon；技能后摇：1000 ms；消耗/限制：SP 10；武器 1hSpear, 2hSpear。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Knight",
+      "direct": true,
+      "tree": {
+        "Name": "KN_TWOHANDQUICKEN",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "SM_TWOHAND",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 60,
+        "Name": "KN_TWOHANDQUICKEN",
+        "Description": "Twohand Quicken",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 30000
+          },
+          {
+            "Level": 2,
+            "Time": 60000
+          },
+          {
+            "Level": 3,
+            "Time": 90000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 150000
+          },
+          {
+            "Level": 6,
+            "Time": 180000
+          },
+          {
+            "Level": 7,
+            "Time": 210000
+          },
+          {
+            "Level": 8,
+            "Time": 240000
+          },
+          {
+            "Level": 9,
+            "Time": 270000
+          },
+          {
+            "Level": 10,
+            "Time": 300000
+          },
+          {
+            "Level": 11,
+            "Time": 300000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 14
+            },
+            {
+              "Level": 2,
+              "Amount": 18
+            },
+            {
+              "Level": 3,
+              "Amount": 22
+            },
+            {
+              "Level": 4,
+              "Amount": 26
+            },
+            {
+              "Level": 5,
+              "Amount": 30
+            },
+            {
+              "Level": 6,
+              "Amount": 34
+            },
+            {
+              "Level": 7,
+              "Amount": 38
+            },
+            {
+              "Level": 8,
+              "Amount": 42
+            },
+            {
+              "Level": 9,
+              "Amount": 46
+            },
+            {
+              "Level": 10,
+              "Amount": 50
+            }
+          ],
+          "Weapon": {
+            "2hSword": true
+          }
+        },
+        "Status": "TwoHandQuicken"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 10；命中类型：Single；段数：1；持续时间1：Lv1=30000; Lv2=60000; Lv3=90000; Lv4=120000; Lv5=150000; Lv6=180000; Lv7=210000; Lv8=240000; Lv9=270000; Lv10-11=300000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=14; Lv2=18; Lv3=22; Lv4=26; Lv5=30; Lv6=34; Lv7=38; Lv8=42; Lv9=46; Lv10=50；武器 2hSword；关联状态：TwoHandQuicken。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Knight",
+      "direct": true,
+      "tree": {
+        "Name": "KN_AUTOCOUNTER",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SM_TWOHAND",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 61,
+        "Name": "KN_AUTOCOUNTER",
+        "Description": "Counter Attack",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "IgnoreDefense": true,
+          "Critical": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 400
+          },
+          {
+            "Level": 2,
+            "Time": 800
+          },
+          {
+            "Level": 3,
+            "Time": 1200
+          },
+          {
+            "Level": 4,
+            "Time": 1600
+          },
+          {
+            "Level": 5,
+            "Time": 2000
+          }
+        ],
+        "Requires": {
+          "SpCost": 3,
+          "Weapon": {
+            "Fist": true,
+            "Dagger": true,
+            "1hSword": true,
+            "2hSword": true,
+            "1hSpear": true,
+            "2hSpear": true,
+            "1hAxe": true,
+            "2hAxe": true,
+            "Mace": true,
+            "2hMace": true,
+            "Staff": true,
+            "Knuckle": true,
+            "Musical": true,
+            "Whip": true,
+            "Book": true,
+            "Katar": true,
+            "Revolver": true,
+            "Rifle": true,
+            "Gatling": true,
+            "Shotgun": true,
+            "Grenade": true,
+            "Huuma": true
+          }
+        },
+        "Status": "AutoCounter"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 5；命中类型：Single；段数：1；属性：Weapon；持续时间1：Lv1=400; Lv2=800; Lv3=1200; Lv4=1600; Lv5=2000 ms；伤害标记：IgnoreDefense, Critical；消耗/限制：SP 3；武器 Fist, Dagger, 1hSword, 2hSword, 1hSpear, 2hSpear, 1hAxe, 2hAxe, Mace, 2hMace, Staff, Knuckle, Musical, Whip, Book, Katar, Revolver, Rifle, Gatling, Shotgun, Grenade, Huuma；关联状态：AutoCounter。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Knight",
+      "direct": true,
+      "tree": {
+        "Name": "KN_BOWLINGBASH",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "SM_BASH",
+            "Level": 10
+          },
+          {
+            "Name": "SM_MAGNUM",
+            "Level": 3
+          },
+          {
+            "Name": "SM_TWOHAND",
+            "Level": 5
+          },
+          {
+            "Name": "KN_TWOHANDQUICKEN",
+            "Level": 10
+          },
+          {
+            "Name": "KN_AUTOCOUNTER",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 62,
+        "Name": "KN_BOWLINGBASH",
+        "Description": "Bowling Bash",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "TargetTrap": true
+        },
+        "Range": -2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": 1,
+        "Knockback": 1,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": 700,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 13
+            },
+            {
+              "Level": 2,
+              "Amount": 14
+            },
+            {
+              "Level": 3,
+              "Amount": 15
+            },
+            {
+              "Level": 4,
+              "Amount": 16
+            },
+            {
+              "Level": 5,
+              "Amount": 17
+            },
+            {
+              "Level": 6,
+              "Amount": 18
+            },
+            {
+              "Level": 7,
+              "Amount": 19
+            },
+            {
+              "Level": 8,
+              "Amount": 20
+            },
+            {
+              "Level": 9,
+              "Amount": 21
+            },
+            {
+              "Level": 10,
+              "Amount": 22
+            }
+          ]
+        },
+        "CastCancel": false
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-2；命中类型：Single；段数：1；属性：Weapon；范围：1；击退：1；吟唱：700 ms；伤害标记：Splash；消耗/限制：SP Lv1=13; Lv2=14; Lv3=15; Lv4=16; Lv5=17; Lv6=18; Lv7=19; Lv8=20; Lv9=21; Lv10=22。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Knight",
+      "direct": true,
+      "tree": {
+        "Name": "KN_RIDING",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "SM_ENDURE",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 63,
+        "Name": "KN_RIDING",
+        "Description": "Peco Peco Riding",
+        "MaxLevel": 1,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 1。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Knight",
+      "direct": true,
+      "tree": {
+        "Name": "KN_CAVALIERMASTERY",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "KN_RIDING",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 64,
+        "Name": "KN_CAVALIERMASTERY",
+        "Description": "Cavalier Mastery",
+        "MaxLevel": 5,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 5。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Knight",
+      "direct": true,
+      "tree": {
+        "Name": "KN_CHARGEATK",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 1001,
+        "Name": "KN_CHARGEATK",
+        "Description": "Charge Attack",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Flags": {
+          "IsQuest": true
+        },
+        "Range": 14,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": 500,
+        "Requires": {
+          "SpCost": 40
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 1；射程：14；命中类型：Single；段数：1；属性：Weapon；吟唱：500 ms；消耗/限制：SP 40。"
+    },
+    {
+      "job": "Knight",
+      "origin_job": "Knight",
+      "direct": true,
+      "tree": {
+        "Name": "KN_ONEHAND",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "KN_TWOHANDQUICKEN",
+            "Level": 10
+          }
+        ]
+      },
+      "skill": {
+        "Id": 495,
+        "Name": "KN_ONEHAND",
+        "Description": "Onehand Quicken",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsSpirit": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 300000,
+        "Requires": {
+          "SpCost": 100,
+          "Weapon": {
+            "1hSword": true
+          }
+        },
+        "Status": "OneHand"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；持续时间1：300000 ms；伤害标记：NoDamage；消耗/限制：SP 100；武器 1hSword；关联状态：OneHand。"
+    }
+  ]
+}

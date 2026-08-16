@@ -1,0 +1,2068 @@
+{
+  "job": "Clown",
+  "ruleset": "pre-renewal",
+  "commit": "2fe6ab3dc4d830b11d93fb44c3b48436571890bd",
+  "skills": [
+    {
+      "job": "Clown",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_BASIC",
+        "MaxLevel": 9
+      },
+      "skill": {
+        "Id": 1,
+        "Name": "NV_BASIC",
+        "Description": "Basic Skill",
+        "MaxLevel": 9
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 9。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_FIRSTAID",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 142,
+        "Name": "NV_FIRSTAID",
+        "Description": "First Aid",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 3
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 3。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "WE_CALLBABY",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 410,
+        "Name": "WE_CALLBABY",
+        "Description": "Call Baby",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsWedding": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 3,
+        "ActiveInstance": 1,
+        "Duration1": 20000,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": 1
+        },
+        "Unit": {
+          "Id": "Callfamily",
+          "Range": -1,
+          "Interval": -1
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；射程：9；命中类型：Single；段数：1；范围：3；持续时间1：20000 ms；伤害标记：NoDamage；消耗/限制：SP 1。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Archer",
+      "direct": false,
+      "tree": {
+        "Name": "AC_OWL",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 43,
+        "Name": "AC_OWL",
+        "Description": "Owl's Eye",
+        "MaxLevel": 10
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Archer",
+      "direct": false,
+      "tree": {
+        "Name": "AC_VULTURE",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AC_OWL",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 44,
+        "Name": "AC_VULTURE",
+        "Description": "Vulture's Eye",
+        "MaxLevel": 10
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Archer",
+      "direct": false,
+      "tree": {
+        "Name": "AC_CONCENTRATION",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AC_VULTURE",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 45,
+        "Name": "AC_CONCENTRATION",
+        "Description": "Improve Concentration",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true,
+          "Splash": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 3,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 60000
+          },
+          {
+            "Level": 2,
+            "Time": 80000
+          },
+          {
+            "Level": 3,
+            "Time": 100000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 140000
+          },
+          {
+            "Level": 6,
+            "Time": 160000
+          },
+          {
+            "Level": 7,
+            "Time": 180000
+          },
+          {
+            "Level": 8,
+            "Time": 200000
+          },
+          {
+            "Level": 9,
+            "Time": 220000
+          },
+          {
+            "Level": 10,
+            "Time": 240000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 25
+            },
+            {
+              "Level": 2,
+              "Amount": 30
+            },
+            {
+              "Level": 3,
+              "Amount": 35
+            },
+            {
+              "Level": 4,
+              "Amount": 40
+            },
+            {
+              "Level": 5,
+              "Amount": 45
+            },
+            {
+              "Level": 6,
+              "Amount": 50
+            },
+            {
+              "Level": 7,
+              "Amount": 55
+            },
+            {
+              "Level": 8,
+              "Amount": 60
+            },
+            {
+              "Level": 9,
+              "Amount": 65
+            },
+            {
+              "Level": 10,
+              "Amount": 70
+            }
+          ]
+        },
+        "Status": "Concentrate"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 10；命中类型：Single；段数：1；范围：3；持续时间1：Lv1=60000; Lv2=80000; Lv3=100000; Lv4=120000; Lv5=140000; Lv6=160000; Lv7=180000; Lv8=200000; Lv9=220000; Lv10=240000 ms；伤害标记：NoDamage, Splash；消耗/限制：SP Lv1=25; Lv2=30; Lv3=35; Lv4=40; Lv5=45; Lv6=50; Lv7=55; Lv8=60; Lv9=65; Lv10=70；关联状态：Concentrate。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Archer",
+      "direct": false,
+      "tree": {
+        "Name": "AC_DOUBLE",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 46,
+        "Name": "AC_DOUBLE",
+        "Description": "Double Strafe",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Flags": {
+          "AlterRangeVulture": true
+        },
+        "Range": -9,
+        "Hit": "Multi_Hit",
+        "HitCount": 2,
+        "Element": "Weapon",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "Duration1": 100,
+        "Requires": {
+          "SpCost": 12,
+          "Weapon": {
+            "Bow": true
+          },
+          "Ammo": {
+            "Arrow": true
+          },
+          "AmmoAmount": 1
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-9；命中类型：Multi_Hit；段数：2；属性：Weapon；持续时间1：100 ms；消耗/限制：SP 12；弹药数 1；武器 Bow；弹药 Arrow。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Archer",
+      "direct": false,
+      "tree": {
+        "Name": "AC_SHOWER",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AC_DOUBLE",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 47,
+        "Name": "AC_SHOWER",
+        "Description": "Arrow Shower",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "TargetTrap": true,
+          "IgnoreLandProtector": true,
+          "AlterRangeVulture": true
+        },
+        "Range": -9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": 2,
+        "Knockback": 2,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "Duration1": 100,
+        "Requires": {
+          "SpCost": 15,
+          "Weapon": {
+            "Bow": true
+          },
+          "Ammo": {
+            "Arrow": true
+          },
+          "AmmoAmount": 1
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：地面区域；最高等级 10；射程：-9；命中类型：Single；段数：1；属性：Weapon；范围：2；击退：2；持续时间1：100 ms；伤害标记：Splash；消耗/限制：SP 15；弹药数 1；武器 Bow；弹药 Arrow。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Archer",
+      "direct": false,
+      "tree": {
+        "Name": "AC_MAKINGARROW",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 147,
+        "Name": "AC_MAKINGARROW",
+        "Description": "Arrow Crafting",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Requires": {
+          "SpCost": 10,
+          "State": "Recover_Weight_Rate"
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；伤害标记：NoDamage；消耗/限制：SP 10；状态 Recover_Weight_Rate。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Archer",
+      "direct": false,
+      "tree": {
+        "Name": "AC_CHARGEARROW",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 148,
+        "Name": "AC_CHARGEARROW",
+        "Description": "Arrow Repel",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "IsQuest": true,
+          "AlterRangeVulture": true
+        },
+        "Range": -9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "Knockback": 6,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": 1500,
+        "Requires": {
+          "SpCost": 15,
+          "Weapon": {
+            "Bow": true
+          },
+          "Ammo": {
+            "Arrow": true
+          },
+          "AmmoAmount": 1
+        },
+        "CastCancel": false
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 1；射程：-9；命中类型：Single；段数：1；属性：Weapon；击退：6；吟唱：1500 ms；伤害标记：Splash；消耗/限制：SP 15；弹药数 1；武器 Bow；弹药 Arrow。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BA_MUSICALLESSON",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 315,
+        "Name": "BA_MUSICALLESSON",
+        "Description": "Music Lessons",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BA_MUSICALSTRIKE",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "BA_MUSICALLESSON",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 316,
+        "Name": "BA_MUSICALSTRIKE",
+        "Description": "Melody Strike",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Flags": {
+          "AllowWhenPerforming": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "CastTime": 1500,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 1
+            },
+            {
+              "Level": 2,
+              "Amount": 3
+            },
+            {
+              "Level": 3,
+              "Amount": 5
+            },
+            {
+              "Level": 4,
+              "Amount": 7
+            },
+            {
+              "Level": 5,
+              "Amount": 9
+            }
+          ],
+          "Weapon": {
+            "Musical": true
+          },
+          "Ammo": {
+            "Arrow": true
+          },
+          "AmmoAmount": 1
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 5；射程：9；命中类型：Single；段数：1；属性：Weapon；吟唱：1500 ms；消耗/限制：SP Lv1=1; Lv2=3; Lv3=5; Lv4=7; Lv5=9；弹药数 1；武器 Musical；弹药 Arrow。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BA_DISSONANCE",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "BA_MUSICALLESSON",
+            "Level": 1
+          },
+          {
+            "Name": "BD_ADAPTATION",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 317,
+        "Name": "BA_DISSONANCE",
+        "Description": "Unchained Serenade",
+        "MaxLevel": 5,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true,
+          "IgnoreFlee": true
+        },
+        "Flags": {
+          "IsSong": true,
+          "IgnoreLandProtector": true
+        },
+        "Hit": "Multi_Hit",
+        "HitCount": 1,
+        "Duration1": 30000,
+        "Duration2": 3000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 18
+            },
+            {
+              "Level": 2,
+              "Amount": 21
+            },
+            {
+              "Level": 3,
+              "Amount": 24
+            },
+            {
+              "Level": 4,
+              "Amount": 27
+            },
+            {
+              "Level": 5,
+              "Amount": 30
+            }
+          ],
+          "Weapon": {
+            "Musical": true
+          }
+        },
+        "Unit": {
+          "Id": "Dissonance",
+          "Layout": 3,
+          "Interval": 3000,
+          "Target": "Enemy",
+          "Flag": {
+            "Song": true,
+            "NoOverlap": true
+          }
+        }
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 5；命中类型：Multi_Hit；段数：1；持续时间1：30000 ms；持续时间2：3000 ms；伤害标记：NoDamage, IgnoreFlee；消耗/限制：SP Lv1=18; Lv2=21; Lv3=24; Lv4=27; Lv5=30；武器 Musical。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BA_FROSTJOKER",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "BD_ENCORE",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 318,
+        "Name": "BA_FROSTJOKER",
+        "Description": "Unbarring Octave",
+        "MaxLevel": 5,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true,
+          "Splash": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": -1,
+        "AfterCastActDelay": 4000,
+        "Duration1": 15000,
+        "Duration2": 12000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 12
+            },
+            {
+              "Level": 2,
+              "Amount": 14
+            },
+            {
+              "Level": 3,
+              "Amount": 16
+            },
+            {
+              "Level": 4,
+              "Amount": 18
+            },
+            {
+              "Level": 5,
+              "Amount": 20
+            }
+          ]
+        },
+        "Status": "Freeze"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 5；命中类型：Single；段数：1；范围：-1；技能后摇：4000 ms；持续时间1：15000 ms；持续时间2：12000 ms；伤害标记：NoDamage, Splash；消耗/限制：SP Lv1=12; Lv2=14; Lv3=16; Lv4=18; Lv5=20；关联状态：Freeze。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BA_WHISTLE",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "BA_DISSONANCE",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 319,
+        "Name": "BA_WHISTLE",
+        "Description": "Perfect Tablature",
+        "MaxLevel": 10,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsSong": true,
+          "IgnoreLandProtector": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 60000,
+        "Duration2": 20000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 24
+            },
+            {
+              "Level": 2,
+              "Amount": 28
+            },
+            {
+              "Level": 3,
+              "Amount": 32
+            },
+            {
+              "Level": 4,
+              "Amount": 36
+            },
+            {
+              "Level": 5,
+              "Amount": 40
+            },
+            {
+              "Level": 6,
+              "Amount": 44
+            },
+            {
+              "Level": 7,
+              "Amount": 48
+            },
+            {
+              "Level": 8,
+              "Amount": 52
+            },
+            {
+              "Level": 9,
+              "Amount": 56
+            },
+            {
+              "Level": 10,
+              "Amount": 60
+            }
+          ],
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Unit": {
+          "Id": "Whistle",
+          "Layout": 3,
+          "Interval": -1,
+          "Flag": {
+            "NoMob": true,
+            "Song": true
+          }
+        },
+        "Status": "Whistle"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 10；命中类型：Single；段数：1；持续时间1：60000 ms；持续时间2：20000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=24; Lv2=28; Lv3=32; Lv4=36; Lv5=40; Lv6=44; Lv7=48; Lv8=52; Lv9=56; Lv10=60；武器 Musical, Whip；关联状态：Whistle。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BA_ASSASSINCROSS",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "BA_DISSONANCE",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 320,
+        "Name": "BA_ASSASSINCROSS",
+        "Description": "Impressive Riff",
+        "MaxLevel": 10,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsSong": true,
+          "IgnoreLandProtector": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 120000,
+        "Duration2": 20000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 38
+            },
+            {
+              "Level": 2,
+              "Amount": 41
+            },
+            {
+              "Level": 3,
+              "Amount": 44
+            },
+            {
+              "Level": 4,
+              "Amount": 47
+            },
+            {
+              "Level": 5,
+              "Amount": 50
+            },
+            {
+              "Level": 6,
+              "Amount": 53
+            },
+            {
+              "Level": 7,
+              "Amount": 56
+            },
+            {
+              "Level": 8,
+              "Amount": 59
+            },
+            {
+              "Level": 9,
+              "Amount": 62
+            },
+            {
+              "Level": 10,
+              "Amount": 65
+            }
+          ],
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Unit": {
+          "Id": "Assassincross",
+          "Layout": 3,
+          "Interval": -1,
+          "Flag": {
+            "NoMob": true,
+            "Song": true
+          }
+        },
+        "Status": "AssnCros"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 10；命中类型：Single；段数：1；持续时间1：120000 ms；持续时间2：20000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=38; Lv2=41; Lv3=44; Lv4=47; Lv5=50; Lv6=53; Lv7=56; Lv8=59; Lv9=62; Lv10=65；武器 Musical, Whip；关联状态：AssnCros。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BA_POEMBRAGI",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "BA_DISSONANCE",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 321,
+        "Name": "BA_POEMBRAGI",
+        "Description": "Magic Strings",
+        "MaxLevel": 10,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsSong": true,
+          "IgnoreLandProtector": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 180000,
+        "Duration2": 20000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 40
+            },
+            {
+              "Level": 2,
+              "Amount": 45
+            },
+            {
+              "Level": 3,
+              "Amount": 50
+            },
+            {
+              "Level": 4,
+              "Amount": 55
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            },
+            {
+              "Level": 6,
+              "Amount": 65
+            },
+            {
+              "Level": 7,
+              "Amount": 70
+            },
+            {
+              "Level": 8,
+              "Amount": 75
+            },
+            {
+              "Level": 9,
+              "Amount": 80
+            },
+            {
+              "Level": 10,
+              "Amount": 85
+            }
+          ],
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Unit": {
+          "Id": "Poembragi",
+          "Layout": 3,
+          "Interval": -1,
+          "Flag": {
+            "NoMob": true,
+            "Song": true
+          }
+        },
+        "Status": "PoemBragi"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 10；命中类型：Single；段数：1；持续时间1：180000 ms；持续时间2：20000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=40; Lv2=45; Lv3=50; Lv4=55; Lv5=60; Lv6=65; Lv7=70; Lv8=75; Lv9=80; Lv10=85；武器 Musical, Whip；关联状态：PoemBragi。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BA_APPLEIDUN",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "BA_DISSONANCE",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 322,
+        "Name": "BA_APPLEIDUN",
+        "Description": "Song of Lutie",
+        "MaxLevel": 10,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsSong": true,
+          "IgnoreLandProtector": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 180000,
+        "Duration2": 20000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 40
+            },
+            {
+              "Level": 2,
+              "Amount": 45
+            },
+            {
+              "Level": 3,
+              "Amount": 50
+            },
+            {
+              "Level": 4,
+              "Amount": 55
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            },
+            {
+              "Level": 6,
+              "Amount": 65
+            },
+            {
+              "Level": 7,
+              "Amount": 70
+            },
+            {
+              "Level": 8,
+              "Amount": 75
+            },
+            {
+              "Level": 9,
+              "Amount": 80
+            },
+            {
+              "Level": 10,
+              "Amount": 85
+            }
+          ],
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Unit": {
+          "Id": "Appleidun",
+          "Layout": 3,
+          "Interval": 6000,
+          "Flag": {
+            "NoMob": true,
+            "Song": true,
+            "DualMode": true
+          }
+        },
+        "Status": "AppleIdun"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 10；命中类型：Single；段数：1；持续时间1：180000 ms；持续时间2：20000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=40; Lv2=45; Lv3=50; Lv4=55; Lv5=60; Lv6=65; Lv7=70; Lv8=75; Lv9=80; Lv10=85；武器 Musical, Whip；关联状态：AppleIdun。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BD_ADAPTATION",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 304,
+        "Name": "BD_ADAPTATION",
+        "Description": "Amp",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "AllowWhenPerforming": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration2": 5000,
+        "Requires": {
+          "SpCost": 1
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；持续时间2：5000 ms；伤害标记：NoDamage；消耗/限制：SP 1。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BD_ENCORE",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "BD_ADAPTATION",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 305,
+        "Name": "BD_ENCORE",
+        "Description": "Encore",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 1,
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Status": "Dancing"
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 1；武器 Musical, Whip；关联状态：Dancing。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BD_LULLABY",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "BA_WHISTLE",
+            "Level": 10
+          }
+        ]
+      },
+      "skill": {
+        "Id": 306,
+        "Name": "BD_LULLABY",
+        "Description": "Lullaby",
+        "MaxLevel": 1,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsEnsemble": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 60000,
+        "Duration2": 30000,
+        "Requires": {
+          "SpCost": 20,
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Unit": {
+          "Id": "Lullaby",
+          "Layout": 4,
+          "Interval": 6000,
+          "Target": "Enemy",
+          "Flag": {
+            "Ensemble": true
+          }
+        },
+        "Status": "Sleep"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 1；命中类型：Single；段数：1；持续时间1：60000 ms；持续时间2：30000 ms；伤害标记：NoDamage；消耗/限制：SP 20；武器 Musical, Whip；关联状态：Sleep。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BD_RICHMANKIM",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "BD_SIEGFRIED",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 307,
+        "Name": "BD_RICHMANKIM",
+        "Description": "Mental Sensing",
+        "MaxLevel": 5,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsEnsemble": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 60000,
+        "Duration2": 60000,
+        "Requires": {
+          "SpCost": 20,
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Unit": {
+          "Id": "Richmankim",
+          "Layout": 4,
+          "Interval": -1,
+          "Target": "Enemy",
+          "Flag": {
+            "NoPc": true,
+            "Ensemble": true
+          }
+        },
+        "Status": "RichManKim"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 5；命中类型：Single；段数：1；持续时间1：60000 ms；持续时间2：60000 ms；伤害标记：NoDamage；消耗/限制：SP 20；武器 Musical, Whip；关联状态：RichManKim。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BD_ETERNALCHAOS",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "BD_ROKISWEIL",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 308,
+        "Name": "BD_ETERNALCHAOS",
+        "Description": "Down Tempo",
+        "MaxLevel": 1,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsEnsemble": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 60000,
+        "Duration2": 60000,
+        "Requires": {
+          "SpCost": 30,
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Unit": {
+          "Id": "Eternalchaos",
+          "Layout": 4,
+          "Interval": -1,
+          "Target": "Enemy",
+          "Flag": {
+            "Ensemble": true
+          }
+        },
+        "Status": "EternalChaos"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 1；命中类型：Single；段数：1；持续时间1：60000 ms；持续时间2：60000 ms；伤害标记：NoDamage；消耗/限制：SP 30；武器 Musical, Whip；关联状态：EternalChaos。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BD_DRUMBATTLEFIELD",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "BA_APPLEIDUN",
+            "Level": 10
+          }
+        ]
+      },
+      "skill": {
+        "Id": 309,
+        "Name": "BD_DRUMBATTLEFIELD",
+        "Description": "Battle Theme",
+        "MaxLevel": 5,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsEnsemble": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 60000,
+        "Duration2": 60000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 40
+            },
+            {
+              "Level": 2,
+              "Amount": 45
+            },
+            {
+              "Level": 3,
+              "Amount": 50
+            },
+            {
+              "Level": 4,
+              "Amount": 55
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ],
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Unit": {
+          "Id": "Drumbattlefield",
+          "Layout": 4,
+          "Interval": -1,
+          "Target": "Party",
+          "Flag": {
+            "Ensemble": true
+          }
+        },
+        "Status": "DrumBattle"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 5；命中类型：Single；段数：1；持续时间1：60000 ms；持续时间2：60000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=40; Lv2=45; Lv3=50; Lv4=55; Lv5=60；武器 Musical, Whip；关联状态：DrumBattle。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BD_RINGNIBELUNGEN",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "BD_DRUMBATTLEFIELD",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 310,
+        "Name": "BD_RINGNIBELUNGEN",
+        "Description": "Harmonic Lick",
+        "MaxLevel": 5,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsEnsemble": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 60000,
+        "Duration2": 60000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 38
+            },
+            {
+              "Level": 2,
+              "Amount": 41
+            },
+            {
+              "Level": 3,
+              "Amount": 44
+            },
+            {
+              "Level": 4,
+              "Amount": 47
+            },
+            {
+              "Level": 5,
+              "Amount": 50
+            }
+          ],
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Unit": {
+          "Id": "Ringnibelungen",
+          "Layout": 4,
+          "Interval": -1,
+          "Target": "Party",
+          "Flag": {
+            "Ensemble": true
+          }
+        },
+        "Status": "Nibelungen"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 5；命中类型：Single；段数：1；持续时间1：60000 ms；持续时间2：60000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=38; Lv2=41; Lv3=44; Lv4=47; Lv5=50；武器 Musical, Whip；关联状态：Nibelungen。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BD_ROKISWEIL",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "BA_ASSASSINCROSS",
+            "Level": 10
+          }
+        ]
+      },
+      "skill": {
+        "Id": 311,
+        "Name": "BD_ROKISWEIL",
+        "Description": "Classical Pluck",
+        "MaxLevel": 1,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsEnsemble": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 60000,
+        "Duration2": 60000,
+        "Requires": {
+          "SpCost": 15,
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Unit": {
+          "Id": "Rokisweil",
+          "Layout": 4,
+          "Interval": -1,
+          "Flag": {
+            "Ensemble": true
+          }
+        },
+        "Status": "RokisWeil"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 1；命中类型：Single；段数：1；持续时间1：60000 ms；持续时间2：60000 ms；伤害标记：NoDamage；消耗/限制：SP 15；武器 Musical, Whip；关联状态：RokisWeil。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BD_INTOABYSS",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "BD_LULLABY",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 312,
+        "Name": "BD_INTOABYSS",
+        "Description": "Power Chord",
+        "MaxLevel": 1,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsEnsemble": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 60000,
+        "Duration2": 60000,
+        "Requires": {
+          "SpCost": 10,
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Unit": {
+          "Id": "Intoabyss",
+          "Layout": 4,
+          "Interval": -1,
+          "Target": "Party",
+          "Flag": {
+            "NoMob": true,
+            "Ensemble": true
+          }
+        },
+        "Status": "IntoAbyss"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 1；命中类型：Single；段数：1；持续时间1：60000 ms；持续时间2：60000 ms；伤害标记：NoDamage；消耗/限制：SP 10；武器 Musical, Whip；关联状态：IntoAbyss。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BD_SIEGFRIED",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "BA_POEMBRAGI",
+            "Level": 10
+          }
+        ]
+      },
+      "skill": {
+        "Id": 313,
+        "Name": "BD_SIEGFRIED",
+        "Description": "Acoustic Rhythm",
+        "MaxLevel": 5,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsEnsemble": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 60000,
+        "Duration2": 60000,
+        "Requires": {
+          "SpCost": 20,
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Unit": {
+          "Id": "Siegfried",
+          "Layout": 4,
+          "Interval": -1,
+          "Target": "Party",
+          "Flag": {
+            "Ensemble": true
+          }
+        },
+        "Status": "Siegfried"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 5；命中类型：Single；段数：1；持续时间1：60000 ms；持续时间2：60000 ms；伤害标记：NoDamage；消耗/限制：SP 20；武器 Musical, Whip；关联状态：Siegfried。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Bard",
+      "direct": false,
+      "tree": {
+        "Name": "BA_PANGVOICE",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 1010,
+        "Name": "BA_PANGVOICE",
+        "Description": "Pang Voice",
+        "MaxLevel": 1,
+        "Type": "Misc",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "CastTime": 1000,
+        "AfterCastActDelay": 2000,
+        "Duration1": 30000,
+        "Requires": {
+          "SpCost": 20
+        }
+      },
+      "structured_description_zh": "特殊技能；目标：敌方目标；最高等级 1；射程：9；命中类型：Single；吟唱：1000 ms；技能后摇：2000 ms；持续时间1：30000 ms；伤害标记：NoDamage；消耗/限制：SP 20。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Clown",
+      "direct": true,
+      "tree": {
+        "Name": "CG_ARROWVULCAN",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AC_SHOWER",
+            "Level": 5
+          },
+          {
+            "Name": "BA_MUSICALSTRIKE",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 394,
+        "Name": "CG_ARROWVULCAN",
+        "Description": "Vulcan Arrow",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Range": 9,
+        "Hit": "Multi_Hit",
+        "HitCount": -9,
+        "Element": "Weapon",
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 2000
+          },
+          {
+            "Level": 2,
+            "Time": 2200
+          },
+          {
+            "Level": 3,
+            "Time": 2400
+          },
+          {
+            "Level": 4,
+            "Time": 2600
+          },
+          {
+            "Level": 5,
+            "Time": 2800
+          },
+          {
+            "Level": 6,
+            "Time": 3000
+          },
+          {
+            "Level": 7,
+            "Time": 3200
+          },
+          {
+            "Level": 8,
+            "Time": 3400
+          },
+          {
+            "Level": 9,
+            "Time": 3600
+          },
+          {
+            "Level": 10,
+            "Time": 3800
+          }
+        ],
+        "AfterCastActDelay": [
+          {
+            "Level": 1,
+            "Time": 2800
+          },
+          {
+            "Level": 2,
+            "Time": 2800
+          },
+          {
+            "Level": 3,
+            "Time": 2800
+          },
+          {
+            "Level": 4,
+            "Time": 2800
+          },
+          {
+            "Level": 5,
+            "Time": 2800
+          },
+          {
+            "Level": 6,
+            "Time": 3000
+          },
+          {
+            "Level": 7,
+            "Time": 3000
+          },
+          {
+            "Level": 8,
+            "Time": 3000
+          },
+          {
+            "Level": 9,
+            "Time": 3000
+          },
+          {
+            "Level": 10,
+            "Time": 3000
+          }
+        ],
+        "AfterCastWalkDelay": 2000,
+        "CastDelayFlags": {
+          "IgnoreStatus": true
+        },
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 12
+            },
+            {
+              "Level": 2,
+              "Amount": 14
+            },
+            {
+              "Level": 3,
+              "Amount": 16
+            },
+            {
+              "Level": 4,
+              "Amount": 18
+            },
+            {
+              "Level": 5,
+              "Amount": 20
+            },
+            {
+              "Level": 6,
+              "Amount": 22
+            },
+            {
+              "Level": 7,
+              "Amount": 24
+            },
+            {
+              "Level": 8,
+              "Amount": 26
+            },
+            {
+              "Level": 9,
+              "Amount": 28
+            },
+            {
+              "Level": 10,
+              "Amount": 30
+            }
+          ],
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          },
+          "Ammo": {
+            "Arrow": true
+          },
+          "AmmoAmount": 1
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：9；命中类型：Multi_Hit；段数：-9；属性：Weapon；吟唱：Lv1=2000; Lv2=2200; Lv3=2400; Lv4=2600; Lv5=2800; Lv6=3000; Lv7=3200; Lv8=3400; Lv9=3600; Lv10=3800 ms；技能后摇：Lv1-5=2800; Lv6-10=3000 ms；移动后摇：2000 ms；消耗/限制：SP Lv1=12; Lv2=14; Lv3=16; Lv4=18; Lv5=20; Lv6=22; Lv7=24; Lv8=26; Lv9=28; Lv10=30；弹药数 1；武器 Musical, Whip；弹药 Arrow。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Clown",
+      "direct": true,
+      "tree": {
+        "Name": "CG_MOONLIT",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "AC_CONCENTRATION",
+            "Level": 5
+          },
+          {
+            "Name": "BA_MUSICALLESSON",
+            "Level": 7
+          }
+        ]
+      },
+      "skill": {
+        "Id": 395,
+        "Name": "CG_MOONLIT",
+        "Description": "Sheltering Bliss",
+        "MaxLevel": 5,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsEnsemble": true
+        },
+        "HitCount": 1,
+        "SplashArea": 3,
+        "Knockback": 2,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 20000
+          },
+          {
+            "Level": 2,
+            "Time": 25000
+          },
+          {
+            "Level": 3,
+            "Time": 30000
+          },
+          {
+            "Level": 4,
+            "Time": 35000
+          },
+          {
+            "Level": 5,
+            "Time": 40000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 30
+            },
+            {
+              "Level": 2,
+              "Amount": 40
+            },
+            {
+              "Level": 3,
+              "Amount": 50
+            },
+            {
+              "Level": 4,
+              "Amount": 60
+            },
+            {
+              "Level": 5,
+              "Amount": 70
+            }
+          ],
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Unit": {
+          "Id": "Moonlit",
+          "Layout": 4,
+          "Interval": -1,
+          "Flag": {
+            "Ensemble": true
+          }
+        }
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 5；段数：1；范围：3；击退：2；持续时间1：Lv1=20000; Lv2=25000; Lv3=30000; Lv4=35000; Lv5=40000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=30; Lv2=40; Lv3=50; Lv4=60; Lv5=70；武器 Musical, Whip。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Clown",
+      "direct": true,
+      "tree": {
+        "Name": "CG_MARIONETTE",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "AC_CONCENTRATION",
+            "Level": 5
+          },
+          {
+            "Name": "BA_MUSICALLESSON",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 396,
+        "Name": "CG_MARIONETTE",
+        "Description": "Marionette Control",
+        "MaxLevel": 1,
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true,
+          "PartyOnly": true,
+          "IgnoreKagehumi": true
+        },
+        "Range": 7,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 1000,
+        "Requires": {
+          "SpCost": 100
+        },
+        "Status": "Marionette"
+      },
+      "structured_description_zh": "非伤害技能；目标：友方目标；最高等级 1；射程：7；命中类型：Single；段数：1；持续时间1：1000 ms；伤害标记：NoDamage；消耗/限制：SP 100；关联状态：Marionette。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Clown",
+      "direct": true,
+      "tree": {
+        "Name": "CG_LONGINGFREEDOM",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "BA_MUSICALLESSON",
+            "Level": 10
+          },
+          {
+            "Name": "CG_MARIONETTE",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 487,
+        "Name": "CG_LONGINGFREEDOM",
+        "Description": "Longing for Freedom",
+        "MaxLevel": 5,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "AllowWhenPerforming": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 180000,
+        "Requires": {
+          "SpCost": 15
+        },
+        "Status": "Longing"
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 5；命中类型：Single；段数：1；持续时间1：180000 ms；伤害标记：NoDamage；消耗/限制：SP 15；关联状态：Longing。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Clown",
+      "direct": true,
+      "tree": {
+        "Name": "CG_HERMODE",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "AC_CONCENTRATION",
+            "Level": 10
+          },
+          {
+            "Name": "BA_MUSICALLESSON",
+            "Level": 10
+          }
+        ]
+      },
+      "skill": {
+        "Id": 488,
+        "Name": "CG_HERMODE",
+        "Description": "Wand of Hermode",
+        "MaxLevel": 5,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsSong": true,
+          "IgnoreLandProtector": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 1,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 10000
+          },
+          {
+            "Level": 2,
+            "Time": 15000
+          },
+          {
+            "Level": 3,
+            "Time": 20000
+          },
+          {
+            "Level": 4,
+            "Time": 25000
+          },
+          {
+            "Level": 5,
+            "Time": 30000
+          }
+        ],
+        "Duration2": [
+          {
+            "Level": 1,
+            "Time": 10000
+          },
+          {
+            "Level": 2,
+            "Time": 15000
+          },
+          {
+            "Level": 3,
+            "Time": 20000
+          },
+          {
+            "Level": 4,
+            "Time": 25000
+          },
+          {
+            "Level": 5,
+            "Time": 30000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 20
+            },
+            {
+              "Level": 2,
+              "Amount": 30
+            },
+            {
+              "Level": 3,
+              "Amount": 40
+            },
+            {
+              "Level": 4,
+              "Amount": 50
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            }
+          ],
+          "Weapon": {
+            "Musical": true,
+            "Whip": true
+          }
+        },
+        "Unit": {
+          "Id": "Hermode",
+          "Layout": 3,
+          "Interval": -1,
+          "Flag": {
+            "Ensemble": true
+          }
+        },
+        "Status": "Hermode"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 5；命中类型：Single；段数：1；范围：1；持续时间1：Lv1=10000; Lv2=15000; Lv3=20000; Lv4=25000; Lv5=30000 ms；持续时间2：Lv1=10000; Lv2=15000; Lv3=20000; Lv4=25000; Lv5=30000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=20; Lv2=30; Lv3=40; Lv4=50; Lv5=60；武器 Musical, Whip；关联状态：Hermode。"
+    },
+    {
+      "job": "Clown",
+      "origin_job": "Clown",
+      "direct": true,
+      "tree": {
+        "Name": "CG_TAROTCARD",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "AC_CONCENTRATION",
+            "Level": 10
+          },
+          {
+            "Name": "BA_DISSONANCE",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 489,
+        "Name": "CG_TAROTCARD",
+        "Description": "Tarot Card of Fate",
+        "MaxLevel": 5,
+        "Type": "Misc",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true,
+          "IgnoreFlee": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 3000,
+        "Duration2": 30000,
+        "Requires": {
+          "SpCost": 40
+        },
+        "Status": "TarotCard"
+      },
+      "structured_description_zh": "特殊技能；目标：敌方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：3000 ms；持续时间2：30000 ms；伤害标记：NoDamage, IgnoreFlee；消耗/限制：SP 40；关联状态：TarotCard。"
+    }
+  ]
+}
