@@ -1,0 +1,1588 @@
+{
+  "job": "Star_Gladiator2",
+  "ruleset": "pre-renewal",
+  "commit": "2fe6ab3dc4d830b11d93fb44c3b48436571890bd",
+  "skills": [
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_BASIC",
+        "MaxLevel": 9
+      },
+      "skill": {
+        "Id": 1,
+        "Name": "NV_BASIC",
+        "Description": "Basic Skill",
+        "MaxLevel": 9
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 9。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_FIRSTAID",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 142,
+        "Name": "NV_FIRSTAID",
+        "Description": "First Aid",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 3
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 3。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "WE_CALLBABY",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 410,
+        "Name": "WE_CALLBABY",
+        "Description": "Call Baby",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsWedding": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 3,
+        "ActiveInstance": 1,
+        "Duration1": 20000,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": 1
+        },
+        "Unit": {
+          "Id": "Callfamily",
+          "Range": -1,
+          "Interval": -1
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；射程：9；命中类型：Single；段数：1；范围：3；持续时间1：20000 ms；伤害标记：NoDamage；消耗/限制：SP 1。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_RUN",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 411,
+        "Name": "TK_RUN",
+        "Description": "Running",
+        "MaxLevel": 10,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "Toggleable": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Knockback": 4,
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 6000
+          },
+          {
+            "Level": 2,
+            "Time": 5000
+          },
+          {
+            "Level": 3,
+            "Time": 4000
+          },
+          {
+            "Level": 4,
+            "Time": 3000
+          },
+          {
+            "Level": 5,
+            "Time": 2000
+          },
+          {
+            "Level": 6,
+            "Time": 1000
+          }
+        ],
+        "Duration1": 1000,
+        "Duration2": 150000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 100
+            },
+            {
+              "Level": 2,
+              "Amount": 90
+            },
+            {
+              "Level": 3,
+              "Amount": 80
+            },
+            {
+              "Level": 4,
+              "Amount": 70
+            },
+            {
+              "Level": 5,
+              "Amount": 60
+            },
+            {
+              "Level": 6,
+              "Amount": 50
+            },
+            {
+              "Level": 7,
+              "Amount": 40
+            },
+            {
+              "Level": 8,
+              "Amount": 30
+            },
+            {
+              "Level": 9,
+              "Amount": 20
+            },
+            {
+              "Level": 10,
+              "Amount": 10
+            }
+          ],
+          "State": "Move_Enable"
+        },
+        "Status": "Run"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 10；命中类型：Single；段数：1；击退：4；吟唱：Lv1=6000; Lv2=5000; Lv3=4000; Lv4=3000; Lv5=2000; Lv6=1000 ms；持续时间1：1000 ms；持续时间2：150000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=100; Lv2=90; Lv3=80; Lv4=70; Lv5=60; Lv6=50; Lv7=40; Lv8=30; Lv9=20; Lv10=10；状态 Move_Enable；关联状态：Run。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_READYSTORM",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "TK_STORMKICK",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 412,
+        "Name": "TK_READYSTORM",
+        "Description": "Tornado Stance",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "Toggleable": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 1
+        },
+        "Status": "ReadyStorm"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 1；关联状态：ReadyStorm。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_STORMKICK",
+        "MaxLevel": 7
+      },
+      "skill": {
+        "Id": 413,
+        "Name": "TK_STORMKICK",
+        "Description": "Tornado Kick",
+        "MaxLevel": 7,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "NoTargetSelf": true,
+          "TargetTrap": true
+        },
+        "Range": -2,
+        "Hit": "Multi_Hit",
+        "HitCount": -3,
+        "Element": "Weapon",
+        "SplashArea": 2,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 14
+            },
+            {
+              "Level": 2,
+              "Amount": 12
+            },
+            {
+              "Level": 3,
+              "Amount": 10
+            },
+            {
+              "Level": 4,
+              "Amount": 8
+            },
+            {
+              "Level": 5,
+              "Amount": 6
+            },
+            {
+              "Level": 6,
+              "Amount": 4
+            },
+            {
+              "Level": 7,
+              "Amount": 2
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 7；射程：-2；命中类型：Multi_Hit；段数：-3；属性：Weapon；范围：2；伤害标记：Splash；消耗/限制：SP Lv1=14; Lv2=12; Lv3=10; Lv4=8; Lv5=6; Lv6=4; Lv7=2。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_READYDOWN",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "TK_DOWNKICK",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 414,
+        "Name": "TK_READYDOWN",
+        "Description": "Heel Drop Stance",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "Toggleable": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 1
+        },
+        "Status": "ReadyDown"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 1；关联状态：ReadyDown。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_DOWNKICK",
+        "MaxLevel": 7
+      },
+      "skill": {
+        "Id": 415,
+        "Name": "TK_DOWNKICK",
+        "Description": "Heel Drop",
+        "MaxLevel": 7,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": -2,
+        "Hit": "Multi_Hit",
+        "HitCount": -3,
+        "Element": "Weapon",
+        "Duration2": 3000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 14
+            },
+            {
+              "Level": 2,
+              "Amount": 12
+            },
+            {
+              "Level": 3,
+              "Amount": 10
+            },
+            {
+              "Level": 4,
+              "Amount": 8
+            },
+            {
+              "Level": 5,
+              "Amount": 6
+            },
+            {
+              "Level": 6,
+              "Amount": 4
+            },
+            {
+              "Level": 7,
+              "Amount": 2
+            }
+          ]
+        },
+        "Status": "Stun"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 7；射程：-2；命中类型：Multi_Hit；段数：-3；属性：Weapon；持续时间2：3000 ms；消耗/限制：SP Lv1=14; Lv2=12; Lv3=10; Lv4=8; Lv5=6; Lv6=4; Lv7=2；关联状态：Stun。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_READYTURN",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "TK_TURNKICK",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 416,
+        "Name": "TK_READYTURN",
+        "Description": "Roundhouse Stance",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "Toggleable": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 1
+        },
+        "Status": "ReadyTurn"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 1；关联状态：ReadyTurn。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_TURNKICK",
+        "MaxLevel": 7
+      },
+      "skill": {
+        "Id": 417,
+        "Name": "TK_TURNKICK",
+        "Description": "Roundhouse Kick",
+        "MaxLevel": 7,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": -2,
+        "Hit": "Multi_Hit",
+        "HitCount": -3,
+        "Element": "Weapon",
+        "SplashArea": 1,
+        "Knockback": 2,
+        "Duration1": 5000,
+        "Duration2": 2000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 14
+            },
+            {
+              "Level": 2,
+              "Amount": 12
+            },
+            {
+              "Level": 3,
+              "Amount": 10
+            },
+            {
+              "Level": 4,
+              "Amount": 8
+            },
+            {
+              "Level": 5,
+              "Amount": 6
+            },
+            {
+              "Level": 6,
+              "Amount": 4
+            },
+            {
+              "Level": 7,
+              "Amount": 2
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 7；射程：-2；命中类型：Multi_Hit；段数：-3；属性：Weapon；范围：1；击退：2；持续时间1：5000 ms；持续时间2：2000 ms；伤害标记：Splash；消耗/限制：SP Lv1=14; Lv2=12; Lv3=10; Lv4=8; Lv5=6; Lv6=4; Lv7=2。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_READYCOUNTER",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "TK_COUNTER",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 418,
+        "Name": "TK_READYCOUNTER",
+        "Description": "Counter Kick Stance",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "Toggleable": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 1
+        },
+        "Status": "ReadyCounter"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 1；关联状态：ReadyCounter。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_COUNTER",
+        "MaxLevel": 7
+      },
+      "skill": {
+        "Id": 419,
+        "Name": "TK_COUNTER",
+        "Description": "Counter Kick",
+        "MaxLevel": 7,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "IgnoreFlee": true
+        },
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": -2,
+        "Hit": "Multi_Hit",
+        "HitCount": -3,
+        "Element": "Weapon",
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 14
+            },
+            {
+              "Level": 2,
+              "Amount": 12
+            },
+            {
+              "Level": 3,
+              "Amount": 10
+            },
+            {
+              "Level": 4,
+              "Amount": 8
+            },
+            {
+              "Level": 5,
+              "Amount": 6
+            },
+            {
+              "Level": 6,
+              "Amount": 4
+            },
+            {
+              "Level": 7,
+              "Amount": 2
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 7；射程：-2；命中类型：Multi_Hit；段数：-3；属性：Weapon；伤害标记：IgnoreFlee；消耗/限制：SP Lv1=14; Lv2=12; Lv3=10; Lv4=8; Lv5=6; Lv6=4; Lv7=2。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_DODGE",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "TK_JUMPKICK",
+            "Level": 7
+          }
+        ]
+      },
+      "skill": {
+        "Id": 420,
+        "Name": "TK_DODGE",
+        "Description": "Tumbling",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 1
+        },
+        "Status": "Dodge"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 1；关联状态：Dodge。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_JUMPKICK",
+        "MaxLevel": 7
+      },
+      "skill": {
+        "Id": 421,
+        "Name": "TK_JUMPKICK",
+        "Description": "Flying Kick",
+        "MaxLevel": 7,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Multi_Hit",
+        "HitCount": -3,
+        "Element": "Weapon",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 70
+            },
+            {
+              "Level": 2,
+              "Amount": 60
+            },
+            {
+              "Level": 3,
+              "Amount": 50
+            },
+            {
+              "Level": 4,
+              "Amount": 40
+            },
+            {
+              "Level": 5,
+              "Amount": 30
+            },
+            {
+              "Level": 6,
+              "Amount": 20
+            },
+            {
+              "Level": 7,
+              "Amount": 10
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 7；射程：9；命中类型：Multi_Hit；段数：-3；属性：Weapon；伤害标记：NoDamage；消耗/限制：SP Lv1=70; Lv2=60; Lv3=50; Lv4=40; Lv5=30; Lv6=20; Lv7=10。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_HPTIME",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 422,
+        "Name": "TK_HPTIME",
+        "Description": "Peaceful Break",
+        "MaxLevel": 10,
+        "SplashArea": 1
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10；范围：1。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_SPTIME",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 423,
+        "Name": "TK_SPTIME",
+        "Description": "Happy Break",
+        "MaxLevel": 10,
+        "SplashArea": 1,
+        "Duration1": 1800000,
+        "Status": "EarthScroll"
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10；范围：1；持续时间1：1800000 ms；关联状态：EarthScroll。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_POWER",
+        "MaxLevel": 5
+      },
+      "skill": {
+        "Id": 424,
+        "Name": "TK_POWER",
+        "Description": "Kihop",
+        "MaxLevel": 5,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 5。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_SEVENWIND",
+        "MaxLevel": 7,
+        "Requires": [
+          {
+            "Name": "TK_HPTIME",
+            "Level": 5
+          },
+          {
+            "Name": "TK_SPTIME",
+            "Level": 5
+          },
+          {
+            "Name": "TK_POWER",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 425,
+        "Name": "TK_SEVENWIND",
+        "Description": "Mild Wind",
+        "MaxLevel": 7,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": [
+          {
+            "Level": 1,
+            "Element": "Earth"
+          },
+          {
+            "Level": 2,
+            "Element": "Wind"
+          },
+          {
+            "Level": 3,
+            "Element": "Water"
+          },
+          {
+            "Level": 4,
+            "Element": "Fire"
+          },
+          {
+            "Level": 5,
+            "Element": "Ghost"
+          },
+          {
+            "Level": 6,
+            "Element": "Dark"
+          },
+          {
+            "Level": 7,
+            "Element": "Holy"
+          }
+        ],
+        "Duration1": 300000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 20
+            },
+            {
+              "Level": 2,
+              "Amount": 20
+            },
+            {
+              "Level": 3,
+              "Amount": 20
+            },
+            {
+              "Level": 4,
+              "Amount": 20
+            },
+            {
+              "Level": 5,
+              "Amount": 50
+            },
+            {
+              "Level": 6,
+              "Amount": 50
+            },
+            {
+              "Level": 7,
+              "Amount": 50
+            }
+          ]
+        },
+        "Status": "SevenWind"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 7；命中类型：Single；段数：1；属性：Lv1=Earth; Lv2=Wind; Lv3=Water; Lv4=Fire; Lv5=Ghost; Lv6=Dark; Lv7=Holy；持续时间1：300000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1-4=20; Lv5-7=50；关联状态：SevenWind。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_HIGHJUMP",
+        "MaxLevel": 5
+      },
+      "skill": {
+        "Id": 426,
+        "Name": "TK_HIGHJUMP",
+        "Description": "Taekwon Jump",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 5000
+          },
+          {
+            "Level": 2,
+            "Time": 4000
+          },
+          {
+            "Level": 3,
+            "Time": 3000
+          },
+          {
+            "Level": 4,
+            "Time": 2000
+          },
+          {
+            "Level": 5,
+            "Time": 1000
+          }
+        ],
+        "Requires": {
+          "SpCost": 50
+        },
+        "CastCancel": false
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 5；命中类型：Single；段数：1；吟唱：Lv1=5000; Lv2=4000; Lv3=3000; Lv4=2000; Lv5=1000 ms；伤害标记：NoDamage；消耗/限制：SP 50。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Taekwon",
+      "direct": false,
+      "tree": {
+        "Name": "TK_MISSION",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "TK_POWER",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 493,
+        "Name": "TK_MISSION",
+        "Description": "Taekwon Mission",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "Requires": {
+          "SpCost": 10
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；吟唱：1000 ms；伤害标记：NoDamage；消耗/限制：SP 10。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_FEEL",
+        "MaxLevel": 3
+      },
+      "skill": {
+        "Id": 427,
+        "Name": "SG_FEEL",
+        "Description": "Feeling the Sun Moon and Stars",
+        "MaxLevel": 3,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "Requires": {
+          "SpCost": 100
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 3；命中类型：Single；段数：1；吟唱：1000 ms；伤害标记：NoDamage；消耗/限制：SP 100。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_SUN_WARM",
+        "MaxLevel": 3,
+        "Requires": [
+          {
+            "Name": "SG_FEEL",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 428,
+        "Name": "SG_SUN_WARM",
+        "Description": "Warmth of the Sun",
+        "MaxLevel": 3,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true,
+          "Splash": true
+        },
+        "Flags": {
+          "IgnoreLandProtector": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": 1,
+        "Knockback": 2,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 10000
+          },
+          {
+            "Level": 2,
+            "Time": 20000
+          },
+          {
+            "Level": 3,
+            "Time": 60000
+          }
+        ],
+        "Requires": {
+          "SpCost": 20
+        },
+        "Unit": {
+          "Id": "Dummyskill",
+          "Range": 1,
+          "Interval": 20,
+          "Target": "Enemy"
+        },
+        "Status": "Warm"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 3；射程：1；命中类型：Single；段数：1；属性：Weapon；范围：1；击退：2；持续时间1：Lv1=10000; Lv2=20000; Lv3=60000 ms；伤害标记：NoDamage, Splash；消耗/限制：SP 20；关联状态：Warm。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_MOON_WARM",
+        "MaxLevel": 3,
+        "Requires": [
+          {
+            "Name": "SG_FEEL",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 429,
+        "Name": "SG_MOON_WARM",
+        "Description": "Warmth of the Moon",
+        "MaxLevel": 3,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true,
+          "Splash": true
+        },
+        "Flags": {
+          "IgnoreLandProtector": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": 1,
+        "Knockback": 2,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 10000
+          },
+          {
+            "Level": 2,
+            "Time": 20000
+          },
+          {
+            "Level": 3,
+            "Time": 60000
+          }
+        ],
+        "Requires": {
+          "SpCost": 20
+        },
+        "Unit": {
+          "Id": "Dummyskill",
+          "Range": 1,
+          "Interval": 20,
+          "Target": "Enemy"
+        },
+        "Status": "Warm"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 3；射程：1；命中类型：Single；段数：1；属性：Weapon；范围：1；击退：2；持续时间1：Lv1=10000; Lv2=20000; Lv3=60000 ms；伤害标记：NoDamage, Splash；消耗/限制：SP 20；关联状态：Warm。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_STAR_WARM",
+        "MaxLevel": 3,
+        "Requires": [
+          {
+            "Name": "SG_FEEL",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 430,
+        "Name": "SG_STAR_WARM",
+        "Description": "Warmth of the Stars",
+        "MaxLevel": 3,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true,
+          "Splash": true
+        },
+        "Flags": {
+          "IgnoreLandProtector": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": 1,
+        "Knockback": 2,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 10000
+          },
+          {
+            "Level": 2,
+            "Time": 20000
+          },
+          {
+            "Level": 3,
+            "Time": 60000
+          }
+        ],
+        "Requires": {
+          "SpCost": 10
+        },
+        "Unit": {
+          "Id": "Dummyskill",
+          "Range": 1,
+          "Interval": 20,
+          "Target": "Enemy"
+        },
+        "Status": "Warm"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 3；射程：1；命中类型：Single；段数：1；属性：Weapon；范围：1；击退：2；持续时间1：Lv1=10000; Lv2=20000; Lv3=60000 ms；伤害标记：NoDamage, Splash；消耗/限制：SP 10；关联状态：Warm。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_SUN_COMFORT",
+        "MaxLevel": 4,
+        "Requires": [
+          {
+            "Name": "SG_FEEL",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 431,
+        "Name": "SG_SUN_COMFORT",
+        "Description": "Comfort of the Sun",
+        "MaxLevel": 4,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "HitCount": 1,
+        "AfterCastActDelay": 1000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 80000
+          },
+          {
+            "Level": 2,
+            "Time": 160000
+          },
+          {
+            "Level": 3,
+            "Time": 240000
+          },
+          {
+            "Level": 4,
+            "Time": 320000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 70
+            },
+            {
+              "Level": 2,
+              "Amount": 60
+            },
+            {
+              "Level": 3,
+              "Amount": 50
+            },
+            {
+              "Level": 4,
+              "Amount": 40
+            }
+          ]
+        },
+        "Status": "Sun_Comfort"
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 4；段数：1；技能后摇：1000 ms；持续时间1：Lv1=80000; Lv2=160000; Lv3=240000; Lv4=320000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=70; Lv2=60; Lv3=50; Lv4=40；关联状态：Sun_Comfort。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_MOON_COMFORT",
+        "MaxLevel": 4,
+        "Requires": [
+          {
+            "Name": "SG_FEEL",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 432,
+        "Name": "SG_MOON_COMFORT",
+        "Description": "Comfort of the Moon",
+        "MaxLevel": 4,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "HitCount": 1,
+        "AfterCastActDelay": 1000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 80000
+          },
+          {
+            "Level": 2,
+            "Time": 160000
+          },
+          {
+            "Level": 3,
+            "Time": 240000
+          },
+          {
+            "Level": 4,
+            "Time": 320000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 70
+            },
+            {
+              "Level": 2,
+              "Amount": 60
+            },
+            {
+              "Level": 3,
+              "Amount": 50
+            },
+            {
+              "Level": 4,
+              "Amount": 40
+            }
+          ]
+        },
+        "Status": "Moon_Comfort"
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 4；段数：1；技能后摇：1000 ms；持续时间1：Lv1=80000; Lv2=160000; Lv3=240000; Lv4=320000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=70; Lv2=60; Lv3=50; Lv4=40；关联状态：Moon_Comfort。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_STAR_COMFORT",
+        "MaxLevel": 4,
+        "Requires": [
+          {
+            "Name": "SG_FEEL",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 433,
+        "Name": "SG_STAR_COMFORT",
+        "Description": "Comfort of the Stars",
+        "MaxLevel": 4,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "HitCount": 1,
+        "AfterCastActDelay": 1000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 80000
+          },
+          {
+            "Level": 2,
+            "Time": 160000
+          },
+          {
+            "Level": 3,
+            "Time": 240000
+          },
+          {
+            "Level": 4,
+            "Time": 320000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 70
+            },
+            {
+              "Level": 2,
+              "Amount": 60
+            },
+            {
+              "Level": 3,
+              "Amount": 50
+            },
+            {
+              "Level": 4,
+              "Amount": 40
+            }
+          ]
+        },
+        "Status": "Star_Comfort"
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 4；段数：1；技能后摇：1000 ms；持续时间1：Lv1=80000; Lv2=160000; Lv3=240000; Lv4=320000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=70; Lv2=60; Lv3=50; Lv4=40；关联状态：Star_Comfort。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_HATE",
+        "MaxLevel": 3
+      },
+      "skill": {
+        "Id": 434,
+        "Name": "SG_HATE",
+        "Description": "Hatred of the Sun Moon and Stars",
+        "MaxLevel": 3,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "Requires": {
+          "SpCost": 100
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 3；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；伤害标记：NoDamage；消耗/限制：SP 100。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_SUN_ANGER",
+        "MaxLevel": 3,
+        "Requires": [
+          {
+            "Name": "SG_HATE",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 435,
+        "Name": "SG_SUN_ANGER",
+        "Description": "Anger of the Sun",
+        "MaxLevel": 3
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 3。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_MOON_ANGER",
+        "MaxLevel": 3,
+        "Requires": [
+          {
+            "Name": "SG_HATE",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 436,
+        "Name": "SG_MOON_ANGER",
+        "Description": "Anger of the Moon",
+        "MaxLevel": 3
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 3。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_STAR_ANGER",
+        "MaxLevel": 3,
+        "Requires": [
+          {
+            "Name": "SG_HATE",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 437,
+        "Name": "SG_STAR_ANGER",
+        "Description": "Anger of the Stars",
+        "MaxLevel": 3
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 3。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_SUN_BLESS",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SG_FEEL",
+            "Level": 1
+          },
+          {
+            "Name": "SG_HATE",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 438,
+        "Name": "SG_SUN_BLESS",
+        "Description": "Blessing of the Sun",
+        "MaxLevel": 5
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 5。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_MOON_BLESS",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SG_FEEL",
+            "Level": 2
+          },
+          {
+            "Name": "SG_HATE",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 439,
+        "Name": "SG_MOON_BLESS",
+        "Description": "Blessing of the Moon",
+        "MaxLevel": 5
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 5。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_STAR_BLESS",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SG_FEEL",
+            "Level": 3
+          },
+          {
+            "Name": "SG_HATE",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 440,
+        "Name": "SG_STAR_BLESS",
+        "Description": "Blessing of the Stars",
+        "MaxLevel": 5
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 5。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_DEVIL",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 441,
+        "Name": "SG_DEVIL",
+        "Description": "Demon of the Sun Moon and Stars",
+        "MaxLevel": 10
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_FRIEND",
+        "MaxLevel": 3
+      },
+      "skill": {
+        "Id": 442,
+        "Name": "SG_FRIEND",
+        "Description": "Friend of the Sun Moon and Stars",
+        "MaxLevel": 3,
+        "Duration1": 10000,
+        "Status": "SkillRate_Up"
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 3；持续时间1：10000 ms；关联状态：SkillRate_Up。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_KNOWLEDGE",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 443,
+        "Name": "SG_KNOWLEDGE",
+        "Description": "Knowledge of the Sun Moon and Stars",
+        "MaxLevel": 10,
+        "Duration1": 600000,
+        "Status": "Knowledge"
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10；持续时间1：600000 ms；关联状态：Knowledge。"
+    },
+    {
+      "job": "Star_Gladiator2",
+      "origin_job": "Star_Gladiator",
+      "direct": false,
+      "tree": {
+        "Name": "SG_FUSION",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "SG_KNOWLEDGE",
+            "Level": 9
+          }
+        ]
+      },
+      "skill": {
+        "Id": 444,
+        "Name": "SG_FUSION",
+        "Description": "Union of the Sun Moon and Stars",
+        "MaxLevel": 1,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "Toggleable": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "AfterCastActDelay": 1000,
+        "Duration1": 600000,
+        "Requires": {
+          "SpCost": 100
+        },
+        "Status": "Fusion"
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 1；命中类型：Single；段数：1；技能后摇：1000 ms；持续时间1：600000 ms；伤害标记：NoDamage；消耗/限制：SP 100；关联状态：Fusion。"
+    }
+  ]
+}

@@ -1,0 +1,517 @@
+{
+  "job": "Baby_Merchant",
+  "ruleset": "pre-renewal",
+  "commit": "2fe6ab3dc4d830b11d93fb44c3b48436571890bd",
+  "skills": [
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Baby",
+      "direct": false,
+      "tree": {
+        "Name": "NV_BASIC",
+        "MaxLevel": 9
+      },
+      "skill": {
+        "Id": 1,
+        "Name": "NV_BASIC",
+        "Description": "Basic Skill",
+        "MaxLevel": 9
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 9。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Baby",
+      "direct": false,
+      "tree": {
+        "Name": "NV_FIRSTAID",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 142,
+        "Name": "NV_FIRSTAID",
+        "Description": "First Aid",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 3
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 3。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Baby",
+      "direct": false,
+      "tree": {
+        "Name": "WE_BABY",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 408,
+        "Name": "WE_BABY",
+        "Description": "Baby",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsWedding": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 3000,
+        "Duration1": 300000,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": 1,
+          "SpRateCost": -10
+        },
+        "Status": "ProtectExp"
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；射程：9；命中类型：Single；段数：1；吟唱：3000 ms；持续时间1：300000 ms；伤害标记：NoDamage；消耗/限制：SP 1；SP% -10；关联状态：ProtectExp。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Baby",
+      "direct": false,
+      "tree": {
+        "Name": "WE_CALLPARENT",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 409,
+        "Name": "WE_CALLPARENT",
+        "Description": "Call Parent",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsWedding": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 3,
+        "ActiveInstance": 1,
+        "Duration1": 20000,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": 1
+        },
+        "Unit": {
+          "Id": "Callfamily",
+          "Range": -1,
+          "Interval": -1
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；射程：9；命中类型：Single；段数：1；范围：3；持续时间1：20000 ms；伤害标记：NoDamage；消耗/限制：SP 1。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Merchant",
+      "direct": false,
+      "tree": {
+        "Name": "MC_INCCARRY",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 36,
+        "Name": "MC_INCCARRY",
+        "Description": "Enlarge Weight Limit",
+        "MaxLevel": 10
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Merchant",
+      "direct": false,
+      "tree": {
+        "Name": "MC_DISCOUNT",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "MC_INCCARRY",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 37,
+        "Name": "MC_DISCOUNT",
+        "Description": "Discount",
+        "MaxLevel": 10
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Merchant",
+      "direct": false,
+      "tree": {
+        "Name": "MC_OVERCHARGE",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "MC_DISCOUNT",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 38,
+        "Name": "MC_OVERCHARGE",
+        "Description": "Overcharge",
+        "MaxLevel": 10
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Merchant",
+      "direct": false,
+      "tree": {
+        "Name": "MC_PUSHCART",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "MC_INCCARRY",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 39,
+        "Name": "MC_PUSHCART",
+        "Description": "Pushcart",
+        "MaxLevel": 10,
+        "Range": 1
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10；射程：1。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Merchant",
+      "direct": false,
+      "tree": {
+        "Name": "MC_IDENTIFY",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 40,
+        "Name": "MC_IDENTIFY",
+        "Description": "Item Appraisal",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "AllowOnMado": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 10
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；射程：1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 10。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Merchant",
+      "direct": false,
+      "tree": {
+        "Name": "MC_VENDING",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "MC_PUSHCART",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 41,
+        "Name": "MC_VENDING",
+        "Description": "Vending",
+        "MaxLevel": 10,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "AllowOnMado": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 30,
+          "State": "Cart"
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 10；射程：1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 30；状态 Cart。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Merchant",
+      "direct": false,
+      "tree": {
+        "Name": "MC_MAMMONITE",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 42,
+        "Name": "MC_MAMMONITE",
+        "Description": "Mammonite",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Flags": {
+          "AllowOnMado": true
+        },
+        "Range": -1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "Requires": {
+          "SpCost": 5,
+          "ZenyCost": [
+            {
+              "Level": 1,
+              "Amount": 100
+            },
+            {
+              "Level": 2,
+              "Amount": 200
+            },
+            {
+              "Level": 3,
+              "Amount": 300
+            },
+            {
+              "Level": 4,
+              "Amount": 400
+            },
+            {
+              "Level": 5,
+              "Amount": 500
+            },
+            {
+              "Level": 6,
+              "Amount": 600
+            },
+            {
+              "Level": 7,
+              "Amount": 700
+            },
+            {
+              "Level": 8,
+              "Amount": 800
+            },
+            {
+              "Level": 9,
+              "Amount": 900
+            },
+            {
+              "Level": 10,
+              "Amount": 1000
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-1；命中类型：Single；段数：1；属性：Weapon；消耗/限制：SP 5；Zeny Lv1=100; Lv2=200; Lv3=300; Lv4=400; Lv5=500; Lv6=600; Lv7=700; Lv8=800; Lv9=900; Lv10=1000。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Merchant",
+      "direct": false,
+      "tree": {
+        "Name": "MC_CARTREVOLUTION",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 153,
+        "Name": "MC_CARTREVOLUTION",
+        "Description": "Cart Revolution",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "IsQuest": true,
+          "TargetTrap": true,
+          "AllowOnMado": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": 1,
+        "Knockback": 2,
+        "Requires": {
+          "SpCost": 12,
+          "State": "Cart"
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 1；射程：1；命中类型：Single；段数：1；属性：Weapon；范围：1；击退：2；伤害标记：Splash；消耗/限制：SP 12；状态 Cart。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Merchant",
+      "direct": false,
+      "tree": {
+        "Name": "MC_CHANGECART",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 154,
+        "Name": "MC_CHANGECART",
+        "Description": "Change Cart",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true,
+          "AllowOnMado": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 40,
+          "State": "Cart"
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 40；状态 Cart。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Merchant",
+      "direct": false,
+      "tree": {
+        "Name": "MC_LOUD",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 155,
+        "Name": "MC_LOUD",
+        "Description": "Crazy Uproar",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true,
+          "AllowOnMado": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 300000,
+        "Requires": {
+          "SpCost": 8
+        },
+        "Status": "Loud"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；持续时间1：300000 ms；伤害标记：NoDamage；消耗/限制：SP 8；关联状态：Loud。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Merchant",
+      "direct": false,
+      "tree": {
+        "Name": "ALL_BUYING_STORE",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "MC_VENDING",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 2535,
+        "Name": "ALL_BUYING_STORE",
+        "Description": "Open Buying Store",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Requires": {
+          "SpCost": 1,
+          "ItemCost": [
+            {
+              "Item": "Buy_Market_Permit",
+              "Amount": 1
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；伤害标记：NoDamage；消耗/限制：SP 1；道具 Buy_Market_Permit×1。"
+    },
+    {
+      "job": "Baby_Merchant",
+      "origin_job": "Merchant",
+      "direct": false,
+      "tree": {
+        "Name": "MC_CARTDECORATE",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 2544,
+        "Name": "MC_CARTDECORATE",
+        "Description": "Decorate Cart",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true,
+          "AllowOnMado": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 40,
+          "State": "Cart"
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 40；状态 Cart。"
+    }
+  ]
+}

@@ -1,0 +1,1322 @@
+{
+  "job": "Rogue",
+  "ruleset": "pre-renewal",
+  "commit": "2fe6ab3dc4d830b11d93fb44c3b48436571890bd",
+  "skills": [
+    {
+      "job": "Rogue",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_BASIC",
+        "MaxLevel": 9
+      },
+      "skill": {
+        "Id": 1,
+        "Name": "NV_BASIC",
+        "Description": "Basic Skill",
+        "MaxLevel": 9
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 9。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_FIRSTAID",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 142,
+        "Name": "NV_FIRSTAID",
+        "Description": "First Aid",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 3
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 3。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "WE_CALLBABY",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 410,
+        "Name": "WE_CALLBABY",
+        "Description": "Call Baby",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsWedding": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 3,
+        "ActiveInstance": 1,
+        "Duration1": 20000,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": 1
+        },
+        "Unit": {
+          "Id": "Callfamily",
+          "Range": -1,
+          "Interval": -1
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；射程：9；命中类型：Single；段数：1；范围：3；持续时间1：20000 ms；伤害标记：NoDamage；消耗/限制：SP 1。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_DOUBLE",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 48,
+        "Name": "TF_DOUBLE",
+        "Description": "Double Attack",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "Range": -1,
+        "Hit": "Multi_Hit",
+        "HitCount": 2,
+        "Element": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10；射程：-1；命中类型：Multi_Hit；段数：2；属性：Weapon。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_MISS",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 49,
+        "Name": "TF_MISS",
+        "Description": "Improve Dodge",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_STEAL",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 50,
+        "Name": "TF_STEAL",
+        "Description": "Steal",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 10
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 10。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_HIDING",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "TF_STEAL",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 51,
+        "Name": "TF_HIDING",
+        "Description": "Hiding",
+        "MaxLevel": 10,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "AllowWhenHidden": true,
+          "IgnoreKagehumi": true,
+          "AllowOnMado": true,
+          "IgnoreWugBite": true,
+          "Toggleable": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 30000
+          },
+          {
+            "Level": 2,
+            "Time": 60000
+          },
+          {
+            "Level": 3,
+            "Time": 90000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 150000
+          },
+          {
+            "Level": 6,
+            "Time": 180000
+          },
+          {
+            "Level": 7,
+            "Time": 210000
+          },
+          {
+            "Level": 8,
+            "Time": 240000
+          },
+          {
+            "Level": 9,
+            "Time": 270000
+          },
+          {
+            "Level": 10,
+            "Time": 300000
+          }
+        ],
+        "Requires": {
+          "SpCost": 10
+        },
+        "Status": "Hiding"
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 10；射程：1；命中类型：Single；段数：1；持续时间1：Lv1=30000; Lv2=60000; Lv3=90000; Lv4=120000; Lv5=150000; Lv6=180000; Lv7=210000; Lv8=240000; Lv9=270000; Lv10=300000 ms；伤害标记：NoDamage；消耗/限制：SP 10；关联状态：Hiding。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_POISON",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 52,
+        "Name": "TF_POISON",
+        "Description": "Envenom",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Range": -2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Poison",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "Duration2": 60000,
+        "Requires": {
+          "SpCost": 12
+        },
+        "Status": "Poison"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-2；命中类型：Single；段数：1；属性：Poison；持续时间2：60000 ms；消耗/限制：SP 12；关联状态：Poison。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_DETOXIFY",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "TF_POISON",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 53,
+        "Name": "TF_DETOXIFY",
+        "Description": "Detoxify",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Poison",
+        "Requires": {
+          "SpCost": 10
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：友方目标；最高等级 1；射程：9；命中类型：Single；段数：1；属性：Poison；伤害标记：NoDamage；消耗/限制：SP 10。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_SPRINKLESAND",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 149,
+        "Name": "TF_SPRINKLESAND",
+        "Description": "Sand Attack",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "IgnoreAtkCard": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Earth",
+        "Duration2": 30000,
+        "Requires": {
+          "SpCost": 9
+        },
+        "Status": "Blind"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 1；射程：1；命中类型：Single；段数：1；属性：Earth；持续时间2：30000 ms；伤害标记：IgnoreAtkCard；消耗/限制：SP 9；关联状态：Blind。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_BACKSLIDING",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 150,
+        "Name": "TF_BACKSLIDING",
+        "Description": "Back Slide",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true,
+          "IgnoreKagehumi": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Knockback": 5,
+        "Requires": {
+          "SpCost": 7
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；击退：5；伤害标记：NoDamage；消耗/限制：SP 7。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_PICKSTONE",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 151,
+        "Name": "TF_PICKSTONE",
+        "Description": "Find Stone",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 500,
+        "Requires": {
+          "SpCost": 3,
+          "State": "Recover_Weight_Rate"
+        },
+        "Status": "Stun"
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；吟唱：500 ms；伤害标记：NoDamage；消耗/限制：SP 3；状态 Recover_Weight_Rate；关联状态：Stun。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Thief",
+      "direct": false,
+      "tree": {
+        "Name": "TF_THROWSTONE",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 152,
+        "Name": "TF_THROWSTONE",
+        "Description": "Stone Fling",
+        "MaxLevel": 1,
+        "Type": "Misc",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "IgnoreFlee": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Range": 7,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "Duration1": 5000,
+        "Duration2": 30000,
+        "Requires": {
+          "SpCost": 2,
+          "ItemCost": [
+            {
+              "Item": "Stone",
+              "Amount": 1
+            }
+          ]
+        },
+        "Status": "Stun"
+      },
+      "structured_description_zh": "特殊技能；目标：敌方目标；最高等级 1；射程：7；命中类型：Single；段数：1；持续时间1：5000 ms；持续时间2：30000 ms；伤害标记：IgnoreFlee；消耗/限制：SP 2；道具 Stone×1；关联状态：Stun。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "SM_SWORD",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 2,
+        "Name": "SM_SWORD",
+        "Description": "Sword Mastery",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "AC_VULTURE",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 44,
+        "Name": "AC_VULTURE",
+        "Description": "Vulture's Eye",
+        "MaxLevel": 10
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "AC_DOUBLE",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AC_VULTURE",
+            "Level": 10
+          }
+        ]
+      },
+      "skill": {
+        "Id": 46,
+        "Name": "AC_DOUBLE",
+        "Description": "Double Strafe",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Flags": {
+          "AlterRangeVulture": true
+        },
+        "Range": -9,
+        "Hit": "Multi_Hit",
+        "HitCount": 2,
+        "Element": "Weapon",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "Duration1": 100,
+        "Requires": {
+          "SpCost": 12,
+          "Weapon": {
+            "Bow": true
+          },
+          "Ammo": {
+            "Arrow": true
+          },
+          "AmmoAmount": 1
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-9；命中类型：Multi_Hit；段数：2；属性：Weapon；持续时间1：100 ms；消耗/限制：SP 12；弹药数 1；武器 Bow；弹药 Arrow。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "HT_REMOVETRAP",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "AC_DOUBLE",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 124,
+        "Name": "HT_REMOVETRAP",
+        "Description": "Remove Trap",
+        "MaxLevel": 1,
+        "Type": "Misc",
+        "TargetType": "Trap",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "TargetTrap": true
+        },
+        "Range": 2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 5
+        }
+      },
+      "structured_description_zh": "特殊技能；目标：陷阱；最高等级 1；射程：2；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 5。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_SNATCHER",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "TF_STEAL",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 210,
+        "Name": "RG_SNATCHER",
+        "Description": "Gank",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "Element": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10；属性：Weapon。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_STEALCOIN",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "RG_SNATCHER",
+            "Level": 4
+          }
+        ]
+      },
+      "skill": {
+        "Id": 211,
+        "Name": "RG_STEALCOIN",
+        "Description": "Mug",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "AfterCastActDelay": 500,
+        "Requires": {
+          "SpCost": 15
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：1；命中类型：Single；段数：1；技能后摇：500 ms；伤害标记：NoDamage；消耗/限制：SP 15。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_BACKSTAP",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "RG_STEALCOIN",
+            "Level": 4
+          }
+        ]
+      },
+      "skill": {
+        "Id": 212,
+        "Name": "RG_BACKSTAP",
+        "Description": "Back Stab",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "IgnoreFlee": true
+        },
+        "Flags": {
+          "AllowWhenHidden": true
+        },
+        "Range": -1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "AfterCastActDelay": 500,
+        "Requires": {
+          "SpCost": 16
+        },
+        "Status": "Stun"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-1；命中类型：Single；段数：1；属性：Weapon；技能后摇：500 ms；伤害标记：IgnoreFlee；消耗/限制：SP 16；关联状态：Stun。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_TUNNELDRIVE",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "TF_HIDING",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 213,
+        "Name": "RG_TUNNELDRIVE",
+        "Description": "Stalk",
+        "MaxLevel": 5
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 5。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_RAID",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "RG_BACKSTAP",
+            "Level": 2
+          },
+          {
+            "Name": "RG_TUNNELDRIVE",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 214,
+        "Name": "RG_RAID",
+        "Description": "Sightless Mind",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "TargetTrap": true,
+          "AllowWhenHidden": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": 1,
+        "Duration1": 5000,
+        "Duration2": 30000,
+        "Requires": {
+          "SpCost": 20,
+          "Status": {
+            "Hiding": true
+          }
+        },
+        "Status": "Stun"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 5；命中类型：Single；段数：1；属性：Weapon；范围：1；持续时间1：5000 ms；持续时间2：30000 ms；伤害标记：Splash；消耗/限制：SP 20；前置状态 Hiding；关联状态：Stun。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_STRIPWEAPON",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "RG_STRIPARMOR",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 215,
+        "Name": "RG_STRIPWEAPON",
+        "Description": "Divest Weapon",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 1000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 75000
+          },
+          {
+            "Level": 2,
+            "Time": 90000
+          },
+          {
+            "Level": 3,
+            "Time": 105000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 135000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 17
+            },
+            {
+              "Level": 2,
+              "Amount": 19
+            },
+            {
+              "Level": 3,
+              "Amount": 21
+            },
+            {
+              "Level": 4,
+              "Amount": 23
+            },
+            {
+              "Level": 5,
+              "Amount": 25
+            }
+          ]
+        },
+        "Status": "StripWeapon",
+        "CastCancel": false
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 5；射程：1；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：1000 ms；持续时间1：Lv1=75000; Lv2=90000; Lv3=105000; Lv4=120000; Lv5=135000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=17; Lv2=19; Lv3=21; Lv4=23; Lv5=25；关联状态：StripWeapon。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_STRIPSHIELD",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "RG_STRIPHELM",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 216,
+        "Name": "RG_STRIPSHIELD",
+        "Description": "Divest Shield",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 1000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 75000
+          },
+          {
+            "Level": 2,
+            "Time": 90000
+          },
+          {
+            "Level": 3,
+            "Time": 105000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 135000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 12
+            },
+            {
+              "Level": 2,
+              "Amount": 14
+            },
+            {
+              "Level": 3,
+              "Amount": 16
+            },
+            {
+              "Level": 4,
+              "Amount": 18
+            },
+            {
+              "Level": 5,
+              "Amount": 20
+            }
+          ]
+        },
+        "Status": "StripShield",
+        "CastCancel": false
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 5；射程：1；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：1000 ms；持续时间1：Lv1=75000; Lv2=90000; Lv3=105000; Lv4=120000; Lv5=135000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=12; Lv2=14; Lv3=16; Lv4=18; Lv5=20；关联状态：StripShield。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_STRIPARMOR",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "RG_STRIPSHIELD",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 217,
+        "Name": "RG_STRIPARMOR",
+        "Description": "Divest Armor",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 1000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 75000
+          },
+          {
+            "Level": 2,
+            "Time": 90000
+          },
+          {
+            "Level": 3,
+            "Time": 105000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 135000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 17
+            },
+            {
+              "Level": 2,
+              "Amount": 19
+            },
+            {
+              "Level": 3,
+              "Amount": 21
+            },
+            {
+              "Level": 4,
+              "Amount": 23
+            },
+            {
+              "Level": 5,
+              "Amount": 25
+            }
+          ]
+        },
+        "Status": "StripArmor",
+        "CastCancel": false
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 5；射程：1；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：1000 ms；持续时间1：Lv1=75000; Lv2=90000; Lv3=105000; Lv4=120000; Lv5=135000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=17; Lv2=19; Lv3=21; Lv4=23; Lv5=25；关联状态：StripArmor。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_STRIPHELM",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "RG_STEALCOIN",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 218,
+        "Name": "RG_STRIPHELM",
+        "Description": "Divest Helm",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 1000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 75000
+          },
+          {
+            "Level": 2,
+            "Time": 90000
+          },
+          {
+            "Level": 3,
+            "Time": 105000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 135000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 12
+            },
+            {
+              "Level": 2,
+              "Amount": 14
+            },
+            {
+              "Level": 3,
+              "Amount": 16
+            },
+            {
+              "Level": 4,
+              "Amount": 18
+            },
+            {
+              "Level": 5,
+              "Amount": 20
+            }
+          ]
+        },
+        "Status": "StripHelm",
+        "CastCancel": false
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 5；射程：1；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：1000 ms；持续时间1：Lv1=75000; Lv2=90000; Lv3=105000; Lv4=120000; Lv5=135000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=12; Lv2=14; Lv3=16; Lv4=18; Lv5=20；关联状态：StripHelm。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_INTIMIDATE",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "RG_BACKSTAP",
+            "Level": 4
+          },
+          {
+            "Name": "RG_RAID",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 219,
+        "Name": "RG_INTIMIDATE",
+        "Description": "Snatch",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 13
+            },
+            {
+              "Level": 2,
+              "Amount": 16
+            },
+            {
+              "Level": 3,
+              "Amount": 19
+            },
+            {
+              "Level": 4,
+              "Amount": 22
+            },
+            {
+              "Level": 5,
+              "Amount": 25
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 5；射程：1；命中类型：Single；段数：1；属性：Weapon；消耗/限制：SP Lv1=13; Lv2=16; Lv3=19; Lv4=22; Lv5=25。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_GRAFFITI",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "RG_FLAGGRAFFITI",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 220,
+        "Name": "RG_GRAFFITI",
+        "Description": "Scribble",
+        "MaxLevel": 1,
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 180000,
+        "Requires": {
+          "SpCost": 15,
+          "ItemCost": [
+            {
+              "Item": "Red_Gemstone",
+              "Amount": 1
+            }
+          ]
+        },
+        "Unit": {
+          "Id": "Graffiti",
+          "Interval": -1,
+          "Flag": {
+            "NoReiteration": true,
+            "RemovedByFireRain": true
+          }
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：地面区域；最高等级 1；射程：1；命中类型：Single；段数：1；持续时间1：180000 ms；伤害标记：NoDamage；消耗/限制：SP 15；道具 Red_Gemstone×1。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_FLAGGRAFFITI",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "RG_CLEANER",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 221,
+        "Name": "RG_FLAGGRAFFITI",
+        "Description": "Piece",
+        "MaxLevel": 5,
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 10
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：地面区域；最高等级 5；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 10。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_CLEANER",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "RG_GANGSTER",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 222,
+        "Name": "RG_CLEANER",
+        "Description": "Remover",
+        "MaxLevel": 1,
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "NoDamage": true,
+          "Splash": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 5,
+        "Requires": {
+          "SpCost": 5
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：地面区域；最高等级 1；射程：1；命中类型：Single；段数：1；范围：5；伤害标记：NoDamage, Splash；消耗/限制：SP 5。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_GANGSTER",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "RG_STRIPSHIELD",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 223,
+        "Name": "RG_GANGSTER",
+        "Description": "Slyness",
+        "MaxLevel": 1,
+        "SplashArea": 1
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 1；范围：1。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_COMPULSION",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "RG_GANGSTER",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 224,
+        "Name": "RG_COMPULSION",
+        "Description": "Haggle",
+        "MaxLevel": 5
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 5。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_PLAGIARISM",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "RG_INTIMIDATE",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 225,
+        "Name": "RG_PLAGIARISM",
+        "Description": "Intimidate",
+        "MaxLevel": 10
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Rogue",
+      "origin_job": "Rogue",
+      "direct": true,
+      "tree": {
+        "Name": "RG_CLOSECONFINE",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 1005,
+        "Name": "RG_CLOSECONFINE",
+        "Description": "Close Confine",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Range": 1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 10000,
+        "Requires": {
+          "SpCost": 25
+        },
+        "Status": "CloseConfine2"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 1；射程：1；命中类型：Single；段数：1；持续时间1：10000 ms；伤害标记：NoDamage；消耗/限制：SP 25；关联状态：CloseConfine2。"
+    }
+  ]
+}

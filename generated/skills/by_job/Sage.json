@@ -1,0 +1,3496 @@
+{
+  "job": "Sage",
+  "ruleset": "pre-renewal",
+  "commit": "2fe6ab3dc4d830b11d93fb44c3b48436571890bd",
+  "skills": [
+    {
+      "job": "Sage",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_BASIC",
+        "MaxLevel": 9
+      },
+      "skill": {
+        "Id": 1,
+        "Name": "NV_BASIC",
+        "Description": "Basic Skill",
+        "MaxLevel": 9
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 9。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_FIRSTAID",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 142,
+        "Name": "NV_FIRSTAID",
+        "Description": "First Aid",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 3
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 3。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "WE_CALLBABY",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 410,
+        "Name": "WE_CALLBABY",
+        "Description": "Call Baby",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsWedding": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 3,
+        "ActiveInstance": 1,
+        "Duration1": 20000,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": 1
+        },
+        "Unit": {
+          "Id": "Callfamily",
+          "Range": -1,
+          "Interval": -1
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；射程：9；命中类型：Single；段数：1；范围：3；持续时间1：20000 ms；伤害标记：NoDamage；消耗/限制：SP 1。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Mage",
+      "direct": false,
+      "tree": {
+        "Name": "MG_SRECOVERY",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 9,
+        "Name": "MG_SRECOVERY",
+        "Description": "Increase SP Recovery",
+        "MaxLevel": 10
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Mage",
+      "direct": false,
+      "tree": {
+        "Name": "MG_SIGHT",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 10,
+        "Name": "MG_SIGHT",
+        "Description": "Sight",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true,
+          "Splash": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Fire",
+        "SplashArea": 3,
+        "Duration1": 10000,
+        "Requires": {
+          "SpCost": 10
+        },
+        "Status": "Sight"
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 1；命中类型：Single；段数：1；属性：Fire；范围：3；持续时间1：10000 ms；伤害标记：NoDamage, Splash；消耗/限制：SP 10；关联状态：Sight。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Mage",
+      "direct": false,
+      "tree": {
+        "Name": "MG_NAPALMBEAT",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 11,
+        "Name": "MG_NAPALMBEAT",
+        "Description": "Napalm Beat",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "Splash": true,
+          "SplashSplit": true
+        },
+        "Flags": {
+          "IsAutoShadowSpell": true,
+          "TargetTrap": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Ghost",
+        "SplashArea": 1,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": 1000,
+        "AfterCastActDelay": [
+          {
+            "Level": 1,
+            "Time": 1000
+          },
+          {
+            "Level": 2,
+            "Time": 1000
+          },
+          {
+            "Level": 3,
+            "Time": 1000
+          },
+          {
+            "Level": 4,
+            "Time": 900
+          },
+          {
+            "Level": 5,
+            "Time": 900
+          },
+          {
+            "Level": 6,
+            "Time": 800
+          },
+          {
+            "Level": 7,
+            "Time": 800
+          },
+          {
+            "Level": 8,
+            "Time": 700
+          },
+          {
+            "Level": 9,
+            "Time": 600
+          },
+          {
+            "Level": 10,
+            "Time": 500
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 9
+            },
+            {
+              "Level": 2,
+              "Amount": 9
+            },
+            {
+              "Level": 3,
+              "Amount": 9
+            },
+            {
+              "Level": 4,
+              "Amount": 12
+            },
+            {
+              "Level": 5,
+              "Amount": 12
+            },
+            {
+              "Level": 6,
+              "Amount": 12
+            },
+            {
+              "Level": 7,
+              "Amount": 15
+            },
+            {
+              "Level": 8,
+              "Amount": 15
+            },
+            {
+              "Level": 9,
+              "Amount": 15
+            },
+            {
+              "Level": 10,
+              "Amount": 18
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 10；射程：9；命中类型：Single；段数：1；属性：Ghost；范围：1；吟唱：1000 ms；技能后摇：Lv1-3=1000; Lv4-5=900; Lv6-7=800; Lv8=700; Lv9=600; Lv10=500 ms；伤害标记：Splash, SplashSplit；消耗/限制：SP Lv1-3=9; Lv4-6=12; Lv7-9=15; Lv10=18。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Mage",
+      "direct": false,
+      "tree": {
+        "Name": "MG_SAFETYWALL",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "MG_NAPALMBEAT",
+            "Level": 7
+          },
+          {
+            "Name": "MG_SOULSTRIKE",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 12,
+        "Name": "MG_SAFETYWALL",
+        "Description": "Safety Wall",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Multi_Hit",
+        "HitCount": 1,
+        "Element": "Ghost",
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 4000
+          },
+          {
+            "Level": 2,
+            "Time": 3500
+          },
+          {
+            "Level": 3,
+            "Time": 3500
+          },
+          {
+            "Level": 4,
+            "Time": 2500
+          },
+          {
+            "Level": 5,
+            "Time": 2000
+          },
+          {
+            "Level": 6,
+            "Time": 1500
+          },
+          {
+            "Level": 7,
+            "Time": 1000
+          },
+          {
+            "Level": 8,
+            "Time": 1000
+          },
+          {
+            "Level": 9,
+            "Time": 1000
+          },
+          {
+            "Level": 10,
+            "Time": 1000
+          }
+        ],
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 5000
+          },
+          {
+            "Level": 2,
+            "Time": 10000
+          },
+          {
+            "Level": 3,
+            "Time": 15000
+          },
+          {
+            "Level": 4,
+            "Time": 20000
+          },
+          {
+            "Level": 5,
+            "Time": 25000
+          },
+          {
+            "Level": 6,
+            "Time": 30000
+          },
+          {
+            "Level": 7,
+            "Time": 35000
+          },
+          {
+            "Level": 8,
+            "Time": 40000
+          },
+          {
+            "Level": 9,
+            "Time": 45000
+          },
+          {
+            "Level": 10,
+            "Time": 50000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 30
+            },
+            {
+              "Level": 2,
+              "Amount": 30
+            },
+            {
+              "Level": 3,
+              "Amount": 30
+            },
+            {
+              "Level": 4,
+              "Amount": 35
+            },
+            {
+              "Level": 5,
+              "Amount": 35
+            },
+            {
+              "Level": 6,
+              "Amount": 35
+            },
+            {
+              "Level": 7,
+              "Amount": 40
+            },
+            {
+              "Level": 8,
+              "Amount": 40
+            },
+            {
+              "Level": 9,
+              "Amount": 40
+            },
+            {
+              "Level": 10,
+              "Amount": 40
+            }
+          ],
+          "ItemCost": [
+            {
+              "Item": "Blue_Gemstone",
+              "Amount": 1
+            }
+          ]
+        },
+        "Unit": {
+          "Id": "Safetywall",
+          "Interval": -1,
+          "Flag": {
+            "NoEnemy": true,
+            "NoReiteration": true
+          }
+        },
+        "Status": "Safetywall"
+      },
+      "structured_description_zh": "魔法技能；目标：地面区域；最高等级 10；射程：9；命中类型：Multi_Hit；段数：1；属性：Ghost；吟唱：Lv1=4000; Lv2-3=3500; Lv4=2500; Lv5=2000; Lv6=1500; Lv7-10=1000 ms；持续时间1：Lv1=5000; Lv2=10000; Lv3=15000; Lv4=20000; Lv5=25000; Lv6=30000; Lv7=35000; Lv8=40000; Lv9=45000; Lv10=50000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1-3=30; Lv4-6=35; Lv7-10=40；道具 Blue_Gemstone×1；关联状态：Safetywall。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Mage",
+      "direct": false,
+      "tree": {
+        "Name": "MG_SOULSTRIKE",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "MG_NAPALMBEAT",
+            "Level": 4
+          }
+        ]
+      },
+      "skill": {
+        "Id": 13,
+        "Name": "MG_SOULSTRIKE",
+        "Description": "Soul Strike",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "Flags": {
+          "IsAutoShadowSpell": true
+        },
+        "Range": 9,
+        "Hit": "Multi_Hit",
+        "HitCount": [
+          {
+            "Level": 1,
+            "Count": 1
+          },
+          {
+            "Level": 2,
+            "Count": 1
+          },
+          {
+            "Level": 3,
+            "Count": 2
+          },
+          {
+            "Level": 4,
+            "Count": 2
+          },
+          {
+            "Level": 5,
+            "Count": 3
+          },
+          {
+            "Level": 6,
+            "Count": 3
+          },
+          {
+            "Level": 7,
+            "Count": 4
+          },
+          {
+            "Level": 8,
+            "Count": 4
+          },
+          {
+            "Level": 9,
+            "Count": 5
+          },
+          {
+            "Level": 10,
+            "Count": 5
+          }
+        ],
+        "Element": "Ghost",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": 500,
+        "AfterCastActDelay": [
+          {
+            "Level": 1,
+            "Time": 1200
+          },
+          {
+            "Level": 2,
+            "Time": 1000
+          },
+          {
+            "Level": 3,
+            "Time": 1400
+          },
+          {
+            "Level": 4,
+            "Time": 1200
+          },
+          {
+            "Level": 5,
+            "Time": 1600
+          },
+          {
+            "Level": 6,
+            "Time": 1400
+          },
+          {
+            "Level": 7,
+            "Time": 1800
+          },
+          {
+            "Level": 8,
+            "Time": 1600
+          },
+          {
+            "Level": 9,
+            "Time": 2000
+          },
+          {
+            "Level": 10,
+            "Time": 1800
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 18
+            },
+            {
+              "Level": 2,
+              "Amount": 14
+            },
+            {
+              "Level": 3,
+              "Amount": 24
+            },
+            {
+              "Level": 4,
+              "Amount": 20
+            },
+            {
+              "Level": 5,
+              "Amount": 30
+            },
+            {
+              "Level": 6,
+              "Amount": 26
+            },
+            {
+              "Level": 7,
+              "Amount": 36
+            },
+            {
+              "Level": 8,
+              "Amount": 32
+            },
+            {
+              "Level": 9,
+              "Amount": 42
+            },
+            {
+              "Level": 10,
+              "Amount": 38
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 10；射程：9；命中类型：Multi_Hit；段数：Lv1-2=1; Lv3-4=2; Lv5-6=3; Lv7-8=4; Lv9-10=5；属性：Ghost；吟唱：500 ms；技能后摇：Lv1=1200; Lv2=1000; Lv3=1400; Lv4=1200; Lv5=1600; Lv6=1400; Lv7=1800; Lv8=1600; Lv9=2000; Lv10=1800 ms；消耗/限制：SP Lv1=18; Lv2=14; Lv3=24; Lv4=20; Lv5=30; Lv6=26; Lv7=36; Lv8=32; Lv9=42; Lv10=38。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Mage",
+      "direct": false,
+      "tree": {
+        "Name": "MG_COLDBOLT",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 14,
+        "Name": "MG_COLDBOLT",
+        "Description": "Cold Bolt",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "Flags": {
+          "IsAutoShadowSpell": true
+        },
+        "Range": 9,
+        "Hit": "Multi_Hit",
+        "HitCount": [
+          {
+            "Level": 1,
+            "Count": 1
+          },
+          {
+            "Level": 2,
+            "Count": 2
+          },
+          {
+            "Level": 3,
+            "Count": 3
+          },
+          {
+            "Level": 4,
+            "Count": 4
+          },
+          {
+            "Level": 5,
+            "Count": 5
+          },
+          {
+            "Level": 6,
+            "Count": 6
+          },
+          {
+            "Level": 7,
+            "Count": 7
+          },
+          {
+            "Level": 8,
+            "Count": 8
+          },
+          {
+            "Level": 9,
+            "Count": 9
+          },
+          {
+            "Level": 10,
+            "Count": 10
+          }
+        ],
+        "Element": "Water",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 700
+          },
+          {
+            "Level": 2,
+            "Time": 1400
+          },
+          {
+            "Level": 3,
+            "Time": 2100
+          },
+          {
+            "Level": 4,
+            "Time": 2800
+          },
+          {
+            "Level": 5,
+            "Time": 3500
+          },
+          {
+            "Level": 6,
+            "Time": 4200
+          },
+          {
+            "Level": 7,
+            "Time": 4900
+          },
+          {
+            "Level": 8,
+            "Time": 5600
+          },
+          {
+            "Level": 9,
+            "Time": 6300
+          },
+          {
+            "Level": 10,
+            "Time": 7000
+          }
+        ],
+        "AfterCastActDelay": [
+          {
+            "Level": 1,
+            "Time": 1000
+          },
+          {
+            "Level": 2,
+            "Time": 1200
+          },
+          {
+            "Level": 3,
+            "Time": 1400
+          },
+          {
+            "Level": 4,
+            "Time": 1600
+          },
+          {
+            "Level": 5,
+            "Time": 1800
+          },
+          {
+            "Level": 6,
+            "Time": 2000
+          },
+          {
+            "Level": 7,
+            "Time": 2200
+          },
+          {
+            "Level": 8,
+            "Time": 2400
+          },
+          {
+            "Level": 9,
+            "Time": 2600
+          },
+          {
+            "Level": 10,
+            "Time": 2800
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 12
+            },
+            {
+              "Level": 2,
+              "Amount": 14
+            },
+            {
+              "Level": 3,
+              "Amount": 16
+            },
+            {
+              "Level": 4,
+              "Amount": 18
+            },
+            {
+              "Level": 5,
+              "Amount": 20
+            },
+            {
+              "Level": 6,
+              "Amount": 22
+            },
+            {
+              "Level": 7,
+              "Amount": 24
+            },
+            {
+              "Level": 8,
+              "Amount": 26
+            },
+            {
+              "Level": 9,
+              "Amount": 28
+            },
+            {
+              "Level": 10,
+              "Amount": 30
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 10；射程：9；命中类型：Multi_Hit；段数：Lv1=1; Lv2=2; Lv3=3; Lv4=4; Lv5=5; Lv6=6; Lv7=7; Lv8=8; Lv9=9; Lv10=10；属性：Water；吟唱：Lv1=700; Lv2=1400; Lv3=2100; Lv4=2800; Lv5=3500; Lv6=4200; Lv7=4900; Lv8=5600; Lv9=6300; Lv10=7000 ms；技能后摇：Lv1=1000; Lv2=1200; Lv3=1400; Lv4=1600; Lv5=1800; Lv6=2000; Lv7=2200; Lv8=2400; Lv9=2600; Lv10=2800 ms；消耗/限制：SP Lv1=12; Lv2=14; Lv3=16; Lv4=18; Lv5=20; Lv6=22; Lv7=24; Lv8=26; Lv9=28; Lv10=30。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Mage",
+      "direct": false,
+      "tree": {
+        "Name": "MG_FROSTDIVER",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "MG_COLDBOLT",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 15,
+        "Name": "MG_FROSTDIVER",
+        "Description": "Frost Diver",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "Flags": {
+          "IsAutoShadowSpell": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Water",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": 800,
+        "AfterCastActDelay": 1500,
+        "Duration2": [
+          {
+            "Level": 1,
+            "Time": 3000
+          },
+          {
+            "Level": 2,
+            "Time": 6000
+          },
+          {
+            "Level": 3,
+            "Time": 9000
+          },
+          {
+            "Level": 4,
+            "Time": 12000
+          },
+          {
+            "Level": 5,
+            "Time": 15000
+          },
+          {
+            "Level": 6,
+            "Time": 18000
+          },
+          {
+            "Level": 7,
+            "Time": 21000
+          },
+          {
+            "Level": 8,
+            "Time": 24000
+          },
+          {
+            "Level": 9,
+            "Time": 27000
+          },
+          {
+            "Level": 10,
+            "Time": 30000
+          },
+          {
+            "Level": 11,
+            "Time": 30000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 25
+            },
+            {
+              "Level": 2,
+              "Amount": 24
+            },
+            {
+              "Level": 3,
+              "Amount": 23
+            },
+            {
+              "Level": 4,
+              "Amount": 22
+            },
+            {
+              "Level": 5,
+              "Amount": 21
+            },
+            {
+              "Level": 6,
+              "Amount": 20
+            },
+            {
+              "Level": 7,
+              "Amount": 19
+            },
+            {
+              "Level": 8,
+              "Amount": 18
+            },
+            {
+              "Level": 9,
+              "Amount": 17
+            },
+            {
+              "Level": 10,
+              "Amount": 16
+            }
+          ]
+        },
+        "Status": "Freeze"
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 10；射程：9；命中类型：Single；段数：1；属性：Water；吟唱：800 ms；技能后摇：1500 ms；持续时间2：Lv1=3000; Lv2=6000; Lv3=9000; Lv4=12000; Lv5=15000; Lv6=18000; Lv7=21000; Lv8=24000; Lv9=27000; Lv10-11=30000 ms；消耗/限制：SP Lv1=25; Lv2=24; Lv3=23; Lv4=22; Lv5=21; Lv6=20; Lv7=19; Lv8=18; Lv9=17; Lv10=16；关联状态：Freeze。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Mage",
+      "direct": false,
+      "tree": {
+        "Name": "MG_STONECURSE",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 16,
+        "Name": "MG_STONECURSE",
+        "Description": "Stone Curse",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Earth",
+        "CastTime": 1000,
+        "Duration1": 5000,
+        "Duration2": 20000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 25
+            },
+            {
+              "Level": 2,
+              "Amount": 24
+            },
+            {
+              "Level": 3,
+              "Amount": 23
+            },
+            {
+              "Level": 4,
+              "Amount": 22
+            },
+            {
+              "Level": 5,
+              "Amount": 21
+            },
+            {
+              "Level": 6,
+              "Amount": 20
+            },
+            {
+              "Level": 7,
+              "Amount": 19
+            },
+            {
+              "Level": 8,
+              "Amount": 18
+            },
+            {
+              "Level": 9,
+              "Amount": 17
+            },
+            {
+              "Level": 10,
+              "Amount": 16
+            }
+          ],
+          "ItemCost": [
+            {
+              "Item": "Red_Gemstone",
+              "Amount": 1
+            }
+          ]
+        },
+        "Status": "StoneWait"
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 10；射程：2；命中类型：Single；段数：1；属性：Earth；吟唱：1000 ms；持续时间1：5000 ms；持续时间2：20000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=25; Lv2=24; Lv3=23; Lv4=22; Lv5=21; Lv6=20; Lv7=19; Lv8=18; Lv9=17; Lv10=16；道具 Red_Gemstone×1；关联状态：StoneWait。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Mage",
+      "direct": false,
+      "tree": {
+        "Name": "MG_FIREBALL",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "MG_FIREBOLT",
+            "Level": 4
+          }
+        ]
+      },
+      "skill": {
+        "Id": 17,
+        "Name": "MG_FIREBALL",
+        "Description": "Fire Ball",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "IsAutoShadowSpell": true,
+          "TargetTrap": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Fire",
+        "SplashArea": [
+          {
+            "Level": 1,
+            "Area": 2
+          },
+          {
+            "Level": 2,
+            "Area": 2
+          },
+          {
+            "Level": 3,
+            "Area": 2
+          },
+          {
+            "Level": 4,
+            "Area": 2
+          },
+          {
+            "Level": 5,
+            "Area": 2
+          },
+          {
+            "Level": 6,
+            "Area": 2
+          },
+          {
+            "Level": 7,
+            "Area": 2
+          },
+          {
+            "Level": 8,
+            "Area": 2
+          },
+          {
+            "Level": 9,
+            "Area": 2
+          },
+          {
+            "Level": 10,
+            "Area": 2
+          },
+          {
+            "Level": 11,
+            "Area": 3
+          }
+        ],
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 1500
+          },
+          {
+            "Level": 2,
+            "Time": 1500
+          },
+          {
+            "Level": 3,
+            "Time": 1500
+          },
+          {
+            "Level": 4,
+            "Time": 1500
+          },
+          {
+            "Level": 5,
+            "Time": 1500
+          },
+          {
+            "Level": 6,
+            "Time": 1000
+          },
+          {
+            "Level": 7,
+            "Time": 1000
+          },
+          {
+            "Level": 8,
+            "Time": 1000
+          },
+          {
+            "Level": 9,
+            "Time": 1000
+          },
+          {
+            "Level": 10,
+            "Time": 1000
+          }
+        ],
+        "AfterCastActDelay": [
+          {
+            "Level": 1,
+            "Time": 1500
+          },
+          {
+            "Level": 2,
+            "Time": 1500
+          },
+          {
+            "Level": 3,
+            "Time": 1500
+          },
+          {
+            "Level": 4,
+            "Time": 1500
+          },
+          {
+            "Level": 5,
+            "Time": 1500
+          },
+          {
+            "Level": 6,
+            "Time": 1000
+          },
+          {
+            "Level": 7,
+            "Time": 1000
+          },
+          {
+            "Level": 8,
+            "Time": 1000
+          },
+          {
+            "Level": 9,
+            "Time": 1000
+          },
+          {
+            "Level": 10,
+            "Time": 1000
+          }
+        ],
+        "Requires": {
+          "SpCost": 25
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 10；射程：9；命中类型：Single；段数：1；属性：Fire；范围：Lv1-10=2; Lv11=3；吟唱：Lv1-5=1500; Lv6-10=1000 ms；技能后摇：Lv1-5=1500; Lv6-10=1000 ms；伤害标记：Splash；消耗/限制：SP 25。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Mage",
+      "direct": false,
+      "tree": {
+        "Name": "MG_FIREWALL",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "MG_FIREBALL",
+            "Level": 5
+          },
+          {
+            "Name": "MG_SIGHT",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 18,
+        "Name": "MG_FIREWALL",
+        "Description": "Fire Wall",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Ground",
+        "Flags": {
+          "IsAutoShadowSpell": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Fire",
+        "ActiveInstance": 3,
+        "Knockback": 2,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 2000
+          },
+          {
+            "Level": 2,
+            "Time": 1850
+          },
+          {
+            "Level": 3,
+            "Time": 1700
+          },
+          {
+            "Level": 4,
+            "Time": 1550
+          },
+          {
+            "Level": 5,
+            "Time": 1400
+          },
+          {
+            "Level": 6,
+            "Time": 1250
+          },
+          {
+            "Level": 7,
+            "Time": 1100
+          },
+          {
+            "Level": 8,
+            "Time": 950
+          },
+          {
+            "Level": 9,
+            "Time": 800
+          },
+          {
+            "Level": 10,
+            "Time": 650
+          }
+        ],
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 5000
+          },
+          {
+            "Level": 2,
+            "Time": 6000
+          },
+          {
+            "Level": 3,
+            "Time": 7000
+          },
+          {
+            "Level": 4,
+            "Time": 8000
+          },
+          {
+            "Level": 5,
+            "Time": 9000
+          },
+          {
+            "Level": 6,
+            "Time": 10000
+          },
+          {
+            "Level": 7,
+            "Time": 11000
+          },
+          {
+            "Level": 8,
+            "Time": 12000
+          },
+          {
+            "Level": 9,
+            "Time": 13000
+          },
+          {
+            "Level": 10,
+            "Time": 14000
+          }
+        ],
+        "Requires": {
+          "SpCost": 40
+        },
+        "Unit": {
+          "Id": "Firewall",
+          "Layout": -1,
+          "Interval": 20,
+          "Target": "Enemy",
+          "Flag": {
+            "PathCheck": true,
+            "RemovedByFireRain": true
+          }
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：地面区域；最高等级 10；射程：9；命中类型：Single；段数：1；属性：Fire；击退：2；吟唱：Lv1=2000; Lv2=1850; Lv3=1700; Lv4=1550; Lv5=1400; Lv6=1250; Lv7=1100; Lv8=950; Lv9=800; Lv10=650 ms；持续时间1：Lv1=5000; Lv2=6000; Lv3=7000; Lv4=8000; Lv5=9000; Lv6=10000; Lv7=11000; Lv8=12000; Lv9=13000; Lv10=14000 ms；消耗/限制：SP 40。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Mage",
+      "direct": false,
+      "tree": {
+        "Name": "MG_FIREBOLT",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 19,
+        "Name": "MG_FIREBOLT",
+        "Description": "Fire Bolt",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "Flags": {
+          "IsAutoShadowSpell": true
+        },
+        "Range": 9,
+        "Hit": "Multi_Hit",
+        "HitCount": [
+          {
+            "Level": 1,
+            "Count": 1
+          },
+          {
+            "Level": 2,
+            "Count": 2
+          },
+          {
+            "Level": 3,
+            "Count": 3
+          },
+          {
+            "Level": 4,
+            "Count": 4
+          },
+          {
+            "Level": 5,
+            "Count": 5
+          },
+          {
+            "Level": 6,
+            "Count": 6
+          },
+          {
+            "Level": 7,
+            "Count": 7
+          },
+          {
+            "Level": 8,
+            "Count": 8
+          },
+          {
+            "Level": 9,
+            "Count": 9
+          },
+          {
+            "Level": 10,
+            "Count": 10
+          }
+        ],
+        "Element": "Fire",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 700
+          },
+          {
+            "Level": 2,
+            "Time": 1400
+          },
+          {
+            "Level": 3,
+            "Time": 2100
+          },
+          {
+            "Level": 4,
+            "Time": 2800
+          },
+          {
+            "Level": 5,
+            "Time": 3500
+          },
+          {
+            "Level": 6,
+            "Time": 4200
+          },
+          {
+            "Level": 7,
+            "Time": 4900
+          },
+          {
+            "Level": 8,
+            "Time": 5600
+          },
+          {
+            "Level": 9,
+            "Time": 6300
+          },
+          {
+            "Level": 10,
+            "Time": 7000
+          }
+        ],
+        "AfterCastActDelay": [
+          {
+            "Level": 1,
+            "Time": 1000
+          },
+          {
+            "Level": 2,
+            "Time": 1200
+          },
+          {
+            "Level": 3,
+            "Time": 1400
+          },
+          {
+            "Level": 4,
+            "Time": 1600
+          },
+          {
+            "Level": 5,
+            "Time": 1800
+          },
+          {
+            "Level": 6,
+            "Time": 2000
+          },
+          {
+            "Level": 7,
+            "Time": 2200
+          },
+          {
+            "Level": 8,
+            "Time": 2400
+          },
+          {
+            "Level": 9,
+            "Time": 2600
+          },
+          {
+            "Level": 10,
+            "Time": 2800
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 12
+            },
+            {
+              "Level": 2,
+              "Amount": 14
+            },
+            {
+              "Level": 3,
+              "Amount": 16
+            },
+            {
+              "Level": 4,
+              "Amount": 18
+            },
+            {
+              "Level": 5,
+              "Amount": 20
+            },
+            {
+              "Level": 6,
+              "Amount": 22
+            },
+            {
+              "Level": 7,
+              "Amount": 24
+            },
+            {
+              "Level": 8,
+              "Amount": 26
+            },
+            {
+              "Level": 9,
+              "Amount": 28
+            },
+            {
+              "Level": 10,
+              "Amount": 30
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 10；射程：9；命中类型：Multi_Hit；段数：Lv1=1; Lv2=2; Lv3=3; Lv4=4; Lv5=5; Lv6=6; Lv7=7; Lv8=8; Lv9=9; Lv10=10；属性：Fire；吟唱：Lv1=700; Lv2=1400; Lv3=2100; Lv4=2800; Lv5=3500; Lv6=4200; Lv7=4900; Lv8=5600; Lv9=6300; Lv10=7000 ms；技能后摇：Lv1=1000; Lv2=1200; Lv3=1400; Lv4=1600; Lv5=1800; Lv6=2000; Lv7=2200; Lv8=2400; Lv9=2600; Lv10=2800 ms；消耗/限制：SP Lv1=12; Lv2=14; Lv3=16; Lv4=18; Lv5=20; Lv6=22; Lv7=24; Lv8=26; Lv9=28; Lv10=30。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Mage",
+      "direct": false,
+      "tree": {
+        "Name": "MG_LIGHTNINGBOLT",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 20,
+        "Name": "MG_LIGHTNINGBOLT",
+        "Description": "Lightning Bolt",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "Flags": {
+          "IsAutoShadowSpell": true
+        },
+        "Range": 9,
+        "Hit": "Multi_Hit",
+        "HitCount": [
+          {
+            "Level": 1,
+            "Count": 1
+          },
+          {
+            "Level": 2,
+            "Count": 2
+          },
+          {
+            "Level": 3,
+            "Count": 3
+          },
+          {
+            "Level": 4,
+            "Count": 4
+          },
+          {
+            "Level": 5,
+            "Count": 5
+          },
+          {
+            "Level": 6,
+            "Count": 6
+          },
+          {
+            "Level": 7,
+            "Count": 7
+          },
+          {
+            "Level": 8,
+            "Count": 8
+          },
+          {
+            "Level": 9,
+            "Count": 9
+          },
+          {
+            "Level": 10,
+            "Count": 10
+          }
+        ],
+        "Element": "Wind",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 700
+          },
+          {
+            "Level": 2,
+            "Time": 1400
+          },
+          {
+            "Level": 3,
+            "Time": 2100
+          },
+          {
+            "Level": 4,
+            "Time": 2800
+          },
+          {
+            "Level": 5,
+            "Time": 3500
+          },
+          {
+            "Level": 6,
+            "Time": 4200
+          },
+          {
+            "Level": 7,
+            "Time": 4900
+          },
+          {
+            "Level": 8,
+            "Time": 5600
+          },
+          {
+            "Level": 9,
+            "Time": 6300
+          },
+          {
+            "Level": 10,
+            "Time": 7000
+          }
+        ],
+        "AfterCastActDelay": [
+          {
+            "Level": 1,
+            "Time": 1000
+          },
+          {
+            "Level": 2,
+            "Time": 1200
+          },
+          {
+            "Level": 3,
+            "Time": 1400
+          },
+          {
+            "Level": 4,
+            "Time": 1600
+          },
+          {
+            "Level": 5,
+            "Time": 1800
+          },
+          {
+            "Level": 6,
+            "Time": 2000
+          },
+          {
+            "Level": 7,
+            "Time": 2200
+          },
+          {
+            "Level": 8,
+            "Time": 2400
+          },
+          {
+            "Level": 9,
+            "Time": 2600
+          },
+          {
+            "Level": 10,
+            "Time": 2800
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 12
+            },
+            {
+              "Level": 2,
+              "Amount": 14
+            },
+            {
+              "Level": 3,
+              "Amount": 16
+            },
+            {
+              "Level": 4,
+              "Amount": 18
+            },
+            {
+              "Level": 5,
+              "Amount": 20
+            },
+            {
+              "Level": 6,
+              "Amount": 22
+            },
+            {
+              "Level": 7,
+              "Amount": 24
+            },
+            {
+              "Level": 8,
+              "Amount": 26
+            },
+            {
+              "Level": 9,
+              "Amount": 28
+            },
+            {
+              "Level": 10,
+              "Amount": 30
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 10；射程：9；命中类型：Multi_Hit；段数：Lv1=1; Lv2=2; Lv3=3; Lv4=4; Lv5=5; Lv6=6; Lv7=7; Lv8=8; Lv9=9; Lv10=10；属性：Wind；吟唱：Lv1=700; Lv2=1400; Lv3=2100; Lv4=2800; Lv5=3500; Lv6=4200; Lv7=4900; Lv8=5600; Lv9=6300; Lv10=7000 ms；技能后摇：Lv1=1000; Lv2=1200; Lv3=1400; Lv4=1600; Lv5=1800; Lv6=2000; Lv7=2200; Lv8=2400; Lv9=2600; Lv10=2800 ms；消耗/限制：SP Lv1=12; Lv2=14; Lv3=16; Lv4=18; Lv5=20; Lv6=22; Lv7=24; Lv8=26; Lv9=28; Lv10=30。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Mage",
+      "direct": false,
+      "tree": {
+        "Name": "MG_THUNDERSTORM",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "MG_LIGHTNINGBOLT",
+            "Level": 4
+          }
+        ]
+      },
+      "skill": {
+        "Id": 21,
+        "Name": "MG_THUNDERSTORM",
+        "Description": "Thunderstorm",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Ground",
+        "Flags": {
+          "IsAutoShadowSpell": true
+        },
+        "Range": 9,
+        "Hit": "Multi_Hit",
+        "HitCount": [
+          {
+            "Level": 1,
+            "Count": 1
+          },
+          {
+            "Level": 2,
+            "Count": 2
+          },
+          {
+            "Level": 3,
+            "Count": 3
+          },
+          {
+            "Level": 4,
+            "Count": 4
+          },
+          {
+            "Level": 5,
+            "Count": 5
+          },
+          {
+            "Level": 6,
+            "Count": 6
+          },
+          {
+            "Level": 7,
+            "Count": 7
+          },
+          {
+            "Level": 8,
+            "Count": 8
+          },
+          {
+            "Level": 9,
+            "Count": 9
+          },
+          {
+            "Level": 10,
+            "Count": 10
+          }
+        ],
+        "Element": "Wind",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 1000
+          },
+          {
+            "Level": 2,
+            "Time": 2000
+          },
+          {
+            "Level": 3,
+            "Time": 3000
+          },
+          {
+            "Level": 4,
+            "Time": 4000
+          },
+          {
+            "Level": 5,
+            "Time": 5000
+          },
+          {
+            "Level": 6,
+            "Time": 6000
+          },
+          {
+            "Level": 7,
+            "Time": 7000
+          },
+          {
+            "Level": 8,
+            "Time": 8000
+          },
+          {
+            "Level": 9,
+            "Time": 9000
+          },
+          {
+            "Level": 10,
+            "Time": 10000
+          }
+        ],
+        "AfterCastActDelay": 2000,
+        "Duration1": 100,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 29
+            },
+            {
+              "Level": 2,
+              "Amount": 34
+            },
+            {
+              "Level": 3,
+              "Amount": 39
+            },
+            {
+              "Level": 4,
+              "Amount": 44
+            },
+            {
+              "Level": 5,
+              "Amount": 49
+            },
+            {
+              "Level": 6,
+              "Amount": 54
+            },
+            {
+              "Level": 7,
+              "Amount": 59
+            },
+            {
+              "Level": 8,
+              "Amount": 64
+            },
+            {
+              "Level": 9,
+              "Amount": 69
+            },
+            {
+              "Level": 10,
+              "Amount": 74
+            }
+          ]
+        },
+        "Unit": {
+          "Id": "Dummyskill",
+          "Range": [
+            {
+              "Level": 1,
+              "Size": 2
+            },
+            {
+              "Level": 2,
+              "Size": 2
+            },
+            {
+              "Level": 3,
+              "Size": 2
+            },
+            {
+              "Level": 4,
+              "Size": 2
+            },
+            {
+              "Level": 5,
+              "Size": 2
+            },
+            {
+              "Level": 6,
+              "Size": 2
+            },
+            {
+              "Level": 7,
+              "Size": 2
+            },
+            {
+              "Level": 8,
+              "Size": 2
+            },
+            {
+              "Level": 9,
+              "Size": 2
+            },
+            {
+              "Level": 10,
+              "Size": 2
+            },
+            {
+              "Level": 11,
+              "Size": 3
+            }
+          ],
+          "Interval": 1000,
+          "Target": "Enemy",
+          "Flag": {
+            "PathCheck": true
+          }
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：地面区域；最高等级 10；射程：9；命中类型：Multi_Hit；段数：Lv1=1; Lv2=2; Lv3=3; Lv4=4; Lv5=5; Lv6=6; Lv7=7; Lv8=8; Lv9=9; Lv10=10；属性：Wind；吟唱：Lv1=1000; Lv2=2000; Lv3=3000; Lv4=4000; Lv5=5000; Lv6=6000; Lv7=7000; Lv8=8000; Lv9=9000; Lv10=10000 ms；技能后摇：2000 ms；持续时间1：100 ms；消耗/限制：SP Lv1=29; Lv2=34; Lv3=39; Lv4=44; Lv5=49; Lv6=54; Lv7=59; Lv8=64; Lv9=69; Lv10=74。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Mage",
+      "direct": false,
+      "tree": {
+        "Name": "MG_ENERGYCOAT",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 157,
+        "Name": "MG_ENERGYCOAT",
+        "Description": "Energy Coat",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 5000,
+        "Duration1": 300000,
+        "Requires": {
+          "SpCost": 30
+        },
+        "Status": "EnergyCoat"
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 1；命中类型：Single；段数：1；吟唱：5000 ms；持续时间1：300000 ms；伤害标记：NoDamage；消耗/限制：SP 30；关联状态：EnergyCoat。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "WZ_ESTIMATION",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 93,
+        "Name": "WZ_ESTIMATION",
+        "Description": "Sense",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 10
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 1；射程：9；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 10。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "WZ_EARTHSPIKE",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SA_SEISMICWEAPON",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 90,
+        "Name": "WZ_EARTHSPIKE",
+        "Description": "Earth Spike",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "Flags": {
+          "IsAutoShadowSpell": true
+        },
+        "Range": 9,
+        "Hit": "Multi_Hit",
+        "HitCount": [
+          {
+            "Level": 1,
+            "Count": 1
+          },
+          {
+            "Level": 2,
+            "Count": 2
+          },
+          {
+            "Level": 3,
+            "Count": 3
+          },
+          {
+            "Level": 4,
+            "Count": 4
+          },
+          {
+            "Level": 5,
+            "Count": 5
+          }
+        ],
+        "Element": "Earth",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 700
+          },
+          {
+            "Level": 2,
+            "Time": 1400
+          },
+          {
+            "Level": 3,
+            "Time": 2100
+          },
+          {
+            "Level": 4,
+            "Time": 2800
+          },
+          {
+            "Level": 5,
+            "Time": 3500
+          }
+        ],
+        "AfterCastActDelay": [
+          {
+            "Level": 1,
+            "Time": 1000
+          },
+          {
+            "Level": 2,
+            "Time": 1200
+          },
+          {
+            "Level": 3,
+            "Time": 1400
+          },
+          {
+            "Level": 4,
+            "Time": 1600
+          },
+          {
+            "Level": 5,
+            "Time": 1800
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 12
+            },
+            {
+              "Level": 2,
+              "Amount": 14
+            },
+            {
+              "Level": 3,
+              "Amount": 16
+            },
+            {
+              "Level": 4,
+              "Amount": 18
+            },
+            {
+              "Level": 5,
+              "Amount": 20
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 5；射程：9；命中类型：Multi_Hit；段数：Lv1=1; Lv2=2; Lv3=3; Lv4=4; Lv5=5；属性：Earth；吟唱：Lv1=700; Lv2=1400; Lv3=2100; Lv4=2800; Lv5=3500 ms；技能后摇：Lv1=1000; Lv2=1200; Lv3=1400; Lv4=1600; Lv5=1800 ms；消耗/限制：SP Lv1=12; Lv2=14; Lv3=16; Lv4=18; Lv5=20。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "WZ_HEAVENDRIVE",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "WZ_EARTHSPIKE",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 91,
+        "Name": "WZ_HEAVENDRIVE",
+        "Description": "Heaven's Drive",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Ground",
+        "Flags": {
+          "IsAutoShadowSpell": true,
+          "TargetHidden": true
+        },
+        "Range": 9,
+        "Hit": "Multi_Hit",
+        "HitCount": [
+          {
+            "Level": 1,
+            "Count": 1
+          },
+          {
+            "Level": 2,
+            "Count": 2
+          },
+          {
+            "Level": 3,
+            "Count": 3
+          },
+          {
+            "Level": 4,
+            "Count": 4
+          },
+          {
+            "Level": 5,
+            "Count": 5
+          }
+        ],
+        "Element": "Earth",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 1000
+          },
+          {
+            "Level": 2,
+            "Time": 2000
+          },
+          {
+            "Level": 3,
+            "Time": 3000
+          },
+          {
+            "Level": 4,
+            "Time": 4000
+          },
+          {
+            "Level": 5,
+            "Time": 5000
+          }
+        ],
+        "AfterCastActDelay": 1000,
+        "Duration1": 100,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 28
+            },
+            {
+              "Level": 2,
+              "Amount": 32
+            },
+            {
+              "Level": 3,
+              "Amount": 36
+            },
+            {
+              "Level": 4,
+              "Amount": 40
+            },
+            {
+              "Level": 5,
+              "Amount": 44
+            }
+          ]
+        },
+        "Unit": {
+          "Id": "Dummyskill",
+          "Layout": 2,
+          "Interval": 1000,
+          "Target": "Enemy",
+          "Flag": {
+            "PathCheck": true
+          }
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：地面区域；最高等级 5；射程：9；命中类型：Multi_Hit；段数：Lv1=1; Lv2=2; Lv3=3; Lv4=4; Lv5=5；属性：Earth；吟唱：Lv1=1000; Lv2=2000; Lv3=3000; Lv4=4000; Lv5=5000 ms；技能后摇：1000 ms；持续时间1：100 ms；消耗/限制：SP Lv1=28; Lv2=32; Lv3=36; Lv4=40; Lv5=44。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_ADVANCEDBOOK",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 274,
+        "Name": "SA_ADVANCEDBOOK",
+        "Description": "Study",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_CASTCANCEL",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SA_ADVANCEDBOOK",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 275,
+        "Name": "SA_CASTCANCEL",
+        "Description": "Cast Cancel",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 2
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 5；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 2。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_MAGICROD",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SA_ADVANCEDBOOK",
+            "Level": 4
+          }
+        ]
+      },
+      "skill": {
+        "Id": 276,
+        "Name": "SA_MAGICROD",
+        "Description": "Magic Rod",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 400
+          },
+          {
+            "Level": 2,
+            "Time": 600
+          },
+          {
+            "Level": 3,
+            "Time": 800
+          },
+          {
+            "Level": 4,
+            "Time": 1000
+          },
+          {
+            "Level": 5,
+            "Time": 1200
+          }
+        ],
+        "Requires": {
+          "SpCost": 2
+        },
+        "Status": "MagicRod"
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 5；命中类型：Single；段数：1；持续时间1：Lv1=400; Lv2=600; Lv3=800; Lv4=1000; Lv5=1200 ms；伤害标记：NoDamage；消耗/限制：SP 2；关联状态：MagicRod。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_SPELLBREAKER",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SA_MAGICROD",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 277,
+        "Name": "SA_SPELLBREAKER",
+        "Description": "Spell Breaker",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 700,
+        "Requires": {
+          "SpCost": 10
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：700 ms；伤害标记：NoDamage；消耗/限制：SP 10。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_FREECAST",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "SA_CASTCANCEL",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 278,
+        "Name": "SA_FREECAST",
+        "Description": "Free Cast",
+        "MaxLevel": 10,
+        "Type": "Magic"
+      },
+      "structured_description_zh": "魔法技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_AUTOSPELL",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "SA_FREECAST",
+            "Level": 4
+          }
+        ]
+      },
+      "skill": {
+        "Id": 279,
+        "Name": "SA_AUTOSPELL",
+        "Description": "Hindsight",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 3000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 120000
+          },
+          {
+            "Level": 2,
+            "Time": 150000
+          },
+          {
+            "Level": 3,
+            "Time": 180000
+          },
+          {
+            "Level": 4,
+            "Time": 210000
+          },
+          {
+            "Level": 5,
+            "Time": 240000
+          },
+          {
+            "Level": 6,
+            "Time": 270000
+          },
+          {
+            "Level": 7,
+            "Time": 300000
+          },
+          {
+            "Level": 8,
+            "Time": 330000
+          },
+          {
+            "Level": 9,
+            "Time": 360000
+          },
+          {
+            "Level": 10,
+            "Time": 390000
+          }
+        ],
+        "Requires": {
+          "SpCost": 35
+        },
+        "Status": "AutoSpell"
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 10；命中类型：Single；段数：1；吟唱：3000 ms；持续时间1：Lv1=120000; Lv2=150000; Lv3=180000; Lv4=210000; Lv5=240000; Lv6=270000; Lv7=300000; Lv8=330000; Lv9=360000; Lv10=390000 ms；伤害标记：NoDamage；消耗/限制：SP 35；关联状态：AutoSpell。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_FLAMELAUNCHER",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MG_FIREBOLT",
+            "Level": 1
+          },
+          {
+            "Name": "SA_ADVANCEDBOOK",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 280,
+        "Name": "SA_FLAMELAUNCHER",
+        "Description": "Endow Blaze",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "PartyOnly": true,
+          "GuildOnly": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Fire",
+        "CastTime": 3000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 1200000
+          },
+          {
+            "Level": 2,
+            "Time": 1200000
+          },
+          {
+            "Level": 3,
+            "Time": 1200000
+          },
+          {
+            "Level": 4,
+            "Time": 1200000
+          },
+          {
+            "Level": 5,
+            "Time": 1800000
+          }
+        ],
+        "Requires": {
+          "SpCost": 40,
+          "ItemCost": [
+            {
+              "Item": "Boody_Red",
+              "Amount": 1
+            }
+          ]
+        },
+        "Status": "FireWeapon"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；属性：Fire；吟唱：3000 ms；持续时间1：Lv1-4=1200000; Lv5=1800000 ms；伤害标记：NoDamage；消耗/限制：SP 40；道具 Boody_Red×1；关联状态：FireWeapon。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_FROSTWEAPON",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MG_COLDBOLT",
+            "Level": 1
+          },
+          {
+            "Name": "SA_ADVANCEDBOOK",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 281,
+        "Name": "SA_FROSTWEAPON",
+        "Description": "Endow Tsunami",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "PartyOnly": true,
+          "GuildOnly": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Water",
+        "CastTime": 3000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 1200000
+          },
+          {
+            "Level": 2,
+            "Time": 1200000
+          },
+          {
+            "Level": 3,
+            "Time": 1200000
+          },
+          {
+            "Level": 4,
+            "Time": 1200000
+          },
+          {
+            "Level": 5,
+            "Time": 1800000
+          }
+        ],
+        "Requires": {
+          "SpCost": 40,
+          "ItemCost": [
+            {
+              "Item": "Crystal_Blue",
+              "Amount": 1
+            }
+          ]
+        },
+        "Status": "WaterWeapon"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；属性：Water；吟唱：3000 ms；持续时间1：Lv1-4=1200000; Lv5=1800000 ms；伤害标记：NoDamage；消耗/限制：SP 40；道具 Crystal_Blue×1；关联状态：WaterWeapon。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_LIGHTNINGLOADER",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MG_LIGHTNINGBOLT",
+            "Level": 1
+          },
+          {
+            "Name": "SA_ADVANCEDBOOK",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 282,
+        "Name": "SA_LIGHTNINGLOADER",
+        "Description": "Endow Tornado",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "PartyOnly": true,
+          "GuildOnly": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Wind",
+        "CastTime": 3000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 1200000
+          },
+          {
+            "Level": 2,
+            "Time": 1200000
+          },
+          {
+            "Level": 3,
+            "Time": 1200000
+          },
+          {
+            "Level": 4,
+            "Time": 1200000
+          },
+          {
+            "Level": 5,
+            "Time": 1800000
+          }
+        ],
+        "Requires": {
+          "SpCost": 40,
+          "ItemCost": [
+            {
+              "Item": "Wind_Of_Verdure",
+              "Amount": 1
+            }
+          ]
+        },
+        "Status": "WindWeapon"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；属性：Wind；吟唱：3000 ms；持续时间1：Lv1-4=1200000; Lv5=1800000 ms；伤害标记：NoDamage；消耗/限制：SP 40；道具 Wind_Of_Verdure×1；关联状态：WindWeapon。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_SEISMICWEAPON",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MG_STONECURSE",
+            "Level": 1
+          },
+          {
+            "Name": "SA_ADVANCEDBOOK",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 283,
+        "Name": "SA_SEISMICWEAPON",
+        "Description": "Endow Quake",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "PartyOnly": true,
+          "GuildOnly": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Earth",
+        "CastTime": 3000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 1200000
+          },
+          {
+            "Level": 2,
+            "Time": 1200000
+          },
+          {
+            "Level": 3,
+            "Time": 1200000
+          },
+          {
+            "Level": 4,
+            "Time": 1200000
+          },
+          {
+            "Level": 5,
+            "Time": 1800000
+          }
+        ],
+        "Requires": {
+          "SpCost": 40,
+          "ItemCost": [
+            {
+              "Item": "Yellow_Live",
+              "Amount": 1
+            }
+          ]
+        },
+        "Status": "EarthWeapon"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 5；射程：9；命中类型：Single；段数：1；属性：Earth；吟唱：3000 ms；持续时间1：Lv1-4=1200000; Lv5=1800000 ms；伤害标记：NoDamage；消耗/限制：SP 40；道具 Yellow_Live×1；关联状态：EarthWeapon。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_DRAGONOLOGY",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SA_ADVANCEDBOOK",
+            "Level": 9
+          }
+        ]
+      },
+      "skill": {
+        "Id": 284,
+        "Name": "SA_DRAGONOLOGY",
+        "Description": "Dragonology",
+        "MaxLevel": 5,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 5。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_VOLCANO",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SA_FLAMELAUNCHER",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 285,
+        "Name": "SA_VOLCANO",
+        "Description": "Volcano",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IgnoreHovering": true
+        },
+        "Range": 2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Fire",
+        "CastTime": 5000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 60000
+          },
+          {
+            "Level": 2,
+            "Time": 120000
+          },
+          {
+            "Level": 3,
+            "Time": 180000
+          },
+          {
+            "Level": 4,
+            "Time": 240000
+          },
+          {
+            "Level": 5,
+            "Time": 300000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 48
+            },
+            {
+              "Level": 2,
+              "Amount": 46
+            },
+            {
+              "Level": 3,
+              "Amount": 44
+            },
+            {
+              "Level": 4,
+              "Amount": 42
+            },
+            {
+              "Level": 5,
+              "Amount": 40
+            }
+          ],
+          "ItemCost": [
+            {
+              "Item": "Yellow_Gemstone",
+              "Amount": 1
+            }
+          ]
+        },
+        "Unit": {
+          "Id": "Volcano",
+          "Layout": 3,
+          "Interval": -1,
+          "Flag": {
+            "PathCheck": true,
+            "RemovedByFireRain": true
+          }
+        },
+        "Status": "Volcano"
+      },
+      "structured_description_zh": "魔法技能；目标：地面区域；最高等级 5；射程：2；命中类型：Single；段数：1；属性：Fire；吟唱：5000 ms；持续时间1：Lv1=60000; Lv2=120000; Lv3=180000; Lv4=240000; Lv5=300000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=48; Lv2=46; Lv3=44; Lv4=42; Lv5=40；道具 Yellow_Gemstone×1；关联状态：Volcano。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_DELUGE",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SA_FROSTWEAPON",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 286,
+        "Name": "SA_DELUGE",
+        "Description": "Deluge",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IgnoreHovering": true
+        },
+        "Range": 2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Water",
+        "CastTime": 5000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 60000
+          },
+          {
+            "Level": 2,
+            "Time": 120000
+          },
+          {
+            "Level": 3,
+            "Time": 180000
+          },
+          {
+            "Level": 4,
+            "Time": 240000
+          },
+          {
+            "Level": 5,
+            "Time": 300000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 48
+            },
+            {
+              "Level": 2,
+              "Amount": 46
+            },
+            {
+              "Level": 3,
+              "Amount": 44
+            },
+            {
+              "Level": 4,
+              "Amount": 42
+            },
+            {
+              "Level": 5,
+              "Amount": 40
+            }
+          ],
+          "ItemCost": [
+            {
+              "Item": "Yellow_Gemstone",
+              "Amount": 1
+            }
+          ]
+        },
+        "Unit": {
+          "Id": "Deluge",
+          "Layout": 3,
+          "Interval": -1,
+          "Flag": {
+            "PathCheck": true,
+            "RemovedByFireRain": true
+          }
+        },
+        "Status": "Deluge"
+      },
+      "structured_description_zh": "魔法技能；目标：地面区域；最高等级 5；射程：2；命中类型：Single；段数：1；属性：Water；吟唱：5000 ms；持续时间1：Lv1=60000; Lv2=120000; Lv3=180000; Lv4=240000; Lv5=300000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=48; Lv2=46; Lv3=44; Lv4=42; Lv5=40；道具 Yellow_Gemstone×1；关联状态：Deluge。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_VIOLENTGALE",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SA_LIGHTNINGLOADER",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 287,
+        "Name": "SA_VIOLENTGALE",
+        "Description": "Whirlwind",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IgnoreHovering": true
+        },
+        "Range": 2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Wind",
+        "CastTime": 5000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 60000
+          },
+          {
+            "Level": 2,
+            "Time": 120000
+          },
+          {
+            "Level": 3,
+            "Time": 180000
+          },
+          {
+            "Level": 4,
+            "Time": 240000
+          },
+          {
+            "Level": 5,
+            "Time": 300000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 48
+            },
+            {
+              "Level": 2,
+              "Amount": 46
+            },
+            {
+              "Level": 3,
+              "Amount": 44
+            },
+            {
+              "Level": 4,
+              "Amount": 42
+            },
+            {
+              "Level": 5,
+              "Amount": 40
+            }
+          ],
+          "ItemCost": [
+            {
+              "Item": "Yellow_Gemstone",
+              "Amount": 1
+            }
+          ]
+        },
+        "Unit": {
+          "Id": "Violentgale",
+          "Layout": 3,
+          "Interval": -1,
+          "Flag": {
+            "PathCheck": true,
+            "RemovedByFireRain": true
+          }
+        },
+        "Status": "ViolentGale"
+      },
+      "structured_description_zh": "魔法技能；目标：地面区域；最高等级 5；射程：2；命中类型：Single；段数：1；属性：Wind；吟唱：5000 ms；持续时间1：Lv1=60000; Lv2=120000; Lv3=180000; Lv4=240000; Lv5=300000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=48; Lv2=46; Lv3=44; Lv4=42; Lv5=40；道具 Yellow_Gemstone×1；关联状态：ViolentGale。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_LANDPROTECTOR",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SA_VOLCANO",
+            "Level": 3
+          },
+          {
+            "Name": "SA_DELUGE",
+            "Level": 3
+          },
+          {
+            "Name": "SA_VIOLENTGALE",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 288,
+        "Name": "SA_LANDPROTECTOR",
+        "Description": "Magnetic Earth",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 5000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 165000
+          },
+          {
+            "Level": 2,
+            "Time": 210000
+          },
+          {
+            "Level": 3,
+            "Time": 255000
+          },
+          {
+            "Level": 4,
+            "Time": 300000
+          },
+          {
+            "Level": 5,
+            "Time": 345000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 66
+            },
+            {
+              "Level": 2,
+              "Amount": 62
+            },
+            {
+              "Level": 3,
+              "Amount": 58
+            },
+            {
+              "Level": 4,
+              "Amount": 54
+            },
+            {
+              "Level": 5,
+              "Amount": 50
+            }
+          ],
+          "ItemCost": [
+            {
+              "Item": "Blue_Gemstone",
+              "Amount": 1
+            },
+            {
+              "Item": "Yellow_Gemstone",
+              "Amount": 1
+            }
+          ]
+        },
+        "Unit": {
+          "Id": "Landprotector",
+          "Layout": [
+            {
+              "Level": 1,
+              "Size": 3
+            },
+            {
+              "Level": 2,
+              "Size": 3
+            },
+            {
+              "Level": 3,
+              "Size": 4
+            },
+            {
+              "Level": 4,
+              "Size": 4
+            },
+            {
+              "Level": 5,
+              "Size": 5
+            }
+          ],
+          "Interval": -1,
+          "Flag": {
+            "PathCheck": true,
+            "RemovedByFireRain": true
+          }
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：地面区域；最高等级 5；射程：2；命中类型：Single；段数：1；吟唱：5000 ms；持续时间1：Lv1=165000; Lv2=210000; Lv3=255000; Lv4=300000; Lv5=345000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=66; Lv2=62; Lv3=58; Lv4=54; Lv5=50；道具 Blue_Gemstone×1, Yellow_Gemstone×1。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_DISPELL",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "SA_SPELLBREAKER",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 289,
+        "Name": "SA_DISPELL",
+        "Description": "Dispell",
+        "MaxLevel": 5,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "NoTargetSelf": true,
+          "PartyOnly": true,
+          "GuildOnly": true,
+          "TargetHidden": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 2000,
+        "Requires": {
+          "SpCost": 1,
+          "ItemCost": [
+            {
+              "Item": "Yellow_Gemstone",
+              "Amount": 1
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 5；射程：9；命中类型：Single；段数：1；吟唱：2000 ms；伤害标记：NoDamage；消耗/限制：SP 1；道具 Yellow_Gemstone×1。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_ABRACADABRA",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "SA_AUTOSPELL",
+            "Level": 5
+          },
+          {
+            "Name": "SA_DISPELL",
+            "Level": 1
+          },
+          {
+            "Name": "SA_LANDPROTECTOR",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 290,
+        "Name": "SA_ABRACADABRA",
+        "Description": "Hocus-pocus",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 50,
+          "ItemCost": [
+            {
+              "Item": "Yellow_Gemstone",
+              "Amount": 2
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 10；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 50；道具 Yellow_Gemstone×2。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_CREATECON",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 1007,
+        "Name": "SA_CREATECON",
+        "Description": "Create Elemental Converter",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "Requires": {
+          "SpCost": 30
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；伤害标记：NoDamage；消耗/限制：SP 30。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_ELEMENTWATER",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 1008,
+        "Name": "SA_ELEMENTWATER",
+        "Description": "Elemental Change Water",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Water",
+        "CastTime": 2000,
+        "AfterCastActDelay": 1000,
+        "Duration1": 1800000,
+        "Requires": {
+          "SpCost": 30,
+          "ItemCost": [
+            {
+              "Item": "Elemental_Water",
+              "Amount": 1
+            }
+          ]
+        },
+        "Status": "ElementalChange"
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 1；射程：9；命中类型：Single；段数：1；属性：Water；吟唱：2000 ms；技能后摇：1000 ms；持续时间1：1800000 ms；伤害标记：NoDamage；消耗/限制：SP 30；道具 Elemental_Water×1；关联状态：ElementalChange。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_ELEMENTGROUND",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 1017,
+        "Name": "SA_ELEMENTGROUND",
+        "Description": "Elemental Change Earth",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Earth",
+        "CastTime": 2000,
+        "AfterCastActDelay": 1000,
+        "Duration1": 1800000,
+        "Requires": {
+          "SpCost": 30,
+          "ItemCost": [
+            {
+              "Item": "Elemental_Earth",
+              "Amount": 1
+            }
+          ]
+        },
+        "Status": "ElementalChange"
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 1；射程：9；命中类型：Single；段数：1；属性：Earth；吟唱：2000 ms；技能后摇：1000 ms；持续时间1：1800000 ms；伤害标记：NoDamage；消耗/限制：SP 30；道具 Elemental_Earth×1；关联状态：ElementalChange。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_ELEMENTFIRE",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 1018,
+        "Name": "SA_ELEMENTFIRE",
+        "Description": "Elemental Change Fire",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Fire",
+        "CastTime": 2000,
+        "AfterCastActDelay": 1000,
+        "Duration1": 1800000,
+        "Requires": {
+          "SpCost": 30,
+          "ItemCost": [
+            {
+              "Item": "Elemental_Fire",
+              "Amount": 1
+            }
+          ]
+        },
+        "Status": "ElementalChange"
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 1；射程：9；命中类型：Single；段数：1；属性：Fire；吟唱：2000 ms；技能后摇：1000 ms；持续时间1：1800000 ms；伤害标记：NoDamage；消耗/限制：SP 30；道具 Elemental_Fire×1；关联状态：ElementalChange。"
+    },
+    {
+      "job": "Sage",
+      "origin_job": "Sage",
+      "direct": true,
+      "tree": {
+        "Name": "SA_ELEMENTWIND",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 1019,
+        "Name": "SA_ELEMENTWIND",
+        "Description": "Elemental Change Wind",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Wind",
+        "CastTime": 2000,
+        "AfterCastActDelay": 1000,
+        "Duration1": 1800000,
+        "Requires": {
+          "SpCost": 30,
+          "ItemCost": [
+            {
+              "Item": "Elemental_Wind",
+              "Amount": 1
+            }
+          ]
+        },
+        "Status": "ElementalChange"
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 1；射程：9；命中类型：Single；段数：1；属性：Wind；吟唱：2000 ms；技能后摇：1000 ms；持续时间1：1800000 ms；伤害标记：NoDamage；消耗/限制：SP 30；道具 Elemental_Wind×1；关联状态：ElementalChange。"
+    }
+  ]
+}

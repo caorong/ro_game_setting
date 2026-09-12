@@ -1,0 +1,21 @@
+schema_version: 1
+purpose: Schema and verified examples; complete skill coverage is generated from pinned skill_db/skill_tree and source implementations.
+skills:
+- id: SM_BASH
+  name_zh: 狂击
+  name_en: Bash
+  status: verified
+  max_level: 10
+  damage_type: weapon
+  element: weapon
+  hit_count: 1
+  damage_ratio_percent: 100 + 30 * skill_level
+  hit_rate_transform: hit_rate += floor(hit_rate * 5 * skill_level / 100)
+  fatal_blow_stun_rate_internal: 'when skill_level > 5 and Fatal Blow learned: (skill_level - 5) * base_level * 10'
+  notes:
+  - The hit bonus is multiplicative on the current final hit-rate value, not a flat +5 percentage points per level.
+  sources:
+  - db/pre-re/skill_db.yml
+  - db/pre-re/skill_tree.yml
+  - src/map/skills/swordman/bash.cpp
+  - src/map/battle.cpp

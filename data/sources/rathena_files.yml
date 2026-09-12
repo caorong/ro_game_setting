@@ -1,0 +1,54 @@
+schema_version: 1
+always_include:
+- LICENSE
+- src/config/renewal.hpp
+- src/map/status.cpp
+- src/map/status.hpp
+- src/map/battle.cpp
+- src/map/battle.hpp
+- src/map/pc.cpp
+- src/map/pc.hpp
+- src/map/skill.cpp
+- src/map/skill.hpp
+- src/map/itemdb.cpp
+- src/map/itemdb.hpp
+- src/map/mob.cpp
+- src/map/mob.hpp
+- src/map/pet.cpp
+- src/map/pet.hpp
+- src/map/homunculus.cpp
+- src/map/homunculus.hpp
+- src/map/mercenary.cpp
+- src/map/mercenary.hpp
+- src/map/party.cpp
+- src/map/party.hpp
+- src/map/guild.cpp
+- src/map/guild.hpp
+- conf/battle/battle.conf
+- conf/battle/player.conf
+- conf/battle/skill.conf
+- conf/battle/items.conf
+- conf/battle/monster.conf
+- conf/battle/drops.conf
+- conf/battle/exp.conf
+- doc/skill_db.txt
+- doc/item_db.txt
+- doc/status.txt
+tree_filters:
+- prefix: db/pre-re/
+  description: all Pre-Renewal database files
+- prefix: db/
+  depth: 1
+  extensions:
+  - .yml
+  - .txt
+  description: common database wrappers and defaults
+- prefix: src/map/skills/
+  extensions:
+  - .cpp
+  - .hpp
+  optional_flag: --include-skill-source
+  description: all split skill implementations
+excluded_prefixes:
+- db/re/
+- npc/re/

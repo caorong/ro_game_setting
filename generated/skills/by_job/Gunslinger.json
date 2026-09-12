@@ -1,0 +1,1615 @@
+{
+  "job": "Gunslinger",
+  "ruleset": "pre-renewal",
+  "commit": "2fe6ab3dc4d830b11d93fb44c3b48436571890bd",
+  "skills": [
+    {
+      "job": "Gunslinger",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_BASIC",
+        "MaxLevel": 9
+      },
+      "skill": {
+        "Id": 1,
+        "Name": "NV_BASIC",
+        "Description": "Basic Skill",
+        "MaxLevel": 9
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 9。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_FIRSTAID",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 142,
+        "Name": "NV_FIRSTAID",
+        "Description": "First Aid",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 3
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 3。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "WE_CALLBABY",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 410,
+        "Name": "WE_CALLBABY",
+        "Description": "Call Baby",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsWedding": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 3,
+        "ActiveInstance": 1,
+        "Duration1": 20000,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": 1
+        },
+        "Unit": {
+          "Id": "Callfamily",
+          "Range": -1,
+          "Interval": -1
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；射程：9；命中类型：Single；段数：1；范围：3；持续时间1：20000 ms；伤害标记：NoDamage；消耗/限制：SP 1。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_GLITTERING",
+        "MaxLevel": 5
+      },
+      "skill": {
+        "Id": 500,
+        "Name": "GS_GLITTERING",
+        "Description": "Flip the Coin",
+        "MaxLevel": 5,
+        "Type": "Misc",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true,
+          "IgnoreFlee": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 600000,
+        "Requires": {
+          "SpCost": 2,
+          "ZenyCost": 1
+        }
+      },
+      "structured_description_zh": "特殊技能；目标：自身；最高等级 5；命中类型：Single；段数：1；持续时间1：600000 ms；伤害标记：NoDamage, IgnoreFlee；消耗/限制：SP 2；Zeny 1。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_FLING",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "GS_GLITTERING",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 501,
+        "Name": "GS_FLING",
+        "Description": "Fling",
+        "MaxLevel": 1,
+        "Type": "Misc",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "IgnoreElement": true,
+          "IgnoreFlee": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "Duration1": 30000,
+        "Requires": {
+          "SpCost": 10,
+          "SpiritSphereCost": 5
+        },
+        "Status": "Fling"
+      },
+      "structured_description_zh": "特殊技能；目标：敌方目标；最高等级 1；射程：9；命中类型：Single；段数：1；属性：Weapon；持续时间1：30000 ms；伤害标记：IgnoreElement, IgnoreFlee；消耗/限制：SP 10；气弹 5；关联状态：Fling。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_TRIPLEACTION",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "GS_GLITTERING",
+            "Level": 1
+          },
+          {
+            "Name": "GS_CHAINACTION",
+            "Level": 10
+          }
+        ]
+      },
+      "skill": {
+        "Id": 502,
+        "Name": "GS_TRIPLEACTION",
+        "Description": "Triple Action",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Range": -9,
+        "Hit": "Multi_Hit",
+        "HitCount": 3,
+        "Element": "Weapon",
+        "Requires": {
+          "SpCost": 20,
+          "Ammo": {
+            "Arrow": true,
+            "Dagger": true,
+            "Bullet": true,
+            "Shell": true,
+            "Grenade": true,
+            "Shuriken": true,
+            "Kunai": true,
+            "Cannonball": true,
+            "Throwweapon": true
+          },
+          "AmmoAmount": 1,
+          "SpiritSphereCost": 1
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 1；射程：-9；命中类型：Multi_Hit；段数：3；属性：Weapon；消耗/限制：SP 20；弹药数 1；气弹 1；弹药 Arrow, Dagger, Bullet, Shell, Grenade, Shuriken, Kunai, Cannonball, Throwweapon。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_BULLSEYE",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "GS_GLITTERING",
+            "Level": 5
+          },
+          {
+            "Name": "GS_TRACKING",
+            "Level": 10
+          }
+        ]
+      },
+      "skill": {
+        "Id": 503,
+        "Name": "GS_BULLSEYE",
+        "Description": "Bulls Eye",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "IgnoreAtkCard": true
+        },
+        "Flags": {
+          "IgnoreAutoGuard": true,
+          "IgnoreCicada": true
+        },
+        "Range": -9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "CastTime": 500,
+        "Requires": {
+          "SpCost": 30,
+          "Ammo": {
+            "Arrow": true,
+            "Dagger": true,
+            "Bullet": true,
+            "Shell": true,
+            "Grenade": true,
+            "Shuriken": true,
+            "Kunai": true,
+            "Cannonball": true,
+            "Throwweapon": true
+          },
+          "AmmoAmount": 1,
+          "SpiritSphereCost": 1
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 1；射程：-9；命中类型：Single；段数：1；属性：Weapon；吟唱：500 ms；伤害标记：IgnoreAtkCard；消耗/限制：SP 30；弹药数 1；气弹 1；弹药 Arrow, Dagger, Bullet, Shell, Grenade, Shuriken, Kunai, Cannonball, Throwweapon。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_MADNESSCANCEL",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "GS_GLITTERING",
+            "Level": 4
+          },
+          {
+            "Name": "GS_GATLINGFEVER",
+            "Level": 10
+          }
+        ]
+      },
+      "skill": {
+        "Id": 504,
+        "Name": "GS_MADNESSCANCEL",
+        "Description": "Madness Canceller",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 3000,
+        "AfterCastActDelay": 4000,
+        "Duration1": 15000,
+        "Requires": {
+          "SpCost": 30,
+          "SpiritSphereCost": 4
+        },
+        "Status": "MadnessCancel"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；吟唱：3000 ms；技能后摇：4000 ms；持续时间1：15000 ms；伤害标记：NoDamage；消耗/限制：SP 30；气弹 4；关联状态：MadnessCancel。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_ADJUSTMENT",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "GS_GLITTERING",
+            "Level": 4
+          },
+          {
+            "Name": "GS_DISARM",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 505,
+        "Name": "GS_ADJUSTMENT",
+        "Description": "Adjustment",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 1000,
+        "Duration1": 30000,
+        "Requires": {
+          "SpCost": 15,
+          "SpiritSphereCost": 2
+        },
+        "Status": "Adjustment"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：1000 ms；持续时间1：30000 ms；伤害标记：NoDamage；消耗/限制：SP 15；气弹 2；关联状态：Adjustment。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_INCREASING",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "GS_GLITTERING",
+            "Level": 2
+          },
+          {
+            "Name": "GS_SNAKEEYE",
+            "Level": 10
+          }
+        ]
+      },
+      "skill": {
+        "Id": 506,
+        "Name": "GS_INCREASING",
+        "Description": "Increasing Accuracy",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "AfterCastActDelay": 1000,
+        "Duration1": 60000,
+        "Requires": {
+          "SpCost": 30,
+          "SpiritSphereCost": 4
+        },
+        "Status": "Increasing"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 1；命中类型：Single；段数：1；技能后摇：1000 ms；持续时间1：60000 ms；伤害标记：NoDamage；消耗/限制：SP 30；气弹 4；关联状态：Increasing。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_MAGICALBULLET",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "GS_GLITTERING",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 507,
+        "Name": "GS_MAGICALBULLET",
+        "Description": "Magical Bullet",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Range": -9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Ghost",
+        "Requires": {
+          "SpCost": 7,
+          "SpiritSphereCost": 1
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 1；射程：-9；命中类型：Single；段数：1；属性：Ghost；消耗/限制：SP 7；气弹 1。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_CRACKER",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "GS_GLITTERING",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 508,
+        "Name": "GS_CRACKER",
+        "Description": "Cracker",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": -9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "AfterCastActDelay": 1000,
+        "Duration2": 5000,
+        "Requires": {
+          "SpCost": 10,
+          "Ammo": {
+            "Arrow": true,
+            "Dagger": true,
+            "Bullet": true,
+            "Shell": true,
+            "Grenade": true,
+            "Shuriken": true,
+            "Kunai": true,
+            "Cannonball": true,
+            "Throwweapon": true
+          },
+          "AmmoAmount": 1,
+          "SpiritSphereCost": 1
+        },
+        "Status": "Stun"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 1；射程：-9；命中类型：Single；段数：1；属性：Weapon；技能后摇：1000 ms；持续时间2：5000 ms；伤害标记：NoDamage；消耗/限制：SP 10；弹药数 1；气弹 1；弹药 Arrow, Dagger, Bullet, Shell, Grenade, Shuriken, Kunai, Cannonball, Throwweapon；关联状态：Stun。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_SINGLEACTION",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 509,
+        "Name": "GS_SINGLEACTION",
+        "Description": "Single Action",
+        "MaxLevel": 10
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_SNAKEEYE",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 510,
+        "Name": "GS_SNAKEEYE",
+        "Description": "Snake Eye",
+        "MaxLevel": 10
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_CHAINACTION",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "GS_SINGLEACTION",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 511,
+        "Name": "GS_CHAINACTION",
+        "Description": "Chain Action",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "Range": -9,
+        "Hit": "Multi_Hit",
+        "HitCount": 2,
+        "Element": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10；射程：-9；命中类型：Multi_Hit；段数：2；属性：Weapon。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_TRACKING",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "GS_SINGLEACTION",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 512,
+        "Name": "GS_TRACKING",
+        "Description": "Tracking",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Range": -9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 1200
+          },
+          {
+            "Level": 2,
+            "Time": 1400
+          },
+          {
+            "Level": 3,
+            "Time": 1600
+          },
+          {
+            "Level": 4,
+            "Time": 1800
+          },
+          {
+            "Level": 5,
+            "Time": 2000
+          },
+          {
+            "Level": 6,
+            "Time": 2200
+          },
+          {
+            "Level": 7,
+            "Time": 2400
+          },
+          {
+            "Level": 8,
+            "Time": 2600
+          },
+          {
+            "Level": 9,
+            "Time": 2800
+          },
+          {
+            "Level": 10,
+            "Time": 3000
+          }
+        ],
+        "CastTimeFlags": {
+          "IgnoreDex": true,
+          "IgnoreStatus": true
+        },
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 15
+            },
+            {
+              "Level": 2,
+              "Amount": 20
+            },
+            {
+              "Level": 3,
+              "Amount": 25
+            },
+            {
+              "Level": 4,
+              "Amount": 30
+            },
+            {
+              "Level": 5,
+              "Amount": 35
+            },
+            {
+              "Level": 6,
+              "Amount": 40
+            },
+            {
+              "Level": 7,
+              "Amount": 45
+            },
+            {
+              "Level": 8,
+              "Amount": 50
+            },
+            {
+              "Level": 9,
+              "Amount": 55
+            },
+            {
+              "Level": 10,
+              "Amount": 60
+            }
+          ],
+          "Weapon": {
+            "Revolver": true,
+            "Rifle": true
+          },
+          "Ammo": {
+            "Bullet": true
+          },
+          "AmmoAmount": 1
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-9；命中类型：Single；段数：1；属性：Weapon；吟唱：Lv1=1200; Lv2=1400; Lv3=1600; Lv4=1800; Lv5=2000; Lv6=2200; Lv7=2400; Lv8=2600; Lv9=2800; Lv10=3000 ms；消耗/限制：SP Lv1=15; Lv2=20; Lv3=25; Lv4=30; Lv5=35; Lv6=40; Lv7=45; Lv8=50; Lv9=55; Lv10=60；弹药数 1；武器 Revolver, Rifle；弹药 Bullet。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_DISARM",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "GS_TRACKING",
+            "Level": 7
+          }
+        ]
+      },
+      "skill": {
+        "Id": 513,
+        "Name": "GS_DISARM",
+        "Description": "Disarm",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Range": -9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "Duration1": 30000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 15
+            },
+            {
+              "Level": 2,
+              "Amount": 20
+            },
+            {
+              "Level": 3,
+              "Amount": 25
+            },
+            {
+              "Level": 4,
+              "Amount": 30
+            },
+            {
+              "Level": 5,
+              "Amount": 35
+            }
+          ],
+          "Weapon": {
+            "Revolver": true,
+            "Rifle": true
+          },
+          "Ammo": {
+            "Bullet": true
+          },
+          "AmmoAmount": 1
+        },
+        "Status": "StripWeapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 5；射程：-9；命中类型：Single；段数：1；属性：Weapon；持续时间1：30000 ms；消耗/限制：SP Lv1=15; Lv2=20; Lv3=25; Lv4=30; Lv5=35；弹药数 1；武器 Revolver, Rifle；弹药 Bullet；关联状态：StripWeapon。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_PIERCINGSHOT",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "GS_TRACKING",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 514,
+        "Name": "GS_PIERCINGSHOT",
+        "Description": "Piercing Shot",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "IgnoreDefense": true
+        },
+        "Flags": {
+          "AlterRangeSnakeEye": true
+        },
+        "Range": -9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "CastTime": 1500,
+        "Duration2": 120000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 11
+            },
+            {
+              "Level": 2,
+              "Amount": 12
+            },
+            {
+              "Level": 3,
+              "Amount": 13
+            },
+            {
+              "Level": 4,
+              "Amount": 14
+            },
+            {
+              "Level": 5,
+              "Amount": 15
+            }
+          ],
+          "Weapon": {
+            "Revolver": true,
+            "Rifle": true
+          },
+          "Ammo": {
+            "Bullet": true
+          },
+          "AmmoAmount": 1
+        },
+        "Status": "Bleeding"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 5；射程：-9；命中类型：Single；段数：1；属性：Weapon；吟唱：1500 ms；持续时间2：120000 ms；伤害标记：IgnoreDefense；消耗/限制：SP Lv1=11; Lv2=12; Lv3=13; Lv4=14; Lv5=15；弹药数 1；武器 Revolver, Rifle；弹药 Bullet；关联状态：Bleeding。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_RAPIDSHOWER",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "GS_CHAINACTION",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 515,
+        "Name": "GS_RAPIDSHOWER",
+        "Description": "Rapid Shower",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Flags": {
+          "AlterRangeSnakeEye": true
+        },
+        "Range": -9,
+        "Hit": "Multi_Hit",
+        "HitCount": -5,
+        "Element": "Weapon",
+        "AfterCastActDelay": 1000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 22
+            },
+            {
+              "Level": 2,
+              "Amount": 24
+            },
+            {
+              "Level": 3,
+              "Amount": 26
+            },
+            {
+              "Level": 4,
+              "Amount": 28
+            },
+            {
+              "Level": 5,
+              "Amount": 30
+            },
+            {
+              "Level": 6,
+              "Amount": 32
+            },
+            {
+              "Level": 7,
+              "Amount": 34
+            },
+            {
+              "Level": 8,
+              "Amount": 36
+            },
+            {
+              "Level": 9,
+              "Amount": 38
+            },
+            {
+              "Level": 10,
+              "Amount": 40
+            }
+          ],
+          "Weapon": {
+            "Revolver": true
+          },
+          "Ammo": {
+            "Bullet": true
+          },
+          "AmmoAmount": 5
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-9；命中类型：Multi_Hit；段数：-5；属性：Weapon；技能后摇：1000 ms；消耗/限制：SP Lv1=22; Lv2=24; Lv3=26; Lv4=28; Lv5=30; Lv6=32; Lv7=34; Lv8=36; Lv9=38; Lv10=40；弹药数 5；武器 Revolver；弹药 Bullet。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_DESPERADO",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "GS_RAPIDSHOWER",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 516,
+        "Name": "GS_DESPERADO",
+        "Description": "Desperado",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Hit": "Multi_Hit",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": 3,
+        "AfterCastActDelay": 1000,
+        "AfterCastWalkDelay": 1000,
+        "Duration1": 1000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 32
+            },
+            {
+              "Level": 2,
+              "Amount": 34
+            },
+            {
+              "Level": 3,
+              "Amount": 36
+            },
+            {
+              "Level": 4,
+              "Amount": 38
+            },
+            {
+              "Level": 5,
+              "Amount": 40
+            },
+            {
+              "Level": 6,
+              "Amount": 42
+            },
+            {
+              "Level": 7,
+              "Amount": 44
+            },
+            {
+              "Level": 8,
+              "Amount": 46
+            },
+            {
+              "Level": 9,
+              "Amount": 48
+            },
+            {
+              "Level": 10,
+              "Amount": 50
+            }
+          ],
+          "Weapon": {
+            "Revolver": true
+          },
+          "Ammo": {
+            "Bullet": true
+          },
+          "AmmoAmount": 10
+        },
+        "Unit": {
+          "Id": "Dummyskill",
+          "Layout": 3,
+          "Interval": 100,
+          "Target": "Enemy"
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 10；命中类型：Multi_Hit；段数：1；属性：Weapon；范围：3；技能后摇：1000 ms；移动后摇：1000 ms；持续时间1：1000 ms；伤害标记：Splash；消耗/限制：SP Lv1=32; Lv2=34; Lv3=36; Lv4=38; Lv5=40; Lv6=42; Lv7=44; Lv8=46; Lv9=48; Lv10=50；弹药数 10；武器 Revolver；弹药 Bullet。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_GATLINGFEVER",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "GS_RAPIDSHOWER",
+            "Level": 7
+          },
+          {
+            "Name": "GS_DESPERADO",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 517,
+        "Name": "GS_GATLINGFEVER",
+        "Description": "Gatling Fever",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "Toggleable": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 30000
+          },
+          {
+            "Level": 2,
+            "Time": 45000
+          },
+          {
+            "Level": 3,
+            "Time": 60000
+          },
+          {
+            "Level": 4,
+            "Time": 75000
+          },
+          {
+            "Level": 5,
+            "Time": 90000
+          },
+          {
+            "Level": 6,
+            "Time": 105000
+          },
+          {
+            "Level": 7,
+            "Time": 120000
+          },
+          {
+            "Level": 8,
+            "Time": 135000
+          },
+          {
+            "Level": 9,
+            "Time": 150000
+          },
+          {
+            "Level": 10,
+            "Time": 165000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 30
+            },
+            {
+              "Level": 2,
+              "Amount": 32
+            },
+            {
+              "Level": 3,
+              "Amount": 34
+            },
+            {
+              "Level": 4,
+              "Amount": 36
+            },
+            {
+              "Level": 5,
+              "Amount": 38
+            },
+            {
+              "Level": 6,
+              "Amount": 40
+            },
+            {
+              "Level": 7,
+              "Amount": 42
+            },
+            {
+              "Level": 8,
+              "Amount": 44
+            },
+            {
+              "Level": 9,
+              "Amount": 46
+            },
+            {
+              "Level": 10,
+              "Amount": 48
+            }
+          ],
+          "Weapon": {
+            "Gatling": true
+          }
+        },
+        "Status": "GatlingFever"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 10；命中类型：Single；段数：1；属性：Weapon；持续时间1：Lv1=30000; Lv2=45000; Lv3=60000; Lv4=75000; Lv5=90000; Lv6=105000; Lv7=120000; Lv8=135000; Lv9=150000; Lv10=165000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=30; Lv2=32; Lv3=34; Lv4=36; Lv5=38; Lv6=40; Lv7=42; Lv8=44; Lv9=46; Lv10=48；武器 Gatling；关联状态：GatlingFever。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_DUST",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "GS_SINGLEACTION",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 518,
+        "Name": "GS_DUST",
+        "Description": "Dust",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Range": 2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "Knockback": 5,
+        "CastTime": 1000,
+        "AfterCastActDelay": 1000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 3
+            },
+            {
+              "Level": 2,
+              "Amount": 6
+            },
+            {
+              "Level": 3,
+              "Amount": 9
+            },
+            {
+              "Level": 4,
+              "Amount": 12
+            },
+            {
+              "Level": 5,
+              "Amount": 15
+            },
+            {
+              "Level": 6,
+              "Amount": 18
+            },
+            {
+              "Level": 7,
+              "Amount": 21
+            },
+            {
+              "Level": 8,
+              "Amount": 24
+            },
+            {
+              "Level": 9,
+              "Amount": 27
+            },
+            {
+              "Level": 10,
+              "Amount": 30
+            }
+          ],
+          "Weapon": {
+            "Shotgun": true
+          },
+          "Ammo": {
+            "Bullet": true
+          },
+          "AmmoAmount": 1
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：2；命中类型：Single；段数：1；属性：Weapon；击退：5；吟唱：1000 ms；技能后摇：1000 ms；消耗/限制：SP Lv1=3; Lv2=6; Lv3=9; Lv4=12; Lv5=15; Lv6=18; Lv7=21; Lv8=24; Lv9=27; Lv10=30；弹药数 1；武器 Shotgun；弹药 Bullet。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_FULLBUSTER",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "GS_DUST",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 519,
+        "Name": "GS_FULLBUSTER",
+        "Description": "Full Buster",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Flags": {
+          "AlterRangeSnakeEye": true
+        },
+        "Range": -9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "AfterCastActDelay": [
+          {
+            "Level": 1,
+            "Time": 1200
+          },
+          {
+            "Level": 2,
+            "Time": 1400
+          },
+          {
+            "Level": 3,
+            "Time": 1600
+          },
+          {
+            "Level": 4,
+            "Time": 1800
+          },
+          {
+            "Level": 5,
+            "Time": 2000
+          },
+          {
+            "Level": 6,
+            "Time": 2200
+          },
+          {
+            "Level": 7,
+            "Time": 2400
+          },
+          {
+            "Level": 8,
+            "Time": 2600
+          },
+          {
+            "Level": 9,
+            "Time": 2800
+          },
+          {
+            "Level": 10,
+            "Time": 3000
+          }
+        ],
+        "Duration2": 10000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 20
+            },
+            {
+              "Level": 2,
+              "Amount": 25
+            },
+            {
+              "Level": 3,
+              "Amount": 30
+            },
+            {
+              "Level": 4,
+              "Amount": 35
+            },
+            {
+              "Level": 5,
+              "Amount": 40
+            },
+            {
+              "Level": 6,
+              "Amount": 45
+            },
+            {
+              "Level": 7,
+              "Amount": 50
+            },
+            {
+              "Level": 8,
+              "Amount": 55
+            },
+            {
+              "Level": 9,
+              "Amount": 60
+            },
+            {
+              "Level": 10,
+              "Amount": 65
+            }
+          ],
+          "Weapon": {
+            "Shotgun": true
+          },
+          "Ammo": {
+            "Bullet": true
+          },
+          "AmmoAmount": [
+            {
+              "Level": 1,
+              "Amount": 2
+            },
+            {
+              "Level": 2,
+              "Amount": 2
+            },
+            {
+              "Level": 3,
+              "Amount": 4
+            },
+            {
+              "Level": 4,
+              "Amount": 4
+            },
+            {
+              "Level": 5,
+              "Amount": 6
+            },
+            {
+              "Level": 6,
+              "Amount": 6
+            },
+            {
+              "Level": 7,
+              "Amount": 8
+            },
+            {
+              "Level": 8,
+              "Amount": 8
+            },
+            {
+              "Level": 9,
+              "Amount": 10
+            },
+            {
+              "Level": 10,
+              "Amount": 10
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-9；命中类型：Single；段数：1；属性：Weapon；技能后摇：Lv1=1200; Lv2=1400; Lv3=1600; Lv4=1800; Lv5=2000; Lv6=2200; Lv7=2400; Lv8=2600; Lv9=2800; Lv10=3000 ms；持续时间2：10000 ms；消耗/限制：SP Lv1=20; Lv2=25; Lv3=30; Lv4=35; Lv5=40; Lv6=45; Lv7=50; Lv8=55; Lv9=60; Lv10=65；弹药数 Lv1-2=2; Lv3-4=4; Lv5-6=6; Lv7-8=8; Lv9-10=10；武器 Shotgun；弹药 Bullet。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_SPREADATTACK",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "GS_FULLBUSTER",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 520,
+        "Name": "GS_SPREADATTACK",
+        "Description": "Spread Attack",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "TargetTrap": true,
+          "AlterRangeSnakeEye": true
+        },
+        "Range": -9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": [
+          {
+            "Level": 1,
+            "Area": 1
+          },
+          {
+            "Level": 2,
+            "Area": 1
+          },
+          {
+            "Level": 3,
+            "Area": 1
+          },
+          {
+            "Level": 4,
+            "Area": 2
+          },
+          {
+            "Level": 5,
+            "Area": 2
+          },
+          {
+            "Level": 6,
+            "Area": 2
+          },
+          {
+            "Level": 7,
+            "Area": 3
+          },
+          {
+            "Level": 8,
+            "Area": 3
+          },
+          {
+            "Level": 9,
+            "Area": 3
+          },
+          {
+            "Level": 10,
+            "Area": 4
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 15
+            },
+            {
+              "Level": 2,
+              "Amount": 20
+            },
+            {
+              "Level": 3,
+              "Amount": 25
+            },
+            {
+              "Level": 4,
+              "Amount": 30
+            },
+            {
+              "Level": 5,
+              "Amount": 35
+            },
+            {
+              "Level": 6,
+              "Amount": 40
+            },
+            {
+              "Level": 7,
+              "Amount": 45
+            },
+            {
+              "Level": 8,
+              "Amount": 50
+            },
+            {
+              "Level": 9,
+              "Amount": 55
+            },
+            {
+              "Level": 10,
+              "Amount": 60
+            }
+          ],
+          "Weapon": {
+            "Shotgun": true
+          },
+          "Ammo": {
+            "Bullet": true
+          },
+          "AmmoAmount": 5
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 10；射程：-9；命中类型：Single；段数：1；属性：Weapon；范围：Lv1-3=1; Lv4-6=2; Lv7-9=3; Lv10=4；伤害标记：Splash；消耗/限制：SP Lv1=15; Lv2=20; Lv3=25; Lv4=30; Lv5=35; Lv6=40; Lv7=45; Lv8=50; Lv9=55; Lv10=60；弹药数 5；武器 Shotgun；弹药 Bullet。"
+    },
+    {
+      "job": "Gunslinger",
+      "origin_job": "Gunslinger",
+      "direct": true,
+      "tree": {
+        "Name": "GS_GROUNDDRIFT",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "GS_SPREADATTACK",
+            "Level": 7
+          }
+        ]
+      },
+      "skill": {
+        "Id": 521,
+        "Name": "GS_GROUNDDRIFT",
+        "Description": "Ground Drift",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "Splash": true,
+          "IgnoreAtkCard": true,
+          "IgnoreFlee": true
+        },
+        "Flags": {
+          "AlterRangeSnakeEye": true
+        },
+        "Range": -9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": 1,
+        "Knockback": 3,
+        "CastTime": 2000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 3000
+          },
+          {
+            "Level": 2,
+            "Time": 6000
+          },
+          {
+            "Level": 3,
+            "Time": 9000
+          },
+          {
+            "Level": 4,
+            "Time": 12000
+          },
+          {
+            "Level": 5,
+            "Time": 15000
+          },
+          {
+            "Level": 6,
+            "Time": 18000
+          },
+          {
+            "Level": 7,
+            "Time": 21000
+          },
+          {
+            "Level": 8,
+            "Time": 24000
+          },
+          {
+            "Level": 9,
+            "Time": 27000
+          },
+          {
+            "Level": 10,
+            "Time": 30000
+          }
+        ],
+        "Duration2": [
+          {
+            "Level": 1,
+            "Time": 5000
+          },
+          {
+            "Level": 2,
+            "Time": 30000
+          },
+          {
+            "Level": 3,
+            "Time": 60000
+          },
+          {
+            "Level": 4,
+            "Time": 12000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 4
+            },
+            {
+              "Level": 2,
+              "Amount": 8
+            },
+            {
+              "Level": 3,
+              "Amount": 12
+            },
+            {
+              "Level": 4,
+              "Amount": 16
+            },
+            {
+              "Level": 5,
+              "Amount": 20
+            },
+            {
+              "Level": 6,
+              "Amount": 24
+            },
+            {
+              "Level": 7,
+              "Amount": 28
+            },
+            {
+              "Level": 8,
+              "Amount": 32
+            },
+            {
+              "Level": 9,
+              "Amount": 36
+            },
+            {
+              "Level": 10,
+              "Amount": 40
+            }
+          ],
+          "Weapon": {
+            "Grenade": true
+          },
+          "Ammo": {
+            "Grenade": true
+          },
+          "AmmoAmount": 1
+        },
+        "Unit": {
+          "Id": "Grounddrift_Wind",
+          "Range": 1,
+          "Interval": 1000,
+          "Target": "Enemy"
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：地面区域；最高等级 10；射程：-9；命中类型：Single；段数：1；属性：Weapon；范围：1；击退：3；吟唱：2000 ms；持续时间1：Lv1=3000; Lv2=6000; Lv3=9000; Lv4=12000; Lv5=15000; Lv6=18000; Lv7=21000; Lv8=24000; Lv9=27000; Lv10=30000 ms；持续时间2：Lv1=5000; Lv2=30000; Lv3=60000; Lv4=12000 ms；伤害标记：Splash, IgnoreAtkCard, IgnoreFlee；消耗/限制：SP Lv1=4; Lv2=8; Lv3=12; Lv4=16; Lv5=20; Lv6=24; Lv7=28; Lv8=32; Lv9=36; Lv10=40；弹药数 1；武器 Grenade；弹药 Grenade。"
+    }
+  ]
+}

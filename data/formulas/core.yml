@@ -1,0 +1,131 @@
+schema_version: 1
+ruleset: pre-renewal
+source_commit: 2fe6ab3dc4d830b11d93fb44c3b48436571890bd
+rounding: Every integer division follows C++ truncation toward zero at that exact operation.
+formulas:
+- id: status_atk
+  status: verified
+  expression: main + floor(main / 10)^2 + floor(secondary / 5) + floor(luk / 5)
+  main_stat_rule:
+    ranged_weapons: DEX
+    other_weapons: STR
+  secondary_stat_rule:
+    ranged_weapons: STR
+    other_weapons: DEX
+  source:
+    path: src/map/status.cpp
+    symbol: status_base_atk
+- id: matk_min
+  status: verified
+  expression: int + floor(int / 7)^2
+  source:
+    path: src/map/status.cpp
+    symbol: status_base_matk_min
+- id: matk_max
+  status: verified
+  expression: int + floor(int / 5)^2
+  source:
+    path: src/map/status.cpp
+    symbol: status_base_matk_max
+- id: hit
+  status: verified
+  expression: bonus_hit + base_level + dex
+  source:
+    path: src/map/status.cpp
+    symbol: status_calc_misc
+- id: flee
+  status: verified
+  expression: bonus_flee + base_level + agi
+  source:
+    path: src/map/status.cpp
+    symbol: status_calc_misc
+- id: soft_def
+  status: verified
+  expression: bonus_soft_def + vit
+  source:
+    path: src/map/status.cpp
+    symbol: status_calc_misc
+- id: soft_mdef
+  status: verified
+  expression: bonus_soft_mdef + int + floor(vit / 2)
+  source:
+    path: src/map/status.cpp
+    symbol: status_calc_misc
+- id: critical_internal
+  status: verified
+  expression: bonus_cri + 10 + floor(luk * 10 / 3)
+  unit: 0.1 percent
+  source:
+    path: src/map/status.cpp
+    symbol: status_calc_misc
+- id: perfect_flee_internal
+  status: verified
+  expression: bonus_flee2 + luk + 10
+  unit: 0.1 percent
+  source:
+    path: src/map/status.cpp
+    symbol: status_calc_misc
+- id: stat_point_cost
+  status: verified
+  expression: 1 + floor((current_base_stat + 9) / 10)
+  source:
+    path: src/map/pc.hpp
+    symbol: PC_STATUS_POINT_COST
+- id: normal_hit_rate
+  status: verified
+  expression: clamp(80 + attacker_hit - effective_target_flee + modifiers, min_hitrate, max_hitrate)
+  source:
+    path: src/map/battle.cpp
+    symbol: battle_calc_hit
+- id: natural_hp_regen
+  status: verified
+  expression: floor(vit / 5) + max(1, floor(max_hp / 200))
+  source:
+    path: src/map/status.cpp
+    symbol: status_calc_regen
+- id: natural_sp_regen
+  status: verified
+  expression: '1 + floor(int / 6) + floor(max_sp / 100) + (int >= 120 ? floor((int - 120) / 2) + 4 : 0)'
+  source:
+    path: src/map/status.cpp
+    symbol: status_calc_regen
+- id: pre_re_base_attack_motion
+  status: verified
+  expression: base_weapon_delay - floor(base_weapon_delay * (4 * agi + dex) / 1000) + raw_aspd_adjustment
+  source:
+    path: src/map/status.cpp
+    symbol: status_base_amotion_pc
+- id: attack_motion_from_aspd
+  status: verified
+  expression: 2000 - 10 * aspd
+  unit: milliseconds
+  source:
+    path: src/map/status.hpp
+- id: attack_delay_from_aspd
+  status: verified
+  expression: 2 * (2000 - 10 * aspd)
+  unit: milliseconds
+  source:
+    path: src/map/status.hpp
+- id: attacks_per_second
+  status: derived
+  expression: 50 / (200 - aspd)
+  derivation: 1000 / attack_delay_ms
+- id: pre_re_cast_time
+  status: verified
+  expression: base_cast_ms * max(0, 150 - dex) / 150, followed by skill/item/status/config modifiers in source order
+  source:
+    path: src/map/skill.cpp
+    symbol: skill_castfix
+- id: physical_defense_default
+  status: verified
+  expression: floor(damage * (100 - hard_def) / 100) - rolled_soft_def
+  source:
+    path: src/map/battle.cpp
+    symbol: battle_calc_defense_reduction
+- id: magic_defense_default
+  status: verified
+  expression: floor(damage * (100 - hard_mdef) / 100) - soft_mdef
+  source:
+    path: src/map/battle.cpp
+    symbol: battle_calc_magic_attack

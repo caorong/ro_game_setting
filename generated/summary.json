@@ -1,0 +1,57 @@
+{
+  "ruleset": "pre-renewal",
+  "build_mode": "PRERE",
+  "repository": "rathena/rathena",
+  "commit": "2fe6ab3dc4d830b11d93fb44c3b48436571890bd",
+  "counts": {
+    "skills_all_metadata": 1228,
+    "skills_classic_catalog": 457,
+    "skill_tree_records": 77,
+    "skill_formula_records": 1228,
+    "classic_jobs": 73,
+    "job_pages": 73,
+    "monsters": {
+      "records": 1004,
+      "csv_rows": 1004,
+      "drops": 5019,
+      "skill_rules": 5494,
+      "pages": 11
+    },
+    "equipment": {
+      "records": 2017,
+      "csv_rows": 2017,
+      "pages": 22,
+      "category_armor": 1216,
+      "category_petarmor": 38,
+      "category_petegg": 56,
+      "category_weapons": 707
+    },
+    "supporting": {
+      "jobs/stats.jsonl": 42,
+      "jobs/aspd.jsonl": 25,
+      "jobs/exp.jsonl": 11,
+      "jobs/basepoints.jsonl": 51,
+      "items/refine.jsonl": 4,
+      "items/combos.jsonl": 105,
+      "statuses/metadata.jsonl": 699,
+      "companions/pets.jsonl": 57,
+      "companions/homunculus.jsonl": 8,
+      "companions/mercenaries.jsonl": 0
+    },
+    "cards": {
+      "records": 538,
+      "csv_rows": 538,
+      "pages": 4
+    },
+    "skill_implementations": {
+      "records": 457,
+      "pages": 73,
+      "coverage": {
+        "core-source-references": 80,
+        "exact-class-methods": 332,
+        "generic-or-class-mapped": 43,
+        "metadata-only": 2
+      }
+    }
+  }
+}

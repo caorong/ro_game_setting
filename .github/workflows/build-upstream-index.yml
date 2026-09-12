@@ -1,0 +1,77 @@
+name: Build and publish pinned upstream reference
+
+on:
+  workflow_dispatch:
+    inputs:
+      include_skill_source:
+        description: Download and index all split skill implementations
+        type: boolean
+        default: true
+      publish_generated:
+        description: Commit generated catalogs back to this branch
+        type: boolean
+        default: true
+  push:
+    branches: [agent/pre-renewal-reference]
+    paths: [build-index.ready]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pre-renewal-generated-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -e '.[dev]'
+      - name: Sync pinned rAthena sources
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RATHENA_SYNC_WORKERS: '12'
+        run: |
+          if [ "${{ github.event_name }}" = "push" ] || [ "${{ inputs.include_skill_source }}" = "true" ]; then
+            python scripts/sync_rathena.py --clean --include-skill-source
+          else
+            python scripts/sync_rathena.py --clean
+          fi
+      - name: Build complete reference catalogs
+        run: |
+          python scripts/build_reference.py
+          python scripts/build_cards.py
+          python scripts/build_skill_implementations.py
+      - name: Verify source lock and generated reference
+        run: |
+          python -m py_compile scripts/*.py src/ro_pre_re/*.py
+          python scripts/sync_rathena.py --verify-only
+          python scripts/validate_reference.py
+          pytest
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ro-pre-renewal-${{ github.sha }}
+          path: |
+            generated/
+            vendor/rathena/sync-manifest.json
+          retention-days: 14
+      - name: Commit generated catalogs
+        if: github.event_name == 'push' || inputs.publish_generated == true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add generated
+          if git diff --cached --quiet; then
+            echo "Generated catalogs are already current."
+          else
+            git commit -m "data: publish complete Pre-Renewal catalogs"
+            git push origin "HEAD:${{ github.ref_name }}"
+          fi

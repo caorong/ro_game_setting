@@ -1,0 +1,1070 @@
+{
+  "job": "Acolyte_High",
+  "ruleset": "pre-renewal",
+  "commit": "2fe6ab3dc4d830b11d93fb44c3b48436571890bd",
+  "skills": [
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_BASIC",
+        "MaxLevel": 9
+      },
+      "skill": {
+        "Id": 1,
+        "Name": "NV_BASIC",
+        "Description": "Basic Skill",
+        "MaxLevel": 9
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 9。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_FIRSTAID",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 142,
+        "Name": "NV_FIRSTAID",
+        "Description": "First Aid",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 3
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 3。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "WE_CALLBABY",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 410,
+        "Name": "WE_CALLBABY",
+        "Description": "Call Baby",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsWedding": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 3,
+        "ActiveInstance": 1,
+        "Duration1": 20000,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": 1
+        },
+        "Unit": {
+          "Id": "Callfamily",
+          "Range": -1,
+          "Interval": -1
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；射程：9；命中类型：Single；段数：1；范围：3；持续时间1：20000 ms；伤害标记：NoDamage；消耗/限制：SP 1。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_DP",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 22,
+        "Name": "AL_DP",
+        "Description": "Divine Protection",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_DEMONBANE",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AL_DP",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 23,
+        "Name": "AL_DEMONBANE",
+        "Description": "Demon Bane",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_RUWACH",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 24,
+        "Name": "AL_RUWACH",
+        "Description": "Ruwach",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true,
+          "Splash": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Holy",
+        "SplashArea": 2,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "Duration1": 10000,
+        "Requires": {
+          "SpCost": 10
+        },
+        "Status": "Ruwach"
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 1；命中类型：Single；段数：1；属性：Holy；范围：2；持续时间1：10000 ms；伤害标记：NoDamage, Splash；消耗/限制：SP 10；关联状态：Ruwach。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_PNEUMA",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "AL_WARP",
+            "Level": 4
+          }
+        ]
+      },
+      "skill": {
+        "Id": 25,
+        "Name": "AL_PNEUMA",
+        "Description": "Pneuma",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 10000,
+        "Requires": {
+          "SpCost": 10
+        },
+        "Unit": {
+          "Id": "Pneuma",
+          "Layout": 1,
+          "Interval": -1,
+          "Flag": {
+            "NoEnemy": true,
+            "NoReiteration": true,
+            "RangedSingleUnit": true
+          }
+        },
+        "Status": "Pneuma"
+      },
+      "structured_description_zh": "魔法技能；目标：地面区域；最高等级 1；射程：9；命中类型：Single；段数：1；持续时间1：10000 ms；伤害标记：NoDamage；消耗/限制：SP 10；关联状态：Pneuma。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_TELEPORT",
+        "MaxLevel": 2,
+        "Requires": [
+          {
+            "Name": "AL_RUWACH",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 26,
+        "Name": "AL_TELEPORT",
+        "Description": "Teleport",
+        "MaxLevel": 2,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IgnoreKagehumi": true,
+          "AllowOnMado": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 10
+            },
+            {
+              "Level": 2,
+              "Amount": 9
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 2；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP Lv1=10; Lv2=9。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_WARP",
+        "MaxLevel": 4,
+        "Requires": [
+          {
+            "Name": "AL_TELEPORT",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 27,
+        "Name": "AL_WARP",
+        "Description": "Warp Portal",
+        "MaxLevel": 4,
+        "Type": "Magic",
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "ActiveInstance": 3,
+        "CastTime": 1000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 5000
+          },
+          {
+            "Level": 2,
+            "Time": 10000
+          },
+          {
+            "Level": 3,
+            "Time": 15000
+          },
+          {
+            "Level": 4,
+            "Time": 20000
+          },
+          {
+            "Level": 5,
+            "Time": 25000
+          },
+          {
+            "Level": 6,
+            "Time": 30000
+          },
+          {
+            "Level": 7,
+            "Time": 35000
+          },
+          {
+            "Level": 8,
+            "Time": 40000
+          },
+          {
+            "Level": 9,
+            "Time": 45000
+          },
+          {
+            "Level": 10,
+            "Time": 50000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 35
+            },
+            {
+              "Level": 2,
+              "Amount": 32
+            },
+            {
+              "Level": 3,
+              "Amount": 29
+            },
+            {
+              "Level": 4,
+              "Amount": 26
+            }
+          ],
+          "ItemCost": [
+            {
+              "Item": "Blue_Gemstone",
+              "Amount": 1
+            }
+          ]
+        },
+        "Unit": {
+          "Id": "Warp_Active",
+          "AlternateId": "Warp_Waiting",
+          "Interval": -1,
+          "Flag": {
+            "NoReiteration": true,
+            "NoFootSet": true,
+            "NoOverlap": true
+          }
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：地面区域；最高等级 4；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；持续时间1：Lv1=5000; Lv2=10000; Lv3=15000; Lv4=20000; Lv5=25000; Lv6=30000; Lv7=35000; Lv8=40000; Lv9=45000; Lv10=50000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=35; Lv2=32; Lv3=29; Lv4=26；道具 Blue_Gemstone×1。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_HEAL",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 28,
+        "Name": "AL_HEAL",
+        "Description": "Heal",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true,
+          "IgnoreDefense": true
+        },
+        "Flags": {
+          "IsAutoShadowSpell": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Holy",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "AfterCastActDelay": 1000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 13
+            },
+            {
+              "Level": 2,
+              "Amount": 16
+            },
+            {
+              "Level": 3,
+              "Amount": 19
+            },
+            {
+              "Level": 4,
+              "Amount": 22
+            },
+            {
+              "Level": 5,
+              "Amount": 25
+            },
+            {
+              "Level": 6,
+              "Amount": 28
+            },
+            {
+              "Level": 7,
+              "Amount": 31
+            },
+            {
+              "Level": 8,
+              "Amount": 34
+            },
+            {
+              "Level": 9,
+              "Amount": 37
+            },
+            {
+              "Level": 10,
+              "Amount": 40
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 10；射程：9；命中类型：Single；段数：1；属性：Holy；技能后摇：1000 ms；伤害标记：NoDamage, IgnoreDefense；消耗/限制：SP Lv1=13; Lv2=16; Lv3=19; Lv4=22; Lv5=25; Lv6=28; Lv7=31; Lv8=34; Lv9=37; Lv10=40。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_INCAGI",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AL_HEAL",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 29,
+        "Name": "AL_INCAGI",
+        "Description": "Increase AGI",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IgnoreHovering": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 1000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 60000
+          },
+          {
+            "Level": 2,
+            "Time": 80000
+          },
+          {
+            "Level": 3,
+            "Time": 100000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 140000
+          },
+          {
+            "Level": 6,
+            "Time": 160000
+          },
+          {
+            "Level": 7,
+            "Time": 180000
+          },
+          {
+            "Level": 8,
+            "Time": 200000
+          },
+          {
+            "Level": 9,
+            "Time": 220000
+          },
+          {
+            "Level": 10,
+            "Time": 240000
+          }
+        ],
+        "Requires": {
+          "HpCost": 15,
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 18
+            },
+            {
+              "Level": 2,
+              "Amount": 21
+            },
+            {
+              "Level": 3,
+              "Amount": 24
+            },
+            {
+              "Level": 4,
+              "Amount": 27
+            },
+            {
+              "Level": 5,
+              "Amount": 30
+            },
+            {
+              "Level": 6,
+              "Amount": 33
+            },
+            {
+              "Level": 7,
+              "Amount": 36
+            },
+            {
+              "Level": 8,
+              "Amount": 39
+            },
+            {
+              "Level": 9,
+              "Amount": 42
+            },
+            {
+              "Level": 10,
+              "Amount": 45
+            }
+          ]
+        },
+        "Status": "IncreaseAgi"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 10；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：1000 ms；持续时间1：Lv1=60000; Lv2=80000; Lv3=100000; Lv4=120000; Lv5=140000; Lv6=160000; Lv7=180000; Lv8=200000; Lv9=220000; Lv10=240000 ms；伤害标记：NoDamage；消耗/限制：HP 15；SP Lv1=18; Lv2=21; Lv3=24; Lv4=27; Lv5=30; Lv6=33; Lv7=36; Lv8=39; Lv9=42; Lv10=45；关联状态：IncreaseAgi。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_DECAGI",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AL_INCAGI",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 30,
+        "Name": "AL_DECAGI",
+        "Description": "Decrease AGI",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 1000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 40000
+          },
+          {
+            "Level": 2,
+            "Time": 50000
+          },
+          {
+            "Level": 3,
+            "Time": 60000
+          },
+          {
+            "Level": 4,
+            "Time": 70000
+          },
+          {
+            "Level": 5,
+            "Time": 80000
+          },
+          {
+            "Level": 6,
+            "Time": 90000
+          },
+          {
+            "Level": 7,
+            "Time": 100000
+          },
+          {
+            "Level": 8,
+            "Time": 110000
+          },
+          {
+            "Level": 9,
+            "Time": 120000
+          },
+          {
+            "Level": 10,
+            "Time": 130000
+          },
+          {
+            "Level": 11,
+            "Time": 130000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 15
+            },
+            {
+              "Level": 2,
+              "Amount": 17
+            },
+            {
+              "Level": 3,
+              "Amount": 19
+            },
+            {
+              "Level": 4,
+              "Amount": 21
+            },
+            {
+              "Level": 5,
+              "Amount": 23
+            },
+            {
+              "Level": 6,
+              "Amount": 25
+            },
+            {
+              "Level": 7,
+              "Amount": 27
+            },
+            {
+              "Level": 8,
+              "Amount": 29
+            },
+            {
+              "Level": 9,
+              "Amount": 31
+            },
+            {
+              "Level": 10,
+              "Amount": 33
+            }
+          ]
+        },
+        "Status": "DecreaseAgi"
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 10；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：1000 ms；持续时间1：Lv1=40000; Lv2=50000; Lv3=60000; Lv4=70000; Lv5=80000; Lv6=90000; Lv7=100000; Lv8=110000; Lv9=120000; Lv10-11=130000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=15; Lv2=17; Lv3=19; Lv4=21; Lv5=23; Lv6=25; Lv7=27; Lv8=29; Lv9=31; Lv10=33；关联状态：DecreaseAgi。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_HOLYWATER",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 31,
+        "Name": "AL_HOLYWATER",
+        "Description": "Aqua Benedicta",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Requires": {
+          "SpCost": 10,
+          "State": "Water"
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 1；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；伤害标记：NoDamage；消耗/限制：SP 10；状态 Water。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_CRUCIS",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AL_DEMONBANE",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 32,
+        "Name": "AL_CRUCIS",
+        "Description": "Signum Crucis",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true,
+          "Splash": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 15,
+        "CastTime": 500,
+        "AfterCastActDelay": 2000,
+        "Requires": {
+          "SpCost": 35
+        },
+        "Status": "SignumCrucis"
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 10；命中类型：Single；段数：1；范围：15；吟唱：500 ms；技能后摇：2000 ms；伤害标记：NoDamage, Splash；消耗/限制：SP 35；关联状态：SignumCrucis。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_ANGELUS",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AL_DP",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 33,
+        "Name": "AL_ANGELUS",
+        "Description": "Angelus",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true,
+          "Splash": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": -1,
+        "CastTime": 500,
+        "AfterCastActDelay": 3500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 30000
+          },
+          {
+            "Level": 2,
+            "Time": 60000
+          },
+          {
+            "Level": 3,
+            "Time": 90000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 150000
+          },
+          {
+            "Level": 6,
+            "Time": 180000
+          },
+          {
+            "Level": 7,
+            "Time": 210000
+          },
+          {
+            "Level": 8,
+            "Time": 240000
+          },
+          {
+            "Level": 9,
+            "Time": 270000
+          },
+          {
+            "Level": 10,
+            "Time": 300000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 23
+            },
+            {
+              "Level": 2,
+              "Amount": 26
+            },
+            {
+              "Level": 3,
+              "Amount": 29
+            },
+            {
+              "Level": 4,
+              "Amount": 32
+            },
+            {
+              "Level": 5,
+              "Amount": 35
+            },
+            {
+              "Level": 6,
+              "Amount": 38
+            },
+            {
+              "Level": 7,
+              "Amount": 41
+            },
+            {
+              "Level": 8,
+              "Amount": 44
+            },
+            {
+              "Level": 9,
+              "Amount": 47
+            },
+            {
+              "Level": 10,
+              "Amount": 50
+            }
+          ]
+        },
+        "Status": "Angelus"
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 10；命中类型：Single；段数：1；范围：-1；吟唱：500 ms；技能后摇：3500 ms；持续时间1：Lv1=30000; Lv2=60000; Lv3=90000; Lv4=120000; Lv5=150000; Lv6=180000; Lv7=210000; Lv8=240000; Lv9=270000; Lv10=300000 ms；伤害标记：NoDamage, Splash；消耗/限制：SP Lv1=23; Lv2=26; Lv3=29; Lv4=32; Lv5=35; Lv6=38; Lv7=41; Lv8=44; Lv9=47; Lv10=50；关联状态：Angelus。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_BLESSING",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AL_DP",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 34,
+        "Name": "AL_BLESSING",
+        "Description": "Blessing",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IgnoreHovering": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 60000
+          },
+          {
+            "Level": 2,
+            "Time": 80000
+          },
+          {
+            "Level": 3,
+            "Time": 100000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 140000
+          },
+          {
+            "Level": 6,
+            "Time": 160000
+          },
+          {
+            "Level": 7,
+            "Time": 180000
+          },
+          {
+            "Level": 8,
+            "Time": 200000
+          },
+          {
+            "Level": 9,
+            "Time": 220000
+          },
+          {
+            "Level": 10,
+            "Time": 240000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 28
+            },
+            {
+              "Level": 2,
+              "Amount": 32
+            },
+            {
+              "Level": 3,
+              "Amount": 36
+            },
+            {
+              "Level": 4,
+              "Amount": 40
+            },
+            {
+              "Level": 5,
+              "Amount": 44
+            },
+            {
+              "Level": 6,
+              "Amount": 48
+            },
+            {
+              "Level": 7,
+              "Amount": 52
+            },
+            {
+              "Level": 8,
+              "Amount": 56
+            },
+            {
+              "Level": 9,
+              "Amount": 60
+            },
+            {
+              "Level": 10,
+              "Amount": 64
+            }
+          ]
+        },
+        "Status": "Blessing"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 10；射程：9；命中类型：Single；段数：1；持续时间1：Lv1=60000; Lv2=80000; Lv3=100000; Lv4=120000; Lv5=140000; Lv6=160000; Lv7=180000; Lv8=200000; Lv9=220000; Lv10=240000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=28; Lv2=32; Lv3=36; Lv4=40; Lv5=44; Lv6=48; Lv7=52; Lv8=56; Lv9=60; Lv10=64；关联状态：Blessing。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_CURE",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "AL_HEAL",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 35,
+        "Name": "AL_CURE",
+        "Description": "Cure",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "AfterCastActDelay": 1000,
+        "Duration2": 6000,
+        "Requires": {
+          "SpCost": 15
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 1；射程：9；命中类型：Single；段数：1；技能后摇：1000 ms；持续时间2：6000 ms；伤害标记：NoDamage；消耗/限制：SP 15。"
+    },
+    {
+      "job": "Acolyte_High",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_HOLYLIGHT",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 156,
+        "Name": "AL_HOLYLIGHT",
+        "Description": "Holy Light",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "Flags": {
+          "IsQuest": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Holy",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": 2000,
+        "Requires": {
+          "SpCost": 15
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 1；射程：9；命中类型：Single；段数：1；属性：Holy；吟唱：2000 ms；消耗/限制：SP 15。"
+    }
+  ]
+}

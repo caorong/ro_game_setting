@@ -1,0 +1,2364 @@
+{
+  "job": "Champion",
+  "ruleset": "pre-renewal",
+  "commit": "2fe6ab3dc4d830b11d93fb44c3b48436571890bd",
+  "skills": [
+    {
+      "job": "Champion",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_BASIC",
+        "MaxLevel": 9
+      },
+      "skill": {
+        "Id": 1,
+        "Name": "NV_BASIC",
+        "Description": "Basic Skill",
+        "MaxLevel": 9
+      },
+      "structured_description_zh": "非伤害技能；目标：被动；最高等级 9。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "NV_FIRSTAID",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 142,
+        "Name": "NV_FIRSTAID",
+        "Description": "First Aid",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 3
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 3。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Novice",
+      "direct": false,
+      "tree": {
+        "Name": "WE_CALLBABY",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 410,
+        "Name": "WE_CALLBABY",
+        "Description": "Call Baby",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsWedding": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 3,
+        "ActiveInstance": 1,
+        "Duration1": 20000,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": 1
+        },
+        "Unit": {
+          "Id": "Callfamily",
+          "Range": -1,
+          "Interval": -1
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；射程：9；命中类型：Single；段数：1；范围：3；持续时间1：20000 ms；伤害标记：NoDamage；消耗/限制：SP 1。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_DP",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 22,
+        "Name": "AL_DP",
+        "Description": "Divine Protection",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_DEMONBANE",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AL_DP",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 23,
+        "Name": "AL_DEMONBANE",
+        "Description": "Demon Bane",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_RUWACH",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 24,
+        "Name": "AL_RUWACH",
+        "Description": "Ruwach",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true,
+          "Splash": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Holy",
+        "SplashArea": 2,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "Duration1": 10000,
+        "Requires": {
+          "SpCost": 10
+        },
+        "Status": "Ruwach"
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 1；命中类型：Single；段数：1；属性：Holy；范围：2；持续时间1：10000 ms；伤害标记：NoDamage, Splash；消耗/限制：SP 10；关联状态：Ruwach。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_PNEUMA",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "AL_WARP",
+            "Level": 4
+          }
+        ]
+      },
+      "skill": {
+        "Id": 25,
+        "Name": "AL_PNEUMA",
+        "Description": "Pneuma",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": 10000,
+        "Requires": {
+          "SpCost": 10
+        },
+        "Unit": {
+          "Id": "Pneuma",
+          "Layout": 1,
+          "Interval": -1,
+          "Flag": {
+            "NoEnemy": true,
+            "NoReiteration": true,
+            "RangedSingleUnit": true
+          }
+        },
+        "Status": "Pneuma"
+      },
+      "structured_description_zh": "魔法技能；目标：地面区域；最高等级 1；射程：9；命中类型：Single；段数：1；持续时间1：10000 ms；伤害标记：NoDamage；消耗/限制：SP 10；关联状态：Pneuma。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_TELEPORT",
+        "MaxLevel": 2,
+        "Requires": [
+          {
+            "Name": "AL_RUWACH",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 26,
+        "Name": "AL_TELEPORT",
+        "Description": "Teleport",
+        "MaxLevel": 2,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IgnoreKagehumi": true,
+          "AllowOnMado": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 10
+            },
+            {
+              "Level": 2,
+              "Amount": 9
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 2；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP Lv1=10; Lv2=9。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_WARP",
+        "MaxLevel": 4,
+        "Requires": [
+          {
+            "Name": "AL_TELEPORT",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 27,
+        "Name": "AL_WARP",
+        "Description": "Warp Portal",
+        "MaxLevel": 4,
+        "Type": "Magic",
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "ActiveInstance": 3,
+        "CastTime": 1000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 5000
+          },
+          {
+            "Level": 2,
+            "Time": 10000
+          },
+          {
+            "Level": 3,
+            "Time": 15000
+          },
+          {
+            "Level": 4,
+            "Time": 20000
+          },
+          {
+            "Level": 5,
+            "Time": 25000
+          },
+          {
+            "Level": 6,
+            "Time": 30000
+          },
+          {
+            "Level": 7,
+            "Time": 35000
+          },
+          {
+            "Level": 8,
+            "Time": 40000
+          },
+          {
+            "Level": 9,
+            "Time": 45000
+          },
+          {
+            "Level": 10,
+            "Time": 50000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 35
+            },
+            {
+              "Level": 2,
+              "Amount": 32
+            },
+            {
+              "Level": 3,
+              "Amount": 29
+            },
+            {
+              "Level": 4,
+              "Amount": 26
+            }
+          ],
+          "ItemCost": [
+            {
+              "Item": "Blue_Gemstone",
+              "Amount": 1
+            }
+          ]
+        },
+        "Unit": {
+          "Id": "Warp_Active",
+          "AlternateId": "Warp_Waiting",
+          "Interval": -1,
+          "Flag": {
+            "NoReiteration": true,
+            "NoFootSet": true,
+            "NoOverlap": true
+          }
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：地面区域；最高等级 4；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；持续时间1：Lv1=5000; Lv2=10000; Lv3=15000; Lv4=20000; Lv5=25000; Lv6=30000; Lv7=35000; Lv8=40000; Lv9=45000; Lv10=50000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=35; Lv2=32; Lv3=29; Lv4=26；道具 Blue_Gemstone×1。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_HEAL",
+        "MaxLevel": 10
+      },
+      "skill": {
+        "Id": 28,
+        "Name": "AL_HEAL",
+        "Description": "Heal",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true,
+          "IgnoreDefense": true
+        },
+        "Flags": {
+          "IsAutoShadowSpell": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Holy",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "AfterCastActDelay": 1000,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 13
+            },
+            {
+              "Level": 2,
+              "Amount": 16
+            },
+            {
+              "Level": 3,
+              "Amount": 19
+            },
+            {
+              "Level": 4,
+              "Amount": 22
+            },
+            {
+              "Level": 5,
+              "Amount": 25
+            },
+            {
+              "Level": 6,
+              "Amount": 28
+            },
+            {
+              "Level": 7,
+              "Amount": 31
+            },
+            {
+              "Level": 8,
+              "Amount": 34
+            },
+            {
+              "Level": 9,
+              "Amount": 37
+            },
+            {
+              "Level": 10,
+              "Amount": 40
+            }
+          ]
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 10；射程：9；命中类型：Single；段数：1；属性：Holy；技能后摇：1000 ms；伤害标记：NoDamage, IgnoreDefense；消耗/限制：SP Lv1=13; Lv2=16; Lv3=19; Lv4=22; Lv5=25; Lv6=28; Lv7=31; Lv8=34; Lv9=37; Lv10=40。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_INCAGI",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AL_HEAL",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 29,
+        "Name": "AL_INCAGI",
+        "Description": "Increase AGI",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IgnoreHovering": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 1000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 60000
+          },
+          {
+            "Level": 2,
+            "Time": 80000
+          },
+          {
+            "Level": 3,
+            "Time": 100000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 140000
+          },
+          {
+            "Level": 6,
+            "Time": 160000
+          },
+          {
+            "Level": 7,
+            "Time": 180000
+          },
+          {
+            "Level": 8,
+            "Time": 200000
+          },
+          {
+            "Level": 9,
+            "Time": 220000
+          },
+          {
+            "Level": 10,
+            "Time": 240000
+          }
+        ],
+        "Requires": {
+          "HpCost": 15,
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 18
+            },
+            {
+              "Level": 2,
+              "Amount": 21
+            },
+            {
+              "Level": 3,
+              "Amount": 24
+            },
+            {
+              "Level": 4,
+              "Amount": 27
+            },
+            {
+              "Level": 5,
+              "Amount": 30
+            },
+            {
+              "Level": 6,
+              "Amount": 33
+            },
+            {
+              "Level": 7,
+              "Amount": 36
+            },
+            {
+              "Level": 8,
+              "Amount": 39
+            },
+            {
+              "Level": 9,
+              "Amount": 42
+            },
+            {
+              "Level": 10,
+              "Amount": 45
+            }
+          ]
+        },
+        "Status": "IncreaseAgi"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 10；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：1000 ms；持续时间1：Lv1=60000; Lv2=80000; Lv3=100000; Lv4=120000; Lv5=140000; Lv6=160000; Lv7=180000; Lv8=200000; Lv9=220000; Lv10=240000 ms；伤害标记：NoDamage；消耗/限制：HP 15；SP Lv1=18; Lv2=21; Lv3=24; Lv4=27; Lv5=30; Lv6=33; Lv7=36; Lv8=39; Lv9=42; Lv10=45；关联状态：IncreaseAgi。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_DECAGI",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AL_INCAGI",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 30,
+        "Name": "AL_DECAGI",
+        "Description": "Decrease AGI",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 1000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 40000
+          },
+          {
+            "Level": 2,
+            "Time": 50000
+          },
+          {
+            "Level": 3,
+            "Time": 60000
+          },
+          {
+            "Level": 4,
+            "Time": 70000
+          },
+          {
+            "Level": 5,
+            "Time": 80000
+          },
+          {
+            "Level": 6,
+            "Time": 90000
+          },
+          {
+            "Level": 7,
+            "Time": 100000
+          },
+          {
+            "Level": 8,
+            "Time": 110000
+          },
+          {
+            "Level": 9,
+            "Time": 120000
+          },
+          {
+            "Level": 10,
+            "Time": 130000
+          },
+          {
+            "Level": 11,
+            "Time": 130000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 15
+            },
+            {
+              "Level": 2,
+              "Amount": 17
+            },
+            {
+              "Level": 3,
+              "Amount": 19
+            },
+            {
+              "Level": 4,
+              "Amount": 21
+            },
+            {
+              "Level": 5,
+              "Amount": 23
+            },
+            {
+              "Level": 6,
+              "Amount": 25
+            },
+            {
+              "Level": 7,
+              "Amount": 27
+            },
+            {
+              "Level": 8,
+              "Amount": 29
+            },
+            {
+              "Level": 9,
+              "Amount": 31
+            },
+            {
+              "Level": 10,
+              "Amount": 33
+            }
+          ]
+        },
+        "Status": "DecreaseAgi"
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 10；射程：9；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：1000 ms；持续时间1：Lv1=40000; Lv2=50000; Lv3=60000; Lv4=70000; Lv5=80000; Lv6=90000; Lv7=100000; Lv8=110000; Lv9=120000; Lv10-11=130000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=15; Lv2=17; Lv3=19; Lv4=21; Lv5=23; Lv6=25; Lv7=27; Lv8=29; Lv9=31; Lv10=33；关联状态：DecreaseAgi。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_HOLYWATER",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 31,
+        "Name": "AL_HOLYWATER",
+        "Description": "Aqua Benedicta",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Requires": {
+          "SpCost": 10,
+          "State": "Water"
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 1；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；伤害标记：NoDamage；消耗/限制：SP 10；状态 Water。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_CRUCIS",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AL_DEMONBANE",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 32,
+        "Name": "AL_CRUCIS",
+        "Description": "Signum Crucis",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true,
+          "Splash": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": 15,
+        "CastTime": 500,
+        "AfterCastActDelay": 2000,
+        "Requires": {
+          "SpCost": 35
+        },
+        "Status": "SignumCrucis"
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 10；命中类型：Single；段数：1；范围：15；吟唱：500 ms；技能后摇：2000 ms；伤害标记：NoDamage, Splash；消耗/限制：SP 35；关联状态：SignumCrucis。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_ANGELUS",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AL_DP",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 33,
+        "Name": "AL_ANGELUS",
+        "Description": "Angelus",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true,
+          "Splash": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "SplashArea": -1,
+        "CastTime": 500,
+        "AfterCastActDelay": 3500,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 30000
+          },
+          {
+            "Level": 2,
+            "Time": 60000
+          },
+          {
+            "Level": 3,
+            "Time": 90000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 150000
+          },
+          {
+            "Level": 6,
+            "Time": 180000
+          },
+          {
+            "Level": 7,
+            "Time": 210000
+          },
+          {
+            "Level": 8,
+            "Time": 240000
+          },
+          {
+            "Level": 9,
+            "Time": 270000
+          },
+          {
+            "Level": 10,
+            "Time": 300000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 23
+            },
+            {
+              "Level": 2,
+              "Amount": 26
+            },
+            {
+              "Level": 3,
+              "Amount": 29
+            },
+            {
+              "Level": 4,
+              "Amount": 32
+            },
+            {
+              "Level": 5,
+              "Amount": 35
+            },
+            {
+              "Level": 6,
+              "Amount": 38
+            },
+            {
+              "Level": 7,
+              "Amount": 41
+            },
+            {
+              "Level": 8,
+              "Amount": 44
+            },
+            {
+              "Level": 9,
+              "Amount": 47
+            },
+            {
+              "Level": 10,
+              "Amount": 50
+            }
+          ]
+        },
+        "Status": "Angelus"
+      },
+      "structured_description_zh": "魔法技能；目标：自身；最高等级 10；命中类型：Single；段数：1；范围：-1；吟唱：500 ms；技能后摇：3500 ms；持续时间1：Lv1=30000; Lv2=60000; Lv3=90000; Lv4=120000; Lv5=150000; Lv6=180000; Lv7=210000; Lv8=240000; Lv9=270000; Lv10=300000 ms；伤害标记：NoDamage, Splash；消耗/限制：SP Lv1=23; Lv2=26; Lv3=29; Lv4=32; Lv5=35; Lv6=38; Lv7=41; Lv8=44; Lv9=47; Lv10=50；关联状态：Angelus。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_BLESSING",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AL_DP",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 34,
+        "Name": "AL_BLESSING",
+        "Description": "Blessing",
+        "MaxLevel": 10,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IgnoreHovering": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 60000
+          },
+          {
+            "Level": 2,
+            "Time": 80000
+          },
+          {
+            "Level": 3,
+            "Time": 100000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 140000
+          },
+          {
+            "Level": 6,
+            "Time": 160000
+          },
+          {
+            "Level": 7,
+            "Time": 180000
+          },
+          {
+            "Level": 8,
+            "Time": 200000
+          },
+          {
+            "Level": 9,
+            "Time": 220000
+          },
+          {
+            "Level": 10,
+            "Time": 240000
+          }
+        ],
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 28
+            },
+            {
+              "Level": 2,
+              "Amount": 32
+            },
+            {
+              "Level": 3,
+              "Amount": 36
+            },
+            {
+              "Level": 4,
+              "Amount": 40
+            },
+            {
+              "Level": 5,
+              "Amount": 44
+            },
+            {
+              "Level": 6,
+              "Amount": 48
+            },
+            {
+              "Level": 7,
+              "Amount": 52
+            },
+            {
+              "Level": 8,
+              "Amount": 56
+            },
+            {
+              "Level": 9,
+              "Amount": 60
+            },
+            {
+              "Level": 10,
+              "Amount": 64
+            }
+          ]
+        },
+        "Status": "Blessing"
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 10；射程：9；命中类型：Single；段数：1；持续时间1：Lv1=60000; Lv2=80000; Lv3=100000; Lv4=120000; Lv5=140000; Lv6=160000; Lv7=180000; Lv8=200000; Lv9=220000; Lv10=240000 ms；伤害标记：NoDamage；消耗/限制：SP Lv1=28; Lv2=32; Lv3=36; Lv4=40; Lv5=44; Lv6=48; Lv7=52; Lv8=56; Lv9=60; Lv10=64；关联状态：Blessing。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_CURE",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "AL_HEAL",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 35,
+        "Name": "AL_CURE",
+        "Description": "Cure",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "AfterCastActDelay": 1000,
+        "Duration2": 6000,
+        "Requires": {
+          "SpCost": 15
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：友方目标；最高等级 1；射程：9；命中类型：Single；段数：1；技能后摇：1000 ms；持续时间2：6000 ms；伤害标记：NoDamage；消耗/限制：SP 15。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Acolyte",
+      "direct": false,
+      "tree": {
+        "Name": "AL_HOLYLIGHT",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 156,
+        "Name": "AL_HOLYLIGHT",
+        "Description": "Holy Light",
+        "MaxLevel": 1,
+        "Type": "Magic",
+        "TargetType": "Attack",
+        "Flags": {
+          "IsQuest": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Holy",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": 2000,
+        "Requires": {
+          "SpCost": 15
+        }
+      },
+      "structured_description_zh": "魔法技能；目标：敌方目标；最高等级 1；射程：9；命中类型：Single；段数：1；属性：Holy；吟唱：2000 ms；消耗/限制：SP 15。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_IRONHAND",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "AL_DEMONBANE",
+            "Level": 10
+          },
+          {
+            "Name": "AL_DP",
+            "Level": 10
+          }
+        ]
+      },
+      "skill": {
+        "Id": 259,
+        "Name": "MO_IRONHAND",
+        "Description": "Iron Fists",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_SPIRITSRECOVERY",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MO_BLADESTOP",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 260,
+        "Name": "MO_SPIRITSRECOVERY",
+        "Description": "Spiritual Cadence",
+        "MaxLevel": 5,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 5。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_CALLSPIRITS",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MO_IRONHAND",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 261,
+        "Name": "MO_CALLSPIRITS",
+        "Description": "Summon Spirit Sphere",
+        "MaxLevel": 5,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 1000,
+        "Duration1": 600000,
+        "Requires": {
+          "SpCost": 8
+        },
+        "CastCancel": false
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 5；命中类型：Single；段数：1；吟唱：1000 ms；持续时间1：600000 ms；伤害标记：NoDamage；消耗/限制：SP 8。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_ABSORBSPIRITS",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "MO_CALLSPIRITS",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 262,
+        "Name": "MO_ABSORBSPIRITS",
+        "Description": "Absorb Spirit Sphere",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 2000,
+        "Requires": {
+          "SpCost": 5
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：友方目标；最高等级 1；射程：9；命中类型：Single；段数：1；吟唱：2000 ms；伤害标记：NoDamage；消耗/限制：SP 5。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_TRIPLEATTACK",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "MO_DODGE",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 263,
+        "Name": "MO_TRIPLEATTACK",
+        "Description": "Raging Trifecta Blow",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "Flags": {
+          "TargetTrap": true,
+          "TargetEmperium": true
+        },
+        "Range": -1,
+        "Hit": "Multi_Hit",
+        "HitCount": -3,
+        "Element": "Weapon",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastDelayFlags": {
+          "IgnoreStatus": true
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10；射程：-1；命中类型：Multi_Hit；段数：-3；属性：Weapon。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_BODYRELOCATION",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "MO_EXTREMITYFIST",
+            "Level": 3
+          },
+          {
+            "Name": "MO_SPIRITSRECOVERY",
+            "Level": 2
+          },
+          {
+            "Name": "MO_STEELBODY",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 264,
+        "Name": "MO_BODYRELOCATION",
+        "Description": "Snap",
+        "MaxLevel": 1,
+        "TargetType": "Ground",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Range": 18,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Requires": {
+          "SpCost": 14,
+          "SpiritSphereCost": 1
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：地面区域；最高等级 1；射程：18；命中类型：Single；段数：1；伤害标记：NoDamage；消耗/限制：SP 14；气弹 1。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_DODGE",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "MO_IRONHAND",
+            "Level": 5
+          },
+          {
+            "Name": "MO_CALLSPIRITS",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 265,
+        "Name": "MO_DODGE",
+        "Description": "Dodge",
+        "MaxLevel": 10,
+        "Type": "Weapon"
+      },
+      "structured_description_zh": "武器/物理技能；目标：被动；最高等级 10。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_INVESTIGATE",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MO_CALLSPIRITS",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 266,
+        "Name": "MO_INVESTIGATE",
+        "Description": "Occult Impaction",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "IgnoreFlee": true
+        },
+        "Flags": {
+          "TargetTrap": true
+        },
+        "Range": 2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 10
+            },
+            {
+              "Level": 2,
+              "Amount": 14
+            },
+            {
+              "Level": 3,
+              "Amount": 17
+            },
+            {
+              "Level": 4,
+              "Amount": 19
+            },
+            {
+              "Level": 5,
+              "Amount": 20
+            }
+          ],
+          "SpiritSphereCost": 1
+        },
+        "CastCancel": false
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 5；射程：2；命中类型：Single；段数：1；吟唱：1000 ms；技能后摇：500 ms；伤害标记：IgnoreFlee；消耗/限制：SP Lv1=10; Lv2=14; Lv3=17; Lv4=19; Lv5=20；气弹 1。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_FINGEROFFENSIVE",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MO_INVESTIGATE",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 267,
+        "Name": "MO_FINGEROFFENSIVE",
+        "Description": "Throw Spirit Sphere",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Flags": {
+          "TargetTrap": true
+        },
+        "Range": 9,
+        "Hit": "Multi_Hit",
+        "HitCount": [
+          {
+            "Level": 1,
+            "Count": 1
+          },
+          {
+            "Level": 2,
+            "Count": 2
+          },
+          {
+            "Level": 3,
+            "Count": 3
+          },
+          {
+            "Level": 4,
+            "Count": 4
+          },
+          {
+            "Level": 5,
+            "Count": 5
+          }
+        ],
+        "Element": "Weapon",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": 1000,
+        "AfterCastActDelay": 500,
+        "AfterCastWalkDelay": [
+          {
+            "Level": 2,
+            "Time": 200
+          },
+          {
+            "Level": 3,
+            "Time": 400
+          },
+          {
+            "Level": 4,
+            "Time": 600
+          },
+          {
+            "Level": 5,
+            "Time": 800
+          }
+        ],
+        "Requires": {
+          "SpCost": 10,
+          "SpiritSphereCost": [
+            {
+              "Level": 1,
+              "Amount": 1
+            },
+            {
+              "Level": 2,
+              "Amount": 2
+            },
+            {
+              "Level": 3,
+              "Amount": 3
+            },
+            {
+              "Level": 4,
+              "Amount": 4
+            },
+            {
+              "Level": 5,
+              "Amount": 5
+            }
+          ]
+        },
+        "CastCancel": false
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 5；射程：9；命中类型：Multi_Hit；段数：Lv1=1; Lv2=2; Lv3=3; Lv4=4; Lv5=5；属性：Weapon；吟唱：1000 ms；技能后摇：500 ms；移动后摇：Lv2=200; Lv3=400; Lv4=600; Lv5=800 ms；消耗/限制：SP 10；气弹 Lv1=1; Lv2=2; Lv3=3; Lv4=4; Lv5=5。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_STEELBODY",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MO_COMBOFINISH",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 268,
+        "Name": "MO_STEELBODY",
+        "Description": "Mental Strength",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 5000,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 30000
+          },
+          {
+            "Level": 2,
+            "Time": 60000
+          },
+          {
+            "Level": 3,
+            "Time": 90000
+          },
+          {
+            "Level": 4,
+            "Time": 120000
+          },
+          {
+            "Level": 5,
+            "Time": 150000
+          }
+        ],
+        "Requires": {
+          "SpCost": 200,
+          "SpiritSphereCost": 5
+        },
+        "Status": "SteelBody",
+        "CastCancel": false
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 5；命中类型：Single；段数：1；吟唱：5000 ms；持续时间1：Lv1=30000; Lv2=60000; Lv3=90000; Lv4=120000; Lv5=150000 ms；伤害标记：NoDamage；消耗/限制：SP 200；气弹 5；关联状态：SteelBody。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_BLADESTOP",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MO_DODGE",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 269,
+        "Name": "MO_BLADESTOP",
+        "Description": "Root",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 500
+          },
+          {
+            "Level": 2,
+            "Time": 700
+          },
+          {
+            "Level": 3,
+            "Time": 900
+          },
+          {
+            "Level": 4,
+            "Time": 1100
+          },
+          {
+            "Level": 5,
+            "Time": 1300
+          }
+        ],
+        "Duration2": [
+          {
+            "Level": 1,
+            "Time": 20000
+          },
+          {
+            "Level": 2,
+            "Time": 30000
+          },
+          {
+            "Level": 3,
+            "Time": 40000
+          },
+          {
+            "Level": 4,
+            "Time": 50000
+          },
+          {
+            "Level": 5,
+            "Time": 60000
+          }
+        ],
+        "Requires": {
+          "SpCost": 10,
+          "Weapon": {
+            "Fist": true,
+            "Dagger": true,
+            "1hSword": true,
+            "2hSword": true,
+            "1hSpear": true,
+            "2hSpear": true,
+            "1hAxe": true,
+            "2hAxe": true,
+            "Mace": true,
+            "2hMace": true,
+            "Staff": true,
+            "Knuckle": true,
+            "Musical": true,
+            "Whip": true,
+            "Book": true,
+            "Katar": true,
+            "Revolver": true,
+            "Rifle": true,
+            "Gatling": true,
+            "Shotgun": true,
+            "Grenade": true,
+            "Huuma": true
+          },
+          "SpiritSphereCost": 1
+        },
+        "Status": "BladeStop_Wait"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 5；命中类型：Single；段数：1；持续时间1：Lv1=500; Lv2=700; Lv3=900; Lv4=1100; Lv5=1300 ms；持续时间2：Lv1=20000; Lv2=30000; Lv3=40000; Lv4=50000; Lv5=60000 ms；伤害标记：NoDamage；消耗/限制：SP 10；气弹 1；武器 Fist, Dagger, 1hSword, 2hSword, 1hSpear, 2hSpear, 1hAxe, 2hAxe, Mace, 2hMace, Staff, Knuckle, Musical, Whip, Book, Katar, Revolver, Rifle, Gatling, Shotgun, Grenade, Huuma；关联状态：BladeStop_Wait。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_EXPLOSIONSPIRITS",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MO_ABSORBSPIRITS",
+            "Level": 1
+          }
+        ]
+      },
+      "skill": {
+        "Id": 270,
+        "Name": "MO_EXPLOSIONSPIRITS",
+        "Description": "Fury",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "Duration1": 180000,
+        "Requires": {
+          "SpCost": 15,
+          "SpiritSphereCost": 5
+        },
+        "Status": "ExplosionSpirits"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 5；命中类型：Single；持续时间1：180000 ms；伤害标记：NoDamage；消耗/限制：SP 15；气弹 5；关联状态：ExplosionSpirits。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_EXTREMITYFIST",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MO_EXPLOSIONSPIRITS",
+            "Level": 3
+          },
+          {
+            "Name": "MO_FINGEROFFENSIVE",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 271,
+        "Name": "MO_EXTREMITYFIST",
+        "Description": "Asura Strike",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "IgnoreDefense": true,
+          "IgnoreFlee": true
+        },
+        "Flags": {
+          "TargetTrap": true
+        },
+        "Range": -2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": [
+          {
+            "Level": 1,
+            "Time": 4000
+          },
+          {
+            "Level": 2,
+            "Time": 3500
+          },
+          {
+            "Level": 3,
+            "Time": 3000
+          },
+          {
+            "Level": 4,
+            "Time": 2500
+          },
+          {
+            "Level": 5,
+            "Time": 2000
+          }
+        ],
+        "AfterCastActDelay": [
+          {
+            "Level": 1,
+            "Time": 3000
+          },
+          {
+            "Level": 2,
+            "Time": 2500
+          },
+          {
+            "Level": 3,
+            "Time": 2000
+          },
+          {
+            "Level": 4,
+            "Time": 1500
+          },
+          {
+            "Level": 5,
+            "Time": 1000
+          }
+        ],
+        "Duration1": 300000,
+        "Requires": {
+          "SpCost": 1,
+          "Weapon": {
+            "Fist": true,
+            "Dagger": true,
+            "1hSword": true,
+            "2hSword": true,
+            "1hSpear": true,
+            "2hSpear": true,
+            "1hAxe": true,
+            "2hAxe": true,
+            "Mace": true,
+            "2hMace": true,
+            "Staff": true,
+            "Knuckle": true,
+            "Musical": true,
+            "Whip": true,
+            "Book": true,
+            "Katar": true,
+            "Revolver": true,
+            "Rifle": true,
+            "Gatling": true,
+            "Shotgun": true,
+            "Grenade": true,
+            "Huuma": true
+          },
+          "Status": {
+            "Explosionspirits": true
+          },
+          "SpiritSphereCost": 5
+        },
+        "Status": "ExtremityFist"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 5；射程：-2；命中类型：Single；段数：1；吟唱：Lv1=4000; Lv2=3500; Lv3=3000; Lv4=2500; Lv5=2000 ms；技能后摇：Lv1=3000; Lv2=2500; Lv3=2000; Lv4=1500; Lv5=1000 ms；持续时间1：300000 ms；伤害标记：IgnoreDefense, IgnoreFlee；消耗/限制：SP 1；气弹 5；武器 Fist, Dagger, 1hSword, 2hSword, 1hSpear, 2hSpear, 1hAxe, 2hAxe, Mace, 2hMace, Staff, Knuckle, Musical, Whip, Book, Katar, Revolver, Rifle, Gatling, Shotgun, Grenade, Huuma；前置状态 Explosionspirits；关联状态：ExtremityFist。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_CHAINCOMBO",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MO_TRIPLEATTACK",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 272,
+        "Name": "MO_CHAINCOMBO",
+        "Description": "Raging Quadruple Blow",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": -2,
+        "Hit": "Multi_Hit",
+        "HitCount": -4,
+        "Element": "Weapon",
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastDelayFlags": {
+          "IgnoreStatus": true
+        },
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 11
+            },
+            {
+              "Level": 2,
+              "Amount": 12
+            },
+            {
+              "Level": 3,
+              "Amount": 13
+            },
+            {
+              "Level": 4,
+              "Amount": 14
+            },
+            {
+              "Level": 5,
+              "Amount": 15
+            }
+          ],
+          "Weapon": {
+            "Fist": true,
+            "Dagger": true,
+            "1hSword": true,
+            "2hSword": true,
+            "1hSpear": true,
+            "2hSpear": true,
+            "1hAxe": true,
+            "2hAxe": true,
+            "Mace": true,
+            "2hMace": true,
+            "Staff": true,
+            "Knuckle": true,
+            "Musical": true,
+            "Whip": true,
+            "Book": true,
+            "Katar": true,
+            "Revolver": true,
+            "Rifle": true,
+            "Gatling": true,
+            "Shotgun": true,
+            "Grenade": true,
+            "Huuma": true
+          }
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 5；射程：-2；命中类型：Multi_Hit；段数：-4；属性：Weapon；消耗/限制：SP Lv1=11; Lv2=12; Lv3=13; Lv4=14; Lv5=15；武器 Fist, Dagger, 1hSword, 2hSword, 1hSpear, 2hSpear, 1hAxe, 2hAxe, Mace, 2hMace, Staff, Knuckle, Musical, Whip, Book, Katar, Revolver, Rifle, Gatling, Shotgun, Grenade, Huuma。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_COMBOFINISH",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MO_CHAINCOMBO",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 273,
+        "Name": "MO_COMBOFINISH",
+        "Description": "Raging Thrust",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "DamageFlags": {
+          "Splash": true
+        },
+        "Flags": {
+          "NoTargetSelf": true,
+          "TargetTrap": true
+        },
+        "Range": -2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": 2,
+        "CastDelayFlags": {
+          "IgnoreStatus": true
+        },
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 11
+            },
+            {
+              "Level": 2,
+              "Amount": 12
+            },
+            {
+              "Level": 3,
+              "Amount": 13
+            },
+            {
+              "Level": 4,
+              "Amount": 14
+            },
+            {
+              "Level": 5,
+              "Amount": 15
+            }
+          ],
+          "Weapon": {
+            "Fist": true,
+            "Dagger": true,
+            "1hSword": true,
+            "2hSword": true,
+            "1hSpear": true,
+            "2hSpear": true,
+            "1hAxe": true,
+            "2hAxe": true,
+            "Mace": true,
+            "2hMace": true,
+            "Staff": true,
+            "Knuckle": true,
+            "Musical": true,
+            "Whip": true,
+            "Book": true,
+            "Katar": true,
+            "Revolver": true,
+            "Rifle": true,
+            "Gatling": true,
+            "Shotgun": true,
+            "Grenade": true,
+            "Huuma": true
+          },
+          "SpiritSphereCost": 1
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 5；射程：-2；命中类型：Single；段数：1；属性：Weapon；范围：2；伤害标记：Splash；消耗/限制：SP Lv1=11; Lv2=12; Lv3=13; Lv4=14; Lv5=15；气弹 1；武器 Fist, Dagger, 1hSword, 2hSword, 1hSpear, 2hSpear, 1hAxe, 2hAxe, Mace, 2hMace, Staff, Knuckle, Musical, Whip, Book, Katar, Revolver, Rifle, Gatling, Shotgun, Grenade, Huuma。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_KITRANSLATION",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 1015,
+        "Name": "MO_KITRANSLATION",
+        "Description": "Ki Translation",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Support",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Flags": {
+          "IsQuest": true,
+          "PartyOnly": true
+        },
+        "Range": 9,
+        "Hit": "Single",
+        "HitCount": 1,
+        "CopyFlags": {
+          "Skill": {
+            "Plagiarism": true,
+            "Reproduce": true
+          }
+        },
+        "CastTime": 2000,
+        "AfterCastActDelay": 1000,
+        "Duration1": 600000,
+        "Requires": {
+          "SpCost": 40,
+          "SpiritSphereCost": 1
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：友方目标；最高等级 1；射程：9；命中类型：Single；段数：1；吟唱：2000 ms；技能后摇：1000 ms；持续时间1：600000 ms；伤害标记：NoDamage；消耗/限制：SP 40；气弹 1。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Monk",
+      "direct": false,
+      "tree": {
+        "Name": "MO_BALKYOUNG",
+        "MaxLevel": 1
+      },
+      "skill": {
+        "Id": 1016,
+        "Name": "MO_BALKYOUNG",
+        "Description": "Ki Explosion",
+        "MaxLevel": 1,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "DamageFlags": {
+          "Splash": true,
+          "IgnoreAtkCard": true
+        },
+        "Flags": {
+          "IsQuest": true
+        },
+        "Range": -1,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "SplashArea": 1,
+        "Knockback": 5,
+        "AfterCastActDelay": 2000,
+        "Duration2": 5000,
+        "Requires": {
+          "HpCost": 10,
+          "SpCost": 20
+        },
+        "Status": "Stun"
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 1；射程：-1；命中类型：Single；段数：1；属性：Weapon；范围：1；击退：5；技能后摇：2000 ms；持续时间2：5000 ms；伤害标记：Splash, IgnoreAtkCard；消耗/限制：HP 10；SP 20；关联状态：Stun。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Champion",
+      "direct": true,
+      "tree": {
+        "Name": "CH_PALMSTRIKE",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MO_IRONHAND",
+            "Level": 7
+          },
+          {
+            "Name": "MO_CALLSPIRITS",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 370,
+        "Name": "CH_PALMSTRIKE",
+        "Description": "Raging Palm Strike",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Attack",
+        "Range": -2,
+        "Hit": "Single",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "Knockback": 3,
+        "AfterCastActDelay": 300,
+        "CastTimeFlags": {
+          "IgnoreDex": true
+        },
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 2
+            },
+            {
+              "Level": 2,
+              "Amount": 4
+            },
+            {
+              "Level": 3,
+              "Amount": 6
+            },
+            {
+              "Level": 4,
+              "Amount": 8
+            },
+            {
+              "Level": 5,
+              "Amount": 10
+            }
+          ],
+          "Status": {
+            "Explosionspirits": true
+          }
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：敌方目标；最高等级 5；射程：-2；命中类型：Single；段数：1；属性：Weapon；击退：3；技能后摇：300 ms；消耗/限制：SP Lv1=2; Lv2=4; Lv3=6; Lv4=8; Lv5=10；前置状态 Explosionspirits。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Champion",
+      "direct": true,
+      "tree": {
+        "Name": "CH_TIGERFIST",
+        "MaxLevel": 5,
+        "Requires": [
+          {
+            "Name": "MO_IRONHAND",
+            "Level": 5
+          },
+          {
+            "Name": "MO_TRIPLEATTACK",
+            "Level": 5
+          },
+          {
+            "Name": "MO_CALLSPIRITS",
+            "Level": 5
+          },
+          {
+            "Name": "MO_COMBOFINISH",
+            "Level": 3
+          }
+        ]
+      },
+      "skill": {
+        "Id": 371,
+        "Name": "CH_TIGERFIST",
+        "Description": "Glacier Fist",
+        "MaxLevel": 5,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": -2,
+        "Hit": "Multi_Hit",
+        "HitCount": 1,
+        "Element": "Weapon",
+        "Duration1": [
+          {
+            "Level": 1,
+            "Time": 2000
+          },
+          {
+            "Level": 2,
+            "Time": 4000
+          },
+          {
+            "Level": 3,
+            "Time": 6000
+          },
+          {
+            "Level": 4,
+            "Time": 8000
+          },
+          {
+            "Level": 5,
+            "Time": 10000
+          }
+        ],
+        "CastDelayFlags": {
+          "IgnoreStatus": true
+        },
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 4
+            },
+            {
+              "Level": 2,
+              "Amount": 6
+            },
+            {
+              "Level": 3,
+              "Amount": 8
+            },
+            {
+              "Level": 4,
+              "Amount": 10
+            },
+            {
+              "Level": 5,
+              "Amount": 12
+            }
+          ],
+          "SpiritSphereCost": 1
+        },
+        "Status": "Ankle"
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 5；射程：-2；命中类型：Multi_Hit；段数：1；属性：Weapon；持续时间1：Lv1=2000; Lv2=4000; Lv3=6000; Lv4=8000; Lv5=10000 ms；消耗/限制：SP Lv1=4; Lv2=6; Lv3=8; Lv4=10; Lv5=12；气弹 1；关联状态：Ankle。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Champion",
+      "direct": true,
+      "tree": {
+        "Name": "CH_CHAINCRUSH",
+        "MaxLevel": 10,
+        "Requires": [
+          {
+            "Name": "MO_IRONHAND",
+            "Level": 5
+          },
+          {
+            "Name": "MO_CALLSPIRITS",
+            "Level": 5
+          },
+          {
+            "Name": "CH_TIGERFIST",
+            "Level": 2
+          }
+        ]
+      },
+      "skill": {
+        "Id": 372,
+        "Name": "CH_CHAINCRUSH",
+        "Description": "Chain Crush Combo",
+        "MaxLevel": 10,
+        "Type": "Weapon",
+        "TargetType": "Self",
+        "Flags": {
+          "NoTargetSelf": true
+        },
+        "Range": -2,
+        "Hit": "Multi_Hit",
+        "HitCount": [
+          {
+            "Level": 1,
+            "Count": -1
+          },
+          {
+            "Level": 2,
+            "Count": -1
+          },
+          {
+            "Level": 3,
+            "Count": -2
+          },
+          {
+            "Level": 4,
+            "Count": -2
+          },
+          {
+            "Level": 5,
+            "Count": -3
+          },
+          {
+            "Level": 6,
+            "Count": -3
+          },
+          {
+            "Level": 7,
+            "Count": -4
+          },
+          {
+            "Level": 8,
+            "Count": -4
+          },
+          {
+            "Level": 9,
+            "Count": -5
+          },
+          {
+            "Level": 10,
+            "Count": -5
+          }
+        ],
+        "Element": "Weapon",
+        "CastDelayFlags": {
+          "IgnoreStatus": true
+        },
+        "Requires": {
+          "SpCost": [
+            {
+              "Level": 1,
+              "Amount": 4
+            },
+            {
+              "Level": 2,
+              "Amount": 6
+            },
+            {
+              "Level": 3,
+              "Amount": 8
+            },
+            {
+              "Level": 4,
+              "Amount": 10
+            },
+            {
+              "Level": 5,
+              "Amount": 12
+            },
+            {
+              "Level": 6,
+              "Amount": 14
+            },
+            {
+              "Level": 7,
+              "Amount": 16
+            },
+            {
+              "Level": 8,
+              "Amount": 18
+            },
+            {
+              "Level": 9,
+              "Amount": 20
+            },
+            {
+              "Level": 10,
+              "Amount": 22
+            }
+          ],
+          "SpiritSphereCost": 2
+        }
+      },
+      "structured_description_zh": "武器/物理技能；目标：自身；最高等级 10；射程：-2；命中类型：Multi_Hit；段数：Lv1-2=-1; Lv3-4=-2; Lv5-6=-3; Lv7-8=-4; Lv9-10=-5；属性：Weapon；消耗/限制：SP Lv1=4; Lv2=6; Lv3=8; Lv4=10; Lv5=12; Lv6=14; Lv7=16; Lv8=18; Lv9=20; Lv10=22；气弹 2。"
+    },
+    {
+      "job": "Champion",
+      "origin_job": "Champion",
+      "direct": true,
+      "tree": {
+        "Name": "CH_SOULCOLLECT",
+        "MaxLevel": 1,
+        "Requires": [
+          {
+            "Name": "MO_CALLSPIRITS",
+            "Level": 5
+          },
+          {
+            "Name": "MO_ABSORBSPIRITS",
+            "Level": 1
+          },
+          {
+            "Name": "MO_EXPLOSIONSPIRITS",
+            "Level": 5
+          }
+        ]
+      },
+      "skill": {
+        "Id": 401,
+        "Name": "CH_SOULCOLLECT",
+        "Description": "Zen",
+        "MaxLevel": 1,
+        "TargetType": "Self",
+        "DamageFlags": {
+          "NoDamage": true
+        },
+        "Hit": "Single",
+        "HitCount": 1,
+        "CastTime": 2000,
+        "Duration1": 600000,
+        "Requires": {
+          "SpCost": 20
+        }
+      },
+      "structured_description_zh": "非伤害技能；目标：自身；最高等级 1；命中类型：Single；段数：1；吟唱：2000 ms；持续时间1：600000 ms；伤害标记：NoDamage；消耗/限制：SP 20。"
+    }
+  ]
+}

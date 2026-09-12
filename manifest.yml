@@ -1,0 +1,31 @@
+schema_version: 1
+project: ro_game_setting
+ruleset: pre-renewal
+build_mode: PRERE
+language: zh-CN
+source_lock: data/sources/rathena.lock.yml
+source_repository: rathena/rathena
+source_commit: 2fe6ab3dc4d830b11d93fb44c3b48436571890bd
+included:
+- classic job and rebirth routes
+- six primary stats and derived stats
+- physical, magic and misc combat pipelines
+- hit, flee, critical, perfect flee and ASPD
+- cast, delay, cooldown and hit count
+- element, size, race and class modifiers
+- equipment, cards, refine and item scripts
+- monsters, experience, drops and monster skills
+- status changes and resistance formulas
+- pets, homunculus, mercenaries and production data
+excluded:
+- Renewal formulas and databases
+- third jobs
+- fourth jobs and trait stats
+- regional server variants
+- private-server customizations
+rounding_policy: C++ integer division truncates toward zero at every source-level operation
+completeness_model:
+  verified: human-reviewed against executable source path
+  table-driven: authoritative values are generated from pinned database tables
+  source-indexed: complete source is pinned and indexed, but not reduced to one algebraic expression
+  uncertain: known disagreement or insufficient source evidence
